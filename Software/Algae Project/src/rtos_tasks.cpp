@@ -89,12 +89,23 @@ void TaskReadSensor(void *pvParameters){
 void TaskControl(void *pvParameters){
 //run setup here this is done once
   DRI0050 PumpController(PumpTxPin,PumpRxPin);
-  
+  PumpController.setPwmFreq(10);
+  PumpController.setPwmDuty(0);
 
   while(1){// add stuff here to add it to the task
     
     if(xSemaphoreTake(xSerialSemaphore,(TickType_t) 5)==pdTRUE){ // this checks if we can get the mutex semaphore
-      // Serial.write("PWM has control over Serial port\n");
+      
+      if(PumpState==Control_State::Off){  // if the pumpstate is off then turn off the pump pwm controller
+        PumpController.setPwmEnable(PWM_DISENABLE);
+      }
+      if(PumpState==Control_State::Manual){ // if the state is set to manual, 
+        PumpController.setPwmDuty(dutycycle.var);
+        PumpController.setPwmEnable(PWM_ENABLE);
+      }
+      if(PumpState==Control_State::Automatic){
+
+      }
       
       xSemaphoreGive(xSerialSemaphore);
     }
@@ -156,4 +167,9 @@ void TaskUI(void *pvParameters){
   }}
   
 
+
+
+void Automatic_Control(){
+  
+}
   

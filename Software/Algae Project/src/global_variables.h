@@ -6,6 +6,25 @@
 #include <ArduinoSTL.h>
 #include <EEPROM_Manager.h>
 
+
+// -------------------------------      ENUM    --------------------------------------
+enum Joystick_State{
+  Up = 1,
+  Down = 2,
+  left =-1,
+  right = -2,
+  Centre = 0
+};
+enum Control_State{
+    Off=0,
+    Manual = 1,
+    Automatic=2
+};
+
+
+
+
+
     //-----------------------------     Pin Declarations  ----------------------------------
 extern const int xinput, yinput;
 extern const int Button;
@@ -15,6 +34,8 @@ extern const int PumpTxPin, PumpRxPin;
     //-----------------------------     Global Variables ---------------------------------------
 extern int Temp1,Temp2;
 extern int SonarDist1, SonarDist2;
+
+extern Control_State PumpState, SolanoidState;
 
 
 
@@ -32,18 +53,6 @@ extern EEPROM_Variable autosave ;
 
 
     //-----------------------------     Other Stuff  ----------------------------------
-enum Joystick_State{
-  Up = 1,
-  Down = 2,
-  left =-1,
-  right = -2,
-  Centre = 0
-};
-enum Control_State{
-    Off=0,
-    Manual = 1,
-    Automatic=2
-};
 
 
 #endif

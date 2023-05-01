@@ -30,9 +30,32 @@ void Reset_Soft();
  */
 void Reset_Hard();
 
-
+/**
+ * @brief Turns the pump on without any control. useful for filling the panel
+ * 
+ */
 void Pump_Manual_On();
+/**
+ * @brief Turns the pump off
+ * 
+ */
+void Pump_Off();
+/**
+ * @brief Sets the pump to controlled mode, operation is adjustable by changing the related function
+ * 
+ */
+void Pump_Automatic_On();
+/**
+ * @brief Opens the Solanouid
+ * 
+ */
+void Solanoid_Open();
+/**
+ * @brief Closes the Solanoid
+ * 
+ */
+void Solanoid_Closed();
 
-void Pump_Manual_Off();
+
 
 #endif

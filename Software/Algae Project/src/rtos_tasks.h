@@ -4,7 +4,6 @@
 #include <Arduino.h>
 #include <Arduino_FreeRTOS.h>
 #include <semphr.h>
-#include <UI_tests/Simple_Menu/SimpleMenu.h>
 #include <LiquidCrystal.h>
 #include <menu.h>
 #include <DS18B20.h>
@@ -51,6 +50,12 @@ void TaskControl(void *pvParameters);
 void TaskUI(void *pvParameters);
 
 
+
+
+
+
+
+void Automatic_Control();
 
 
 #endif

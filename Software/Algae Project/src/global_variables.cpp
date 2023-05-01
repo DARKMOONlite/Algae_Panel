@@ -9,6 +9,7 @@ const int PumpTxPin = 9, PumpRxPin = 10;
     //-----------------------------     Global Variables ---------------------------------------
 int Temp1=-1,Temp2=-1;
 int SonarDist1=-1, SonarDist2=-1;
+Control_State PumpState = Control_State::Off, SolanoidState = Control_State::Off;
     //-----------------------------     Global Objects Declarations  ----------------------------------
 LiquidCrystal lcd = LiquidCrystal(2,3,4,5,6,7);
 

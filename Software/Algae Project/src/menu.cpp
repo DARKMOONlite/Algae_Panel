@@ -4,22 +4,18 @@
 
     //-----------------------------     Menu Structure ----------------------------------
 
-  SimpleMenu Manual_Pump_menu[2]={
-    SimpleMenu("On",Pump_Manual_On),
-    SimpleMenu("Off",Pump_Manual_Off),
-    // SimpleMenu("Duty Cycle"),
-    // SimpleMenu("Duration")
-  };
-    SimpleMenu Automatic_Pump_menu[2]={
-    SimpleMenu("On",Pump_Manual_On),
-    SimpleMenu("Off",Pump_Manual_Off)
 
+
+
+    SimpleMenu Pump_Menu[3] = {
+    SimpleMenu("Off",Pump_Off),
+    SimpleMenu("Manual On",Pump_Manual_On),
+    SimpleMenu("Automatic On",Pump_Manual_On),
   };
 
-
-    SimpleMenu Pump_Menu[2] = {
-    SimpleMenu("Manual Control",2,Manual_Pump_menu),
-    SimpleMenu("Auto Control",2,Automatic_Pump_menu)
+  SimpleMenu Solanoid_Menu[]={
+    SimpleMenu("Open",Solanoid_Open),
+    SimpleMenu("Close",Solanoid_Closed)
   };
 
   SimpleMenu TempMenu[2]={
@@ -38,10 +34,10 @@
   
 
 
-  SimpleMenu Menu[2] = {
+  SimpleMenu Menu[3] = {
     SimpleMenu("Pump Controls",2,Pump_Menu),
+    SimpleMenu("Solanoid Control",2,Solanoid_Menu),
     SimpleMenu("Sensors",2,Sensor_Menu)
-
 
   };
 
@@ -83,3 +79,13 @@ void Reset_Soft(){
 void Reset_Hard(){
 
 }
+
+void Pump_Manual_On(){PumpState=Control_State::Manual;}
+
+void Pump_Off(){PumpState=Control_State::Off;}
+
+void Pump_Automatic_On(){PumpState=Control_State::Automatic;}
+
+void Solanoid_Open(){SolanoidState=Control_State::Manual;}
+
+void Solanoid_Closed(){SolanoidState=Control_State::Off;}
