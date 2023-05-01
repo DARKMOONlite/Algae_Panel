@@ -4,27 +4,51 @@
 
     //-----------------------------     Menu Structure ----------------------------------
 
-    SimpleMenu Joystick_Menu[3] = {
-    SimpleMenu("Joystick X",&xinput),
-    SimpleMenu("Joystick Y",&yinput),
-    SimpleMenu("Button",&Button)
+  SimpleMenu Manual_Pump_menu[2]={
+    SimpleMenu("On",Pump_Manual_On),
+    SimpleMenu("Off",Pump_Manual_Off),
+    // SimpleMenu("Duty Cycle"),
+    // SimpleMenu("Duration")
+  };
+    SimpleMenu Automatic_Pump_menu[2]={
+    SimpleMenu("On",Pump_Manual_On),
+    SimpleMenu("Off",Pump_Manual_Off)
+
   };
 
-  SimpleMenu PWM_Menu[1] = {
-    SimpleMenu("Duty Cycle",&dutycycle.var,0,100)
-  };
-  SimpleMenu SD_Menu[1] = {
-    SimpleMenu("autosave (min)",&autosave.var,1,1000)
+
+    SimpleMenu Pump_Menu[2] = {
+    SimpleMenu("Manual Control",2,Manual_Pump_menu),
+    SimpleMenu("Auto Control",2,Automatic_Pump_menu)
   };
 
-  SimpleMenu Menu[3] = {
-    SimpleMenu("Joystick Options",3,Joystick_Menu),
-    SimpleMenu("PWM Settings",1,PWM_Menu),
-    SimpleMenu("SD Card Settings",1,SD_Menu)
+  SimpleMenu TempMenu[2]={
+    SimpleMenu("Panel Temp",&Temp1),
+    SimpleMenu("Resevoir Temp",&Temp2)
+  };
+  SimpleMenu DepthMenu[2] = {
+    SimpleMenu("Panel Depth",&SonarDist1), //! Change these variables to the calculated depths of each
+    SimpleMenu("Resevoir Depth",&SonarDist2)
+  };
+
+  SimpleMenu Sensor_Menu[2]={
+    SimpleMenu("Temperature",2,TempMenu),
+    SimpleMenu("Depth",2,DepthMenu)
+  };
+  
+
+
+  SimpleMenu Menu[2] = {
+    SimpleMenu("Pump Controls",2,Pump_Menu),
+    SimpleMenu("Sensors",2,Sensor_Menu)
+
+
   };
 
 
 SimpleMenu TopMenu(3,Menu);
+
+
     //-----------------------------     Menu Functions  ----------------------------------
 
 

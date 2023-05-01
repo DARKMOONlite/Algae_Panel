@@ -1,6 +1,6 @@
 #ifndef MENU_H
 #define MENU_H
-#include <UI_tests/Simple_Menu/SimpleMenu.h>
+#include <SimpleMenu.h>
 #include <LiquidCrystal.h>
 #include <Arduino.h>
 #include <global_variables.h>
@@ -29,5 +29,10 @@ void Reset_Soft();
  * 
  */
 void Reset_Hard();
+
+
+void Pump_Manual_On();
+
+void Pump_Manual_Off();
 
 #endif

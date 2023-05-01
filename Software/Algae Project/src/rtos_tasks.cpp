@@ -72,8 +72,8 @@ void TaskReadSensor(void *pvParameters){
   while(1){ // add stuff here to add it to the task
     if(xSemaphoreTake(xSerialSemaphore,(TickType_t) 5)==pdTRUE){ // this checks if we can get the mutex semaphore
       // Serial.write("PWM has control over Serial port\n");
-      // Temp1 = TempSensor1.readTempC();
-      // Temp2 = TempSensor2.readTempC();
+      Temp1 = (int)TempSensor1.readTempC();
+      Temp2 = (int)TempSensor2.readTempC();
       SonarDist1 = Sonar1.ping_cm();
       SonarDist2 = Sonar2.ping_cm();
       
@@ -86,10 +86,10 @@ void TaskReadSensor(void *pvParameters){
 
 
 
-void TaskPWM(void *pvParameters){
+void TaskControl(void *pvParameters){
 //run setup here this is done once
-
-
+  DRI0050 PumpController(PumpTxPin,PumpRxPin);
+  
 
   while(1){// add stuff here to add it to the task
     
@@ -100,24 +100,6 @@ void TaskPWM(void *pvParameters){
     }
     vTaskDelay(1);
   }}
-
-
-
-
-
-  void TaskSD(void *pvParameters){
-
-
-  while(1){// add stuff here to add it to the task
-    
-    if(xSemaphoreTake(xSerialSemaphore,(TickType_t) 5)==pdTRUE){ // this checks if we can get the mutex semaphore
-      // Serial.write("PWM has control over Serial port\n");
-    
-      xSemaphoreGive(xSerialSemaphore);
-    }
-    vTaskDelay(1);
-  }}
-
 
 
 

@@ -1,4 +1,4 @@
-#include <UI_tests/Simple_Menu/SimpleMenu.h>
+#include <SimpleMenu.h>
 #include <LiquidCrystal.h>
 
 #define LCD_RS 2

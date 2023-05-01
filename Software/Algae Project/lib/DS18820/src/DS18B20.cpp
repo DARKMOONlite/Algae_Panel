@@ -1,7 +1,7 @@
 #include "DS18B20.h"
 
 //constructor
-DS18B20::DS18B20(const int pin) : m_pin(pin), oneWire(pin), sensor(&oneWire)
+DS18B20::DS18B20(const int pin) :oneWire(pin), m_pin(pin),  sensor(&oneWire)
 {
   sensor.begin(); // Start the temperature sensor
 }

@@ -7,6 +7,10 @@
 #include <UI_tests/Simple_Menu/SimpleMenu.h>
 #include <LiquidCrystal.h>
 #include <menu.h>
+#include <DS18B20.h>
+#include <NewPing.h>
+#include <DRI0050.h>
+#include <SoftwareSerial.h>
 
 
     //-----------------------------     RTOS Variables Declarations ----------------------------------
@@ -37,14 +41,7 @@ void TaskReadSensor(void *pvParameters);
  * 
  * @param pvParameters 
  */
-void TaskPWM(void *pvParameters);
-
-/**
- * @brief saves data to sd card for later reading
- * 
- * @param pvParameters 
- */
-void TaskSD(void *pvParameters);
+void TaskControl(void *pvParameters);
 
 /**
  * @brief Reads User input and updates the display to match

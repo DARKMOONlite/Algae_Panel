@@ -1,9 +1,5 @@
 #include <rtos_tasks.h>
 
-EEPROM_Manager test;
-std::vector<EEPROM_Variable> test2;
-
-
 void setup() {
   
   // put your setup code here, to run once:
