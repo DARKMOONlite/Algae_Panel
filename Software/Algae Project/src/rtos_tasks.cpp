@@ -1,6 +1,6 @@
 
 #include <rtos_tasks.h>
-#include <global_variables.h>
+
 
     //-----------------------------     RTOS Variable Definitions  ----------------------------------
 
@@ -12,7 +12,7 @@ SemaphoreHandle_t xSerialSemaphore;
 
 bool setup_rtos_tasks(){
 
-
+  Serial.println("Creating UI Task");
   if(xTaskCreate(
     TaskUI,
     "UI",
@@ -23,16 +23,17 @@ bool setup_rtos_tasks(){
   )!=pdPASS){
     return(false);
   }
-   if(xTaskCreate(
-    TaskReadSensor,
-    "ReadSensor",
-    128,
-    NULL,
-    2,
-    NULL
-  )!=pdPASS){
-    return(false);
-  }
+  
+  //  if(xTaskCreate(
+  //   TaskReadSensor,
+  //   "ReadSensor",
+  //   128,
+  //   NULL,
+  //   2,
+  //   NULL
+  // )!=pdPASS){
+  //   return(false);
+  // }
   // if(xTaskCreate(
   //   TaskPWM,
   //   "WritePWM",
@@ -58,67 +59,69 @@ bool setup_rtos_tasks(){
 return(true);
 }
 
-    //-----------------------------     RTOS Task Definition  ----------------------------------
+//     //-----------------------------     RTOS Task Definition  ----------------------------------
 
 
-void TaskReadSensor(void *pvParameters){
-//run setup, this is done once
+// void TaskReadSensor(void *pvParameters){
+// //run setup, this is done once
 
-  DS18B20 TempSensor1(TSensorPin1);
-  DS18B20 TempSensor2(TSensorPin2);
-  NewPing Sonar1(SSensorPin1,SonarEchoPin,400);
-  NewPing Sonar2(SSensorPin2,SonarEchoPin,400);
+//   // DS18B20 TempSensor1(TSensorPin1);
+//   // DS18B20 TempSensor2(TSensorPin2);
+//   // NewPing Sonar1(SSensorPin1,SonarEchoPin,400);
+//   // NewPing Sonar2(SSensorPin2,SonarEchoPin,400);
 
-  while(1){ // add stuff here to add it to the task
-    if(xSemaphoreTake(xSerialSemaphore,(TickType_t) 5)==pdTRUE){ // this checks if we can get the mutex semaphore
-      // Serial.write("PWM has control over Serial port\n");
-      Temp1 = (int)TempSensor1.readTempC();
-      Temp2 = (int)TempSensor2.readTempC();
-      SonarDist1 = Sonar1.ping_cm();
-      SonarDist2 = Sonar2.ping_cm();
+//   while(1){ // add stuff here to add it to the task
+//     // if(xSemaphoreTake(xSerialSemaphore,(TickType_t) 5)==pdTRUE){ // this checks if we can get the mutex semaphore
+//     //   Serial.write("Task: Sensor\n");
+//     //   Temp1 = (int)TempSensor1.readTempC();
+//     //   Temp2 = (int)TempSensor2.readTempC();
+//     //   SonarDist1 = Sonar1.ping_cm();
+//     //   SonarDist2 = Sonar2.ping_cm();
       
-      xSemaphoreGive(xSerialSemaphore);
-    }
-    vTaskDelay(1);
-  }}
+//     //   xSemaphoreGive(xSerialSemaphore);
+//     // }
+//     // vTaskDelay(1);
+//   }
+//   }
 
 
 
 
 
-void TaskControl(void *pvParameters){
-//run setup here this is done once
-  DRI0050 PumpController(PumpTxPin,PumpRxPin);
-  PumpController.setPwmFreq(10);
-  PumpController.setPwmDuty(0);
+// void TaskControl(void *pvParameters){
+// //run setup here this is done once
+//   DRI0050 PumpController(PumpTxPin,PumpRxPin);
+//   PumpController.setPwmFreq(10);
+//   PumpController.setPwmDuty(0);
 
-  while(1){// add stuff here to add it to the task
+//   while(1){// add stuff here to add it to the task
     
-    if(xSemaphoreTake(xSerialSemaphore,(TickType_t) 5)==pdTRUE){ // this checks if we can get the mutex semaphore
-      
-      if(PumpState==Control_State::Off){  // if the pumpstate is off then turn off the pump pwm controller
-        PumpController.setPwmEnable(PWM_DISENABLE);
-      }
-      if(PumpState==Control_State::Manual){ // if the state is set to manual, 
-        PumpController.setPwmDuty(dutycycle.var);
-        PumpController.setPwmEnable(PWM_ENABLE);
-      }
-      if(PumpState==Control_State::Automatic){
+//     if(xSemaphoreTake(xSerialSemaphore,(TickType_t) 5)==pdTRUE){ // this checks if we can get the mutex semaphore
+//       Serial.write("Task: Control\n");
+//       if(PumpState==Control_State::Off){  // if the pumpstate is off then turn off the pump pwm controller
+//         PumpController.setPwmEnable(PWM_DISENABLE);
+//       }
+//       if(PumpState==Control_State::Manual){ // if the state is set to manual, 
+//         PumpController.setPwmDuty(dutycycle.var);
+//         PumpController.setPwmEnable(PWM_ENABLE);
+//       }
+//       if(PumpState==Control_State::Automatic){
 
-      }
+//       }
       
-      xSemaphoreGive(xSerialSemaphore);
-    }
-    vTaskDelay(1);
-  }}
+//       xSemaphoreGive(xSerialSemaphore);
+//     }
+//     vTaskDelay(1);
+//   }
+//   }
 
 
 
 void TaskUI(void *pvParameters){
 //run setup, this is done once
-
+  Serial.print("Setting Up TaskUI");
   Joystick_State prev_pos = Centre; 
-  // make the pushbutton's pin an input:
+  // // make the pushbutton's pin an input:
   pinMode(Button, INPUT_PULLUP);
   pinMode(xinput,INPUT);
   pinMode(yinput,INPUT);
@@ -129,7 +132,7 @@ void TaskUI(void *pvParameters){
 
   while(1){ // add stuff here to add it to the task
     if(xSemaphoreTake(xSerialSemaphore,(TickType_t) 5)==pdTRUE){ // this checks if we can get the mutex semaphore
-      // Serial.write("PWM has control over Serial port\n");
+      Serial.write("Task: UI\n");
       xPosition = analogRead(xinput)-1024/2;
       yPosition = analogRead(yinput)-1024/2;
       buttonState = digitalRead(Button);
@@ -163,13 +166,15 @@ void TaskUI(void *pvParameters){
       }
       xSemaphoreGive(xSerialSemaphore);
     }
+    Serial.println("test2");
     vTaskDelay(1);
-  }}
+  }
+  }
   
 
 
 
-void Automatic_Control(){
+// void Automatic_Control(){
   
-}
+// }
   

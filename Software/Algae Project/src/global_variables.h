@@ -1,12 +1,12 @@
 #ifndef GLOBAL_VARIABLES_H
 #define GLOBAL_VARIABLES_H
-#include <Arduino.h>
 #include <LiquidCrystal.h>
-#include <SimpleMenu.h>
 #include <ArduinoSTL.h>
 #include <EEPROM_Manager.h>
-
-
+#include <NewPing.h>
+#include <DRI0050.h>
+#include <SoftwareSerial.h>
+#include <DS18B20.h>
 // -------------------------------      ENUM    --------------------------------------
 enum Joystick_State{
   Up = 1,
@@ -42,7 +42,7 @@ extern Control_State PumpState, SolanoidState;
 
     //-----------------------------     Global Objects Declarations  ----------------------------------
 extern LiquidCrystal lcd;
-extern SimpleMenu TopMenu;
+
     //-----------------------------     EEPROM Variable Declarations  ----------------------------------
 
 

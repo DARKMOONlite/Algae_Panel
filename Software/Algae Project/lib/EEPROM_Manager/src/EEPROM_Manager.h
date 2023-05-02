@@ -64,7 +64,7 @@ class EEPROM_Variable {
 };
 
 
-class EEPROM_Manager : private std::vector<EEPROM_Variable*> {
+class EEPROM_Manager{
 
     public:
         EEPROM_Manager();
@@ -96,12 +96,15 @@ class EEPROM_Manager : private std::vector<EEPROM_Variable*> {
 
         void print_errors();
 
-        
+        private:
 
         uint8_t EEPROM_MAP;
         
         std::vector<uint8_t> double_error;
         std::vector<uint8_t> overflow_error;
+
+
+        std::vector<EEPROM_Variable*> EEPROM_Vector;
 };
 
 

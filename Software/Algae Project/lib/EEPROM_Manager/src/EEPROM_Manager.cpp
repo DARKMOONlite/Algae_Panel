@@ -42,20 +42,20 @@ void EEPROM_Variable::Reset(){
 
 
     void EEPROM_Manager::Store(){
-        for(size_t i=0; i < this->size();i++){
-            this->at(i)->Store();
+        for(size_t i=0; i < EEPROM_Vector.size();i++){
+            EEPROM_Vector.at(i)->Store();
         }
     }
 
     void EEPROM_Manager::Retrieve(){
-        for(size_t i=0; i < this->size();i++){
-            this->at(i)->Retrieve();
+        for(size_t i=0; i < EEPROM_Vector.size();i++){
+            EEPROM_Vector.at(i)->Retrieve();
         }
     }
 
     void EEPROM_Manager::Reset(){
-        for(size_t i=0; i < this->size();i++){
-            this->at(i)->Reset();
+        for(size_t i=0; i < EEPROM_Vector.size();i++){
+            EEPROM_Vector.at(i)->Reset();
         }
     }
 
@@ -69,7 +69,7 @@ void EEPROM_Variable::Reset(){
             return(false);
         }
         EEPROM_MAP |= (1U << EEPROM_LOC);
-        this->push_back(variable);
+        EEPROM_Vector.push_back(variable);
         return(true);
     }
 

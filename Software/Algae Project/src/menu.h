@@ -7,6 +7,7 @@
 
 
 
+extern SimpleMenu TopMenu;
 
 
     //-----------------------------     Menu Functions  ----------------------------------
