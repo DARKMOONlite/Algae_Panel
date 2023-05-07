@@ -16,7 +16,7 @@ while (Serial.available())
     switch( (char)Serial.read())
     {
       case 'w':
-        an
+        
         break;
       case 's':
       
