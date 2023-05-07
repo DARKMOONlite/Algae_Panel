@@ -13,13 +13,15 @@
 
 class DRI0050 {
 public:
-    DRI0050(uint8_t tx, uint8_t rx):COMS(rx,tx){}
+    DRI0050(uint8_t tx, uint8_t rx):COMS(rx,tx){
+        COMS.begin(9600);
+    }
 
 
     SoftwareSerial COMS;
 private:
 
-    static uint16_t CheckCRC(uint8_t *data, uint8_t len){
+     uint16_t CheckCRC(uint8_t *data, uint8_t len){
     uint16_t crc = 0xFFFF;
     for(uint8_t pos = 0; pos < len; pos++){
         crc ^= (uint16_t)data[pos];
@@ -36,7 +38,7 @@ private:
     return crc;
     }
 
-    static void WriteRegValue(uint16_t regAddr, uint16_t value){
+     void WriteRegValue(uint16_t regAddr, uint16_t value){
     uint8_t tempData[8];
     uint16_t crc;
     tempData[0] = DEV_ADDR;
@@ -49,22 +51,23 @@ private:
     tempData[6] = (crc >> 8) & 0xFF;
     tempData[7] = crc & 0xFF;
     for(uint8_t i = 0 ;i < 8; i++){
-        Serial.print((char)tempData[i]);
+        COMS.print((char)tempData[i]);
+        
     }
-    Serial.flush();
+    COMS.flush();
     }
 
 public:
 
-    static void setPwmDuty(uint8_t duty){
+     void setPwmDuty(uint8_t duty){
     WriteRegValue(DUTY_REG_ADDR, (uint16_t)duty);
     }
 
-    static void setPwmFreq(uint8_t freq){
+     void setPwmFreq(uint8_t freq){
     WriteRegValue(FREQ_REG_ADDR, (uint16_t)freq);
     }
 
-    static void setPwmEnable(uint8_t pwmStatus){
+    void setPwmEnable(uint8_t pwmStatus){
     WriteRegValue(PWM_EN_REG_ADDR, (uint16_t)pwmStatus);
     }
 
