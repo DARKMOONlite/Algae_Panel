@@ -1,17 +1,11 @@
 #include <global_variables.h>
 
-    //-----------------------------     Pin Definitions  ----------------------------------
-const int xinput = A0, yinput = A1;
-const int Button = 8;
-const int TSensorPin1 = 12, TSensorPin2 = 13;
-const int SSensorPin1 = A3, SSensorPin2 = A4,SonarEchoPin = A2;
-const int PumpTxPin = 9, PumpRxPin = 10;
     //-----------------------------     Global Variables ---------------------------------------
 int Temp1=-1,Temp2=-1;
 int SonarDist1=-1, SonarDist2=-1;
 Control_State PumpState = Control_State::Off, SolanoidState = Control_State::Off;
     //-----------------------------     Global Objects Declarations  ----------------------------------
-LiquidCrystal lcd = LiquidCrystal(2,3,4,5,6,7);
+LiquidCrystal lcd = LiquidCrystal(LCDRSPin,LCDRWPin,LCDD4Pin,LCDD5Pin,LCDD6Pin,LCDD7Pin);
 
 
     //-----------------------------     EEPROM Variable Definitions  ----------------------------------

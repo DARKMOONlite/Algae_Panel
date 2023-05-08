@@ -6,16 +6,11 @@
 
 
 
-  //   SimpleMenu Pump_Menu[3] = {
-  //   SimpleMenu("Off",Pump_Off),
-  //   SimpleMenu("Manual On",Pump_Manual_On),
-  //   SimpleMenu("Automatic On",Pump_Manual_On),
-  // };
-
-  // SimpleMenu Solanoid_Menu[2]={
-  //   SimpleMenu("Panel Temp",&Temp1),
-  //   SimpleMenu("Resevoir Temp",&Temp2)
-  // };
+    SimpleMenu Pump_Menu[3] = {
+    SimpleMenu("Off",Pump_Off),
+    SimpleMenu("Manual On",Pump_Manual_On),
+    SimpleMenu("Automatic On",Pump_Manual_On),
+  };
 
 
   SimpleMenu DepthMenu[2] = {
@@ -42,19 +37,19 @@
   };
 
 
-  SimpleMenu Menu[3] = {
+  SimpleMenu Menu[4] = {
     SimpleMenu("Save Settings",3,Save_Menu),
         SimpleMenu("Solanoid",2,Solanoid_Menu),
         //     SimpleMenu("Solanoid",2,Solanoid_Menu),
     // SimpleMenu("Solanoid",2,Solanoid_Menu),
-    // SimpleMenu("Pump Controls",3,Pump_Menu),
+    SimpleMenu("Pump Controls",3,Pump_Menu),
     
     SimpleMenu("Sensors",2,Sensor_Menu)
     
     
 
   };
-  SimpleMenu TopMenu(3,Menu);
+  SimpleMenu TopMenu(4,Menu);
 
 
 

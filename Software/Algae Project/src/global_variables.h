@@ -7,6 +7,7 @@
 #include <DRI0050.h>
 #include <SoftwareSerial.h>
 #include <DS18B20.h>
+#include <pin_definitions.hpp>
 // -------------------------------      ENUM    --------------------------------------
 enum Joystick_State{
   Up = 1,
@@ -25,12 +26,7 @@ enum Control_State{
 
 
 
-    //-----------------------------     Pin Declarations  ----------------------------------
-extern const int xinput, yinput;
-extern const int Button;
-extern const int TSensorPin1, TSensorPin2;
-extern const int SSensorPin1, SSensorPin2,SonarEchoPin;
-extern const int PumpTxPin, PumpRxPin;
+
     //-----------------------------     Global Variables ---------------------------------------
 extern int Temp1,Temp2;
 extern int SonarDist1, SonarDist2;
