@@ -1,4 +1,9 @@
+#ifndef ALGAE_PANEL_REMOTE_CODES_H
+#define ALGAE_PANEL_REMOTE_CODES_H
 
 
-
-#define UP 21
+#define IRREMOTE_DOWN 21
+#define IRREMOTE_UP 22
+#define IRREMOTE_LEFT 23
+#define IRREMOTE_RIGHT 24
+#endif

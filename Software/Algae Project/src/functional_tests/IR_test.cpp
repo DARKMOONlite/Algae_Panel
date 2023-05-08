@@ -6,7 +6,7 @@
 
 const int recv_pin = 11;
 IRrecv irrecv(recv_pin);
-decode_results results;
+
 void setup(){
     
     Serial.begin(9600);

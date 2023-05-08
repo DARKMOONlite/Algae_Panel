@@ -15,8 +15,6 @@ class EEPROM_Variable {
         :default_var(_Variable)
         {
             var = _Variable;
-            
-
         }
         /**
          * @brief Constructs a variable to be stored in EEPROM to persist between resets
@@ -36,7 +34,7 @@ class EEPROM_Variable {
          * @brief Retrieves Value from EEPROM, should be done on startup.
          * 
          */
-        void Retrieve();
+        int Retrieve();
 
         /**
          * @brief sets the variable var to the default var

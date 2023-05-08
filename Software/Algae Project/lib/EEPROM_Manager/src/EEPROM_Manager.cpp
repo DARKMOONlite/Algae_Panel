@@ -17,18 +17,20 @@ void EEPROM_Variable::Store(){
     return;
     }
     for(size_t i =0;i<sizeof(int);i++){
-        EEPROM.update(EEPROM_LOC*4+i,*((uint8_t*)(&var)+i));
+        EEPROM.update(EEPROM_LOC*sizeof(int)+i,*((uint8_t*)(&var)+i));
     }
 }
 
-void EEPROM_Variable::Retrieve(){
+int EEPROM_Variable::Retrieve(){
     if(EEPROM_LOC<0){
-        return;
+        return(-1);
     }
     var = 0;
     for(size_t i=0;i<sizeof(int);i++){
-        var |= ((int)EEPROM.read(EEPROM_LOC*4+i)<<8*(sizeof(int)-i)); //! check if this is little or big endian
-    }   
+        var |= ((int)EEPROM.read(EEPROM_LOC*sizeof(int)+i)<<8*i); //! check if this is little or big endian
+    
+    }  
+    return(var); 
 }
 
 void EEPROM_Variable::Reset(){

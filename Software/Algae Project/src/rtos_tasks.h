@@ -6,6 +6,8 @@
 #include <semphr.h>
 #include <global_variables.h>
 #include <menu.h>
+
+#include <AlgaePanelRemote.hpp>
     //-----------------------------     RTOS Variables Declarations ----------------------------------
 extern SemaphoreHandle_t xSerialSemaphore;
 extern SemaphoreHandle_t xSDSemaphore;
