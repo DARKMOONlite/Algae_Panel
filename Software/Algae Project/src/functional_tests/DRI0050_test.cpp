@@ -4,13 +4,18 @@
 
 const int DRItx = 12;
 const int DRIrx = 13;
-unsigned int DutyCycle = 50;
-DRI0050 Pump;
+unsigned int DutyCycle = 100;
+DRI0050 Pump(DRItx,DRIrx);
 
 void setup(){
 Pump.setPwmDuty(100);
+delay(50);
 Pump.setPwmFreq(10);
+delay(50);
+Pump.setPwmEnable(PWM_ENABLE);
+delay(50);
 Serial.begin(9600);
+Serial.print("Waiting for Input");
 }
 
 
@@ -22,9 +27,7 @@ while (Serial.available())
     {
       case 'w':
         DutyCycle +=10;
-        if(DutyCycle>=100){DutyCycle=100;}
-        Serial.print("Duty Cycle Increased to :");
-        Serial.println(DutyCycle);
+        if(DutyCycle>=250){DutyCycle=250;}
         break;
       case 's':
       
@@ -33,8 +36,9 @@ while (Serial.available())
         break;
 
     }
+    Pump.setPwmDuty(DutyCycle);
     Serial.print("Duty Cycle :");
     Serial.println(DutyCycle);
   }
-
+  
 }
