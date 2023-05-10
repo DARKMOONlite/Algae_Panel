@@ -7,6 +7,7 @@
 
 void setup(){
 pinMode(Solanoid_Pin,OUTPUT);
+Serial.begin(9600);
 }
 
 
@@ -16,9 +17,14 @@ while (Serial.available())
     switch( (char)Serial.read())
     {
       case 'w':
-        
+        Serial.print("Opening Solanoid Valve \n");
+        digitalWrite(Solanoid_Pin,HIGH);
         break;
       case 's':
+        Serial.print("Closing Solanoid Valve \n");
+        digitalWrite(Solanoid_Pin,LOW);
+
+
       
         
         break;
