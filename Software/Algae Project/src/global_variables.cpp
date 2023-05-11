@@ -11,7 +11,7 @@ LiquidCrystal lcd = LiquidCrystal(LCDRSPin,LCDEPin,LCDD4Pin,LCDD5Pin,LCDD6Pin,LC
 
     //-----------------------------     EEPROM Variable Definitions  ----------------------------------
 EEPROM_Manager rom_manager;
-EEPROM_Variable dutycycle(50,1,&rom_manager);
+EEPROM_Variable manual_dutycycle(25,1,&rom_manager);
 EEPROM_Variable autosave(10,2,&rom_manager);
 
 

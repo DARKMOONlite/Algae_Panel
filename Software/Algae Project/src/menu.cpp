@@ -4,11 +4,14 @@
 
     //-----------------------------     Menu Structure ----------------------------------
 
-
+  SimpleMenu ManualPumpSettings[2]={
+    SimpleMenu("Duty Cycle",&manual_dutycycle.var,0,25),
+    SimpleMenu("Manual On",[](){return(Pump_Ctrl(1));})
+  };
 
     SimpleMenu Pump_Menu[3] = {
     SimpleMenu("Off",[](){return(Pump_Ctrl(0));}),
-    SimpleMenu("Manual On",[](){return(Pump_Ctrl(1));}),
+    SimpleMenu("Manual:",2,ManualPumpSettings),
     SimpleMenu("Automatic On",[](){return(Pump_Ctrl(2));}),
   };
 
@@ -23,25 +26,25 @@
   };
   
   SimpleMenu Sensor_Menu[2]={
-    SimpleMenu("Temperature",2,TempMenu),
-    SimpleMenu("Depth",2,DepthMenu)
+    SimpleMenu("Temperature:",2,TempMenu),
+    SimpleMenu("Depth:",2,DepthMenu)
   };
     SimpleMenu Solanoid_Menu[2]={
     SimpleMenu("Open",[](){return(Solanoid_Ctrl(1));}),
     SimpleMenu("Close",[](){return(Solanoid_Ctrl(0));})
   };
   SimpleMenu Save_Menu[3]={
-    SimpleMenu("Save Settings",[](){return(rom_manager.Store());}),
-    SimpleMenu("Soft Reset",[](){return(rom_manager.Retrieve());}),
-    SimpleMenu("Hard Reset",[](){return(rom_manager.Reset());})
+    SimpleMenu("Save!",[](){return(rom_manager.Store());}),
+    SimpleMenu("Soft Reset!",[](){return(rom_manager.Retrieve());}),
+    SimpleMenu("Hard Reset!",[](){return(rom_manager.Reset());})
   };
 
 
   SimpleMenu Menu[4] = {
-    SimpleMenu("Save Settings",3,Save_Menu),
-    SimpleMenu("Solanoid",2,Solanoid_Menu),
-    SimpleMenu("Pump Controls",3,Pump_Menu),
-    SimpleMenu("Sensors",2,Sensor_Menu)
+    SimpleMenu("Save Settings:",3,Save_Menu),
+    SimpleMenu("Solanoid:",2,Solanoid_Menu),
+    SimpleMenu("Pump Controls:",3,Pump_Menu),
+    SimpleMenu("Sensors:",2,Sensor_Menu)
     
     
 
@@ -79,7 +82,7 @@ void Pump_Ctrl(int _state){PumpState=Control_State(_state);}
 
 void Solanoid_Ctrl(int _state){SolanoidState = Control_State(_state);}
 
-int Menu_IR_Input(int _input){
+uint16_t Menu_IR_Input(uint16_t _input){
   Serial.print("IR Input Received: ");
   Serial.println(_input);
   switch (_input)

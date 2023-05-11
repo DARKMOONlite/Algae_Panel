@@ -7,7 +7,6 @@
   DS18B20 TempSensor2(TSensorPin2);
   NewPing Sonar1(SSensorPin1,SonarEchoPin,400);
   NewPing Sonar2(SSensorPin2,SonarEchoPin,400);
-  char input;
 IRrecv irrecv(IRRXPin);
 DRI0050 PumpController(PumpTxPin,PumpRxPin);
 
@@ -23,6 +22,9 @@ void setup() {
   TopMenu.begin(display,displayValue);
   PumpController.setPwmFreq(10);
   PumpController.setPwmDuty(0);
+  // if you want to change values here in code, then comment out the retrieve call and save the changes to the arduino
+  // rom_manager.Retrieve();
+
 }
 
 void loop() {//! do not put anything here, task scheduler will take over
@@ -58,7 +60,7 @@ if(PumpState != prevPumpState){
         
       }
       if(PumpState==Control_State::Manual){ // if the state is set to manual, 
-        PumpController.setPwmDuty(dutycycle.var);
+        PumpController.setPwmDuty(manual_dutycycle.var);
         PumpController.setPwmEnable(PWM_ENABLE);
         digitalWrite(SolanoidPin2,HIGH);
       }

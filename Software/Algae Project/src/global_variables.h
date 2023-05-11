@@ -46,7 +46,7 @@ extern LiquidCrystal lcd;
 
 extern EEPROM_Manager rom_manager;
 
-extern EEPROM_Variable dutycycle ;
+extern EEPROM_Variable manual_dutycycle ;
 extern EEPROM_Variable autosave ;
 
 
