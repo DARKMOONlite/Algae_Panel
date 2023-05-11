@@ -38,18 +38,23 @@
     SimpleMenu("Soft Reset!",[](){return(rom_manager.Retrieve());}),
     SimpleMenu("Hard Reset!",[](){return(rom_manager.Reset());})
   };
+  SimpleMenu SD_Menu[2]={
+    SimpleMenu("autosave period",&autosave.var,0,60),
+    SimpleMenu("manual save!",[](){})
+  };
 
 
-  SimpleMenu Menu[4] = {
+  SimpleMenu Menu[5] = {
     SimpleMenu("Save Settings:",3,Save_Menu),
     SimpleMenu("Solanoid:",2,Solanoid_Menu),
     SimpleMenu("Pump Controls:",3,Pump_Menu),
-    SimpleMenu("Sensors:",2,Sensor_Menu)
+    SimpleMenu("Sensors:",2,Sensor_Menu),
+    SimpleMenu("SD Menu",2,SD_Menu)
     
     
 
   };
-  SimpleMenu TopMenu(4,Menu);
+  SimpleMenu TopMenu(5,Menu);
 
 
 
