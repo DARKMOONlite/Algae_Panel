@@ -7,9 +7,9 @@
 
 
     SimpleMenu Pump_Menu[3] = {
-    SimpleMenu("Off",Pump_Off),
-    SimpleMenu("Manual On",Pump_Manual_On),
-    SimpleMenu("Automatic On",Pump_Manual_On),
+    SimpleMenu("Off",[](){return(Pump_Ctrl(0));}),
+    SimpleMenu("Manual On",[](){return(Pump_Ctrl(1));}),
+    SimpleMenu("Automatic On",[](){return(Pump_Ctrl(2));}),
   };
 
 
@@ -27,8 +27,8 @@
     SimpleMenu("Depth",2,DepthMenu)
   };
     SimpleMenu Solanoid_Menu[2]={
-    SimpleMenu("Open",Solanoid_Open),
-    SimpleMenu("Close",Solanoid_Closed)
+    SimpleMenu("Open",[](){return(Solanoid_Ctrl(1));}),
+    SimpleMenu("Close",[](){return(Solanoid_Ctrl(0));})
   };
   SimpleMenu Save_Menu[3]={
     SimpleMenu("Save Settings",[](){return(rom_manager.Store());}),
@@ -39,11 +39,8 @@
 
   SimpleMenu Menu[4] = {
     SimpleMenu("Save Settings",3,Save_Menu),
-        SimpleMenu("Solanoid",2,Solanoid_Menu),
-        //     SimpleMenu("Solanoid",2,Solanoid_Menu),
-    // SimpleMenu("Solanoid",2,Solanoid_Menu),
+    SimpleMenu("Solanoid",2,Solanoid_Menu),
     SimpleMenu("Pump Controls",3,Pump_Menu),
-    
     SimpleMenu("Sensors",2,Sensor_Menu)
     
     
@@ -78,27 +75,54 @@ void displayValue(SimpleMenu *_menu)
 }
 
 
-void Store(){
+void Pump_Ctrl(int _state){PumpState=Control_State(_state);}
 
-}
+void Solanoid_Ctrl(int _state){SolanoidState = Control_State(_state);}
 
-void Reset_Soft(){
-  
-}
-void Reset_Hard(){
+int Menu_IR_Input(int _input){
+  Serial.print("IR Input Received: ");
+  Serial.println(_input);
+  switch (_input)
+  {
+  case IRREMOTE_UP:
+    TopMenu.up();
+    break;
+    case IRREMOTE_DOWN:
+    TopMenu.down();
+    break;
+    case IRREMOTE_LEFT:
+    TopMenu.back();
+    break;
+    case IRREMOTE_RIGHT:
+    TopMenu.select();
+    break;
+  default:
+  return(-1);
 
-}
-
-void Pump_Manual_On(){PumpState=Control_State::Manual;}
-
-void Pump_Off(){PumpState=Control_State::Off;}
-
-void Pump_Automatic_On(){PumpState=Control_State::Automatic;}
-
-void Solanoid_Open(){
-  // SolanoidState=Control_State::Manual;
   }
+  return(_input);
+}
 
-void Solanoid_Closed(){
-  // SolanoidState=Control_State::Off;
-  }
+int Menu_Serial_Input(int _input){
+  Serial.print("Serial Input Received: ");
+  Serial.println(_input);
+  switch (_input)
+    {
+    case 'w':
+      TopMenu.up();
+      break;
+    case 's':
+      TopMenu.down();
+      break;
+      case 'a':
+      TopMenu.back();
+      break;
+      case 'd':
+      case ' ':
+      TopMenu.select();
+      break;
+    default:
+      return(-1);
+    }
+  return(_input);
+}

@@ -1,32 +1,87 @@
 
-#include <rtos_tasks.h>
+#include <global_variables.h>
 #include <Arduino.h>
+#include <IRremote.h> //this needs to be included in a .cpp file, IDK why it doesn't work in a header file
+
+  DS18B20 TempSensor1(TSensorPin1);
+  DS18B20 TempSensor2(TSensorPin2);
+  NewPing Sonar1(SSensorPin1,SonarEchoPin,400);
+  NewPing Sonar2(SSensorPin2,SonarEchoPin,400);
+  char input;
+IRrecv irrecv(IRRXPin);
+DRI0050 PumpController(PumpTxPin,PumpRxPin);
 
 
 void setup() {
   
   // put your setup code here, to run once:
   Serial.begin(9600);
-  Serial.println("Starting Up");
+
   while(!Serial){;}
-  if(xSerialSemaphore == NULL){
-    xSerialSemaphore = xSemaphoreCreateMutex();
-    if(xSerialSemaphore != NULL){
-      xSemaphoreGive(xSerialSemaphore);
-    }
-  }
-  _delay_ms(100);
-
-  if(!setup_rtos_tasks()){
-    Serial.println("RTOS Task failed to start");
-  }
-  else{
-    Serial.println("All tasks Created Successfully");
-  }
-
-
+  Serial.println("Starting Up");
+  lcd.begin(16,2);
+  TopMenu.begin(display,displayValue);
+  PumpController.setPwmFreq(10);
+  PumpController.setPwmDuty(0);
 }
 
 void loop() {//! do not put anything here, task scheduler will take over
 
+
+// ----------------------------------------     UI      ---------------------------------------------------------
+
+if(irrecv.decode()){ //if IR receiver is picking up something
+    Menu_IR_Input(irrecv.decodedIRData.command);
   }
+if(Serial.available()){
+  Menu_Serial_Input(Serial.read());
+}
+
+//--------------------------------------------------      Sensor Data     ----------------------------------------------------------
+
+      Temp1 = (int)TempSensor1.readTempC();
+      Temp2 = (int)TempSensor2.readTempC();
+      SonarDist1 = Sonar1.ping_cm();
+      SonarDist2 = Sonar2.ping_cm();
+
+
+
+//----------------------------------------------------    Control   -----------------------------------------------
+Serial.print("Current PunpState: ");
+Serial.println(PumpState);
+
+if(PumpState != prevPumpState){
+  prevPumpState=PumpState;
+      if(PumpState==Control_State::Off){  // if the pumpstate is off then turn off the pump pwm controller
+        PumpController.setPwmEnable(PWM_DISENABLE);
+        digitalWrite(SolanoidPin2,LOW);
+        
+      }
+      if(PumpState==Control_State::Manual){ // if the state is set to manual, 
+        PumpController.setPwmDuty(dutycycle.var);
+        PumpController.setPwmEnable(PWM_ENABLE);
+        digitalWrite(SolanoidPin2,HIGH);
+      }
+      
+  }
+  if(SolanoidState!=prevSolanoidState){
+    prevSolanoidState=SolanoidState;
+    if(SolanoidState==Control_State::Off){
+      digitalWrite(SolanoidPin1,LOW);
+    }
+    if(SolanoidState==Control_State::Manual){
+      digitalWrite(SolanoidPin1,HIGH);
+    }
+    
+  }
+
+
+  if(SolanoidState==Control_State::Automatic){
+      
+    }
+
+
+    if(PumpState==Control_State::Automatic){
+
+  }
+}

@@ -17,13 +17,16 @@
 #define PumpTxPin 9
 #define PumpRxPin 10
 
+#define SolanoidPin1 50
+#define SolanoidPin2 51 // emergency pin for use with the pump until the pwm motor controller board arrives 
+
 
 //------------------------------        UI      ------------------------------
 
 #define IRRXPin 11
 
 #define LCDRSPin 2
-#define LCDRWPin 3
+#define LCDEPin 3
 #define LCDD4Pin 4
 #define LCDD5Pin 5
 #define LCDD6Pin 6

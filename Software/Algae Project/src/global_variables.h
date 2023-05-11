@@ -3,12 +3,13 @@
 #include <LiquidCrystal.h>
 #include <ArduinoSTL.h>
 #include <EEPROM_Manager.h>
-
+#include <menu.h>
 #include <NewPing.h>
 #include <DRI0050.h>
 #include <SoftwareSerial.h>
 #include <DS18B20.h>
 #include <pin_definitions.hpp>
+#include <AlgaePanelRemote.hpp>
 // -------------------------------      ENUM    --------------------------------------
 enum Joystick_State{
   Up = 1,
@@ -32,7 +33,7 @@ enum Control_State{
 extern int Temp1,Temp2;
 extern int SonarDist1, SonarDist2;
 
-extern Control_State PumpState, SolanoidState;
+extern Control_State PumpState, SolanoidState, prevPumpState, prevSolanoidState;
 
 
 
