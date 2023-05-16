@@ -25,9 +25,14 @@ repo for the storage of files related to the control and operation of an Algae B
 graph LR;
     Repo-->CAD;
     Repo-->Software;
-    CAD-->Product_Information;
-    CAD-->Parts&Drawings;
+    CAD-->Parts_List;
+    CAD-->Parts&Assemblies;
+    CAD-->Drawings;
     Software-->Deprecated;
-    Software-->AlgaePanel;
+    Software-->AlgaeProject;
+    AlgaeProject-->src;
+    AlgaeProject-->lib;
+    AlgaeProject-->include;
+
 
 ```
