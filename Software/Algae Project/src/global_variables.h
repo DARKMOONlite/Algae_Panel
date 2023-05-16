@@ -25,10 +25,6 @@ enum Control_State{
 };
 
 
-
-
-
-
     //-----------------------------     Global Variables ---------------------------------------
 extern int Temp1,Temp2;
 extern int SonarDist1, SonarDist2;
