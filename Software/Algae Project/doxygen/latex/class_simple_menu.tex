@@ -1,0 +1,283 @@
+\hypertarget{class_simple_menu}{}\doxysection{Simple\+Menu Class Reference}
+\label{class_simple_menu}\index{SimpleMenu@{SimpleMenu}}
+
+
+\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} structure \href{https://github.com/tinkersprojects/LCD-Simple-Menu-Library}{\texttt{ https\+://github.\+com/tinkersprojects/\+LCD-\/\+Simple-\/\+Menu-\/\+Library}}.  
+
+
+
+
+{\ttfamily \#include $<$Simple\+Menu.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_simple_menu_a21297bb9b5f6a94c8267941e814c310b}{Simple\+Menu}} (int \+\_\+number\+Menu\+Items, \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+submenus)
+\item 
+\mbox{\hyperlink{class_simple_menu_ad82972ecc947f30e37e3b4509c47233a}{Simple\+Menu}} (void($\ast$\+\_\+\+Call\+Back)())
+\item 
+\mbox{\hyperlink{class_simple_menu_a21ee2dbbebbc82cc7efe1284ede67dc1}{Simple\+Menu}} (bool($\ast$\+\_\+\+List\+Call\+Back)(int \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}}), void($\ast$\+\_\+\+Call\+Back)())
+\item 
+\mbox{\hyperlink{class_simple_menu_a3dc689de926d833320f86513a1fcd858}{Simple\+Menu}} (bool($\ast$\+\_\+\+List\+Call\+Back)(int \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}}), \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+submenus)
+\item 
+\mbox{\hyperlink{class_simple_menu_aba0fe439964620347db10304f4ac1ba6}{Simple\+Menu}} (String \+\_\+name, int \+\_\+number\+Menu\+Items, \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+submenus)
+\item 
+\mbox{\hyperlink{class_simple_menu_a3af8e89a49d53e1dbe8899e7eb68d432}{Simple\+Menu}} (String \+\_\+name, int $\ast$\+\_\+value)
+\item 
+\mbox{\hyperlink{class_simple_menu_ae0d0bca2dcd0c0f35ed332be767f4ba1}{Simple\+Menu}} (String \+\_\+name, int $\ast$\+\_\+value, int \+\_\+min, int \+\_\+max)
+\item 
+\mbox{\hyperlink{class_simple_menu_ac5407dda8d84ce94451879e85569dcb9}{Simple\+Menu}} (String \+\_\+name, void($\ast$\+\_\+\+Call\+Back)())
+\item 
+\mbox{\hyperlink{class_simple_menu_aea83d33b9bf5c799cde2d46a161dd6fc}{Simple\+Menu}} (String \+\_\+name, bool($\ast$\+\_\+\+List\+Call\+Back)(int \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}}), \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+submenus)
+\item 
+\mbox{\hyperlink{class_simple_menu_af2de810ba844629fab608ae71c58d9c6}{Simple\+Menu}} (String \+\_\+name, bool($\ast$\+\_\+\+List\+Call\+Back)(int \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}}), void($\ast$\+\_\+\+Call\+Back)())
+\item 
+void \mbox{\hyperlink{class_simple_menu_a5033d662129a5eeb754c040a3206c22d}{begin}} ()
+\item 
+void \mbox{\hyperlink{class_simple_menu_a95d14a5121661540a9eeeb50ee39d4e3}{begin}} (void($\ast$\+\_\+display\+Call\+Back)(\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+menu))
+\item 
+void \mbox{\hyperlink{class_simple_menu_ae86dde0424e8b46d75e151fd9934b415}{begin}} (void($\ast$\+\_\+display\+Call\+Back)(\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+menu), void($\ast$\+\_\+value\+Call\+Back)(\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+menu))
+\item 
+void \mbox{\hyperlink{class_simple_menu_a4da2b180e1bacff4afa4d249f378041c}{begin}} (\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+\+Top, void($\ast$\+\_\+display\+Call\+Back)(\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+menu), void($\ast$\+\_\+value\+Call\+Back)(\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+menu))
+\item 
+void \mbox{\hyperlink{class_simple_menu_a8d6980cc4dc29561aacb97476700a1df}{set\+Functions}} (void($\ast$\+\_\+display\+Call\+Back)(\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+menu), void($\ast$\+\_\+value\+Call\+Back)(\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+menu))
+\item 
+void \mbox{\hyperlink{class_simple_menu_a7be5c5e2fe22e97983d956e0c5afd9c0}{home}} ()
+\item 
+void \mbox{\hyperlink{class_simple_menu_a250f04b4bd23360a8dc1a2bdc2450de6}{select}} ()
+\item 
+void \mbox{\hyperlink{class_simple_menu_a5bee3699ff3f92f974bafae55da0cf5c}{back}} ()
+\item 
+void \mbox{\hyperlink{class_simple_menu_a155cc048639907bfa66c656949cb7e25}{returned}} ()
+\item 
+void \mbox{\hyperlink{class_simple_menu_ac8262d3fe7b7ef18c7ac1e4202fb3a91}{up}} ()
+\item 
+void \mbox{\hyperlink{class_simple_menu_aa563392b6497716e6d96741014c141d7}{down}} ()
+\item 
+void \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}} (int \+\_\+index)
+\item 
+\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$ \mbox{\hyperlink{class_simple_menu_ab031b2b76bac664e84d15dfbcec443a4}{next}} ()
+\item 
+\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$ \mbox{\hyperlink{class_simple_menu_a63cbef156398c3417b71a958bc0a682a}{next}} (int \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}})
+\item 
+int \mbox{\hyperlink{class_simple_menu_ad2ee78273a0e0ff8b709b1bea7592265}{get\+Value}} ()
+\item 
+bool \mbox{\hyperlink{class_simple_menu_af89ffba9fcfe83e85915f8b5ed2ebe21}{has\+Value}} ()
+\item 
+int \mbox{\hyperlink{class_simple_menu_a868844b553c0261e2983506b0eb17e1b}{get\+Index}} ()
+\item 
+void \mbox{\hyperlink{class_simple_menu_a85d3e7865facd410fc5bc4ca2685583e}{print}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{class_simple_menu_a5e2c6c0e3dc5ca015f6db5e3a757f9c2}{name}}
+\item 
+bool \mbox{\hyperlink{class_simple_menu_a782fd0d212dd47afcdd1f7a4625192af}{select\+Menu}} = false
+\item 
+int \mbox{\hyperlink{class_simple_menu_a88d3c8ac29625bd43c9b8e78e4f63b3f}{menu\+Location}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} structure \href{https://github.com/tinkersprojects/LCD-Simple-Menu-Library}{\texttt{ https\+://github.\+com/tinkersprojects/\+LCD-\/\+Simple-\/\+Menu-\/\+Library}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_simple_menu_a21297bb9b5f6a94c8267941e814c310b}\label{class_simple_menu_a21297bb9b5f6a94c8267941e814c310b}} 
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{SimpleMenu()}{SimpleMenu()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily Simple\+Menu\+::\+Simple\+Menu (\begin{DoxyParamCaption}\item[{int}]{\+\_\+number\+Menu\+Items,  }\item[{\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$}]{\+\_\+submenus }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_ad82972ecc947f30e37e3b4509c47233a}\label{class_simple_menu_ad82972ecc947f30e37e3b4509c47233a}} 
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{SimpleMenu()}{SimpleMenu()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily Simple\+Menu\+::\+Simple\+Menu (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{\+\_\+\+Call\+Back }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_a21ee2dbbebbc82cc7efe1284ede67dc1}\label{class_simple_menu_a21ee2dbbebbc82cc7efe1284ede67dc1}} 
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{SimpleMenu()}{SimpleMenu()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily Simple\+Menu\+::\+Simple\+Menu (\begin{DoxyParamCaption}\item[{bool($\ast$)(int \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}})}]{\+\_\+\+List\+Call\+Back,  }\item[{void($\ast$)()}]{\+\_\+\+Call\+Back }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_a3dc689de926d833320f86513a1fcd858}\label{class_simple_menu_a3dc689de926d833320f86513a1fcd858}} 
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{SimpleMenu()}{SimpleMenu()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily Simple\+Menu\+::\+Simple\+Menu (\begin{DoxyParamCaption}\item[{bool($\ast$)(int \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}})}]{\+\_\+\+List\+Call\+Back,  }\item[{\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$}]{\+\_\+submenus }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_aba0fe439964620347db10304f4ac1ba6}\label{class_simple_menu_aba0fe439964620347db10304f4ac1ba6}} 
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{SimpleMenu()}{SimpleMenu()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily Simple\+Menu\+::\+Simple\+Menu (\begin{DoxyParamCaption}\item[{String}]{\+\_\+name,  }\item[{int}]{\+\_\+number\+Menu\+Items,  }\item[{\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$}]{\+\_\+submenus }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_a3af8e89a49d53e1dbe8899e7eb68d432}\label{class_simple_menu_a3af8e89a49d53e1dbe8899e7eb68d432}} 
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{SimpleMenu()}{SimpleMenu()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily Simple\+Menu\+::\+Simple\+Menu (\begin{DoxyParamCaption}\item[{String}]{\+\_\+name,  }\item[{int $\ast$}]{\+\_\+value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_ae0d0bca2dcd0c0f35ed332be767f4ba1}\label{class_simple_menu_ae0d0bca2dcd0c0f35ed332be767f4ba1}} 
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{SimpleMenu()}{SimpleMenu()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily Simple\+Menu\+::\+Simple\+Menu (\begin{DoxyParamCaption}\item[{String}]{\+\_\+name,  }\item[{int $\ast$}]{\+\_\+value,  }\item[{int}]{\+\_\+min,  }\item[{int}]{\+\_\+max }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_ac5407dda8d84ce94451879e85569dcb9}\label{class_simple_menu_ac5407dda8d84ce94451879e85569dcb9}} 
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{SimpleMenu()}{SimpleMenu()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily Simple\+Menu\+::\+Simple\+Menu (\begin{DoxyParamCaption}\item[{String}]{\+\_\+name,  }\item[{void($\ast$)()}]{\+\_\+\+Call\+Back }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_aea83d33b9bf5c799cde2d46a161dd6fc}\label{class_simple_menu_aea83d33b9bf5c799cde2d46a161dd6fc}} 
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{SimpleMenu()}{SimpleMenu()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily Simple\+Menu\+::\+Simple\+Menu (\begin{DoxyParamCaption}\item[{String}]{\+\_\+name,  }\item[{bool($\ast$)(int \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}})}]{\+\_\+\+List\+Call\+Back,  }\item[{\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$}]{\+\_\+submenus }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_af2de810ba844629fab608ae71c58d9c6}\label{class_simple_menu_af2de810ba844629fab608ae71c58d9c6}} 
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\index{SimpleMenu@{SimpleMenu}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{SimpleMenu()}{SimpleMenu()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily Simple\+Menu\+::\+Simple\+Menu (\begin{DoxyParamCaption}\item[{String}]{\+\_\+name,  }\item[{bool($\ast$)(int \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}})}]{\+\_\+\+List\+Call\+Back,  }\item[{void($\ast$)()}]{\+\_\+\+Call\+Back }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_simple_menu_a5bee3699ff3f92f974bafae55da0cf5c}\label{class_simple_menu_a5bee3699ff3f92f974bafae55da0cf5c}} 
+\index{SimpleMenu@{SimpleMenu}!back@{back}}
+\index{back@{back}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}}
+{\footnotesize\ttfamily void Simple\+Menu\+::back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_a5033d662129a5eeb754c040a3206c22d}\label{class_simple_menu_a5033d662129a5eeb754c040a3206c22d}} 
+\index{SimpleMenu@{SimpleMenu}!begin@{begin}}
+\index{begin@{begin}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Simple\+Menu\+::begin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_a4da2b180e1bacff4afa4d249f378041c}\label{class_simple_menu_a4da2b180e1bacff4afa4d249f378041c}} 
+\index{SimpleMenu@{SimpleMenu}!begin@{begin}}
+\index{begin@{begin}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Simple\+Menu\+::begin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$}]{\+\_\+\+Top,  }\item[{void($\ast$)(\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+menu)}]{\+\_\+display\+Call\+Back,  }\item[{void($\ast$)(\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+menu)}]{\+\_\+value\+Call\+Back }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_a95d14a5121661540a9eeeb50ee39d4e3}\label{class_simple_menu_a95d14a5121661540a9eeeb50ee39d4e3}} 
+\index{SimpleMenu@{SimpleMenu}!begin@{begin}}
+\index{begin@{begin}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Simple\+Menu\+::begin (\begin{DoxyParamCaption}\item[{void($\ast$)(\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+menu)}]{\+\_\+display\+Call\+Back }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_ae86dde0424e8b46d75e151fd9934b415}\label{class_simple_menu_ae86dde0424e8b46d75e151fd9934b415}} 
+\index{SimpleMenu@{SimpleMenu}!begin@{begin}}
+\index{begin@{begin}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Simple\+Menu\+::begin (\begin{DoxyParamCaption}\item[{void($\ast$)(\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+menu)}]{\+\_\+display\+Call\+Back,  }\item[{void($\ast$)(\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+menu)}]{\+\_\+value\+Call\+Back }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_aa563392b6497716e6d96741014c141d7}\label{class_simple_menu_aa563392b6497716e6d96741014c141d7}} 
+\index{SimpleMenu@{SimpleMenu}!down@{down}}
+\index{down@{down}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{down()}{down()}}
+{\footnotesize\ttfamily void Simple\+Menu\+::down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_a868844b553c0261e2983506b0eb17e1b}\label{class_simple_menu_a868844b553c0261e2983506b0eb17e1b}} 
+\index{SimpleMenu@{SimpleMenu}!getIndex@{getIndex}}
+\index{getIndex@{getIndex}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{getIndex()}{getIndex()}}
+{\footnotesize\ttfamily int Simple\+Menu\+::get\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_ad2ee78273a0e0ff8b709b1bea7592265}\label{class_simple_menu_ad2ee78273a0e0ff8b709b1bea7592265}} 
+\index{SimpleMenu@{SimpleMenu}!getValue@{getValue}}
+\index{getValue@{getValue}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily int Simple\+Menu\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_af89ffba9fcfe83e85915f8b5ed2ebe21}\label{class_simple_menu_af89ffba9fcfe83e85915f8b5ed2ebe21}} 
+\index{SimpleMenu@{SimpleMenu}!hasValue@{hasValue}}
+\index{hasValue@{hasValue}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{hasValue()}{hasValue()}}
+{\footnotesize\ttfamily bool Simple\+Menu\+::has\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_a7be5c5e2fe22e97983d956e0c5afd9c0}\label{class_simple_menu_a7be5c5e2fe22e97983d956e0c5afd9c0}} 
+\index{SimpleMenu@{SimpleMenu}!home@{home}}
+\index{home@{home}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{home()}{home()}}
+{\footnotesize\ttfamily void Simple\+Menu\+::home (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}\label{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}} 
+\index{SimpleMenu@{SimpleMenu}!index@{index}}
+\index{index@{index}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily void Simple\+Menu\+::index (\begin{DoxyParamCaption}\item[{int}]{\+\_\+index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_ab031b2b76bac664e84d15dfbcec443a4}\label{class_simple_menu_ab031b2b76bac664e84d15dfbcec443a4}} 
+\index{SimpleMenu@{SimpleMenu}!next@{next}}
+\index{next@{next}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$ Simple\+Menu\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_a63cbef156398c3417b71a958bc0a682a}\label{class_simple_menu_a63cbef156398c3417b71a958bc0a682a}} 
+\index{SimpleMenu@{SimpleMenu}!next@{next}}
+\index{next@{next}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$ Simple\+Menu\+::next (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_a85d3e7865facd410fc5bc4ca2685583e}\label{class_simple_menu_a85d3e7865facd410fc5bc4ca2685583e}} 
+\index{SimpleMenu@{SimpleMenu}!print@{print}}
+\index{print@{print}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Simple\+Menu\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_a155cc048639907bfa66c656949cb7e25}\label{class_simple_menu_a155cc048639907bfa66c656949cb7e25}} 
+\index{SimpleMenu@{SimpleMenu}!returned@{returned}}
+\index{returned@{returned}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{returned()}{returned()}}
+{\footnotesize\ttfamily void Simple\+Menu\+::returned (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_a250f04b4bd23360a8dc1a2bdc2450de6}\label{class_simple_menu_a250f04b4bd23360a8dc1a2bdc2450de6}} 
+\index{SimpleMenu@{SimpleMenu}!select@{select}}
+\index{select@{select}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{select()}{select()}}
+{\footnotesize\ttfamily void Simple\+Menu\+::select (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_a8d6980cc4dc29561aacb97476700a1df}\label{class_simple_menu_a8d6980cc4dc29561aacb97476700a1df}} 
+\index{SimpleMenu@{SimpleMenu}!setFunctions@{setFunctions}}
+\index{setFunctions@{setFunctions}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{setFunctions()}{setFunctions()}}
+{\footnotesize\ttfamily void Simple\+Menu\+::set\+Functions (\begin{DoxyParamCaption}\item[{void($\ast$)(\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+menu)}]{\+\_\+display\+Call\+Back,  }\item[{void($\ast$)(\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+menu)}]{\+\_\+value\+Call\+Back }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simple_menu_ac8262d3fe7b7ef18c7ac1e4202fb3a91}\label{class_simple_menu_ac8262d3fe7b7ef18c7ac1e4202fb3a91}} 
+\index{SimpleMenu@{SimpleMenu}!up@{up}}
+\index{up@{up}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{up()}{up()}}
+{\footnotesize\ttfamily void Simple\+Menu\+::up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_simple_menu_a88d3c8ac29625bd43c9b8e78e4f63b3f}\label{class_simple_menu_a88d3c8ac29625bd43c9b8e78e4f63b3f}} 
+\index{SimpleMenu@{SimpleMenu}!menuLocation@{menuLocation}}
+\index{menuLocation@{menuLocation}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{menuLocation}{menuLocation}}
+{\footnotesize\ttfamily int Simple\+Menu\+::menu\+Location = 0}
+
+\mbox{\Hypertarget{class_simple_menu_a5e2c6c0e3dc5ca015f6db5e3a757f9c2}\label{class_simple_menu_a5e2c6c0e3dc5ca015f6db5e3a757f9c2}} 
+\index{SimpleMenu@{SimpleMenu}!name@{name}}
+\index{name@{name}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily String Simple\+Menu\+::name}
+
+\mbox{\Hypertarget{class_simple_menu_a782fd0d212dd47afcdd1f7a4625192af}\label{class_simple_menu_a782fd0d212dd47afcdd1f7a4625192af}} 
+\index{SimpleMenu@{SimpleMenu}!selectMenu@{selectMenu}}
+\index{selectMenu@{selectMenu}!SimpleMenu@{SimpleMenu}}
+\doxysubsubsection{\texorpdfstring{selectMenu}{selectMenu}}
+{\footnotesize\ttfamily bool Simple\+Menu\+::select\+Menu = false}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+Simple\+Menu/src/\mbox{\hyperlink{_simple_menu_8h}{Simple\+Menu.\+h}}\item 
+lib/\+Simple\+Menu/src/\mbox{\hyperlink{_simple_menu_8cpp}{Simple\+Menu.\+cpp}}\end{DoxyCompactItemize}

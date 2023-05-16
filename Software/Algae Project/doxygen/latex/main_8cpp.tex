@@ -1,0 +1,81 @@
+\hypertarget{main_8cpp}{}\doxysection{src/main.cpp File Reference}
+\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+{\ttfamily \#include $<$global\+\_\+variables.\+h$>$}\newline
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$IRremote.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+New\+Ping \mbox{\hyperlink{main_8cpp_aa3890dc13ad641f783b713ac4bd4a749}{Sonar1}} (\mbox{\hyperlink{pin__definitions_8hpp_a9a54be5fe92c6d16578982bf6cecd891}{SSensor\+Pin1}}, \mbox{\hyperlink{pin__definitions_8hpp_aea99235fa3eef529e3ca42c55036d49a}{Sonar\+Echo\+Pin}}, 400)
+\item 
+New\+Ping \mbox{\hyperlink{main_8cpp_a13056dab98115394b132ce9e388cd66f}{Sonar2}} (\mbox{\hyperlink{pin__definitions_8hpp_acbebe49963630ffe7894925f9af6929e}{SSensor\+Pin2}}, \mbox{\hyperlink{pin__definitions_8hpp_aea99235fa3eef529e3ca42c55036d49a}{Sonar\+Echo\+Pin}}, 400)
+\item 
+IRrecv \mbox{\hyperlink{main_8cpp_a719f315363a42d399582066b011803a0}{irrecv}} (\mbox{\hyperlink{pin__definitions_8hpp_aca6f3616097e746f44b630d09fa99c98}{IRRXPin}})
+\item 
+void \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\item 
+void \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_s18_b20}{DS18\+B20}} \mbox{\hyperlink{main_8cpp_abf193c5fdc2f45cdabb593b689213741}{Temp\+Sensor1}} (\mbox{\hyperlink{pin__definitions_8hpp_a671f1d97cbed333ba37efc31c19176d4}{TSensor\+Pin1}})
+\item 
+\mbox{\hyperlink{class_d_s18_b20}{DS18\+B20}} \mbox{\hyperlink{main_8cpp_ae6a8ea5c1f475f84c3a2fd12ccca81a1}{Temp\+Sensor2}} (\mbox{\hyperlink{pin__definitions_8hpp_a1b12e63467a86c1176ada2ca6dfd6ba1}{TSensor\+Pin2}})
+\item 
+\mbox{\hyperlink{class_d_r_i0050}{DRI0050}} \mbox{\hyperlink{main_8cpp_a8b8365b51c26f340cc7c21a6eddc1146}{Pump\+Controller}} (\mbox{\hyperlink{pin__definitions_8hpp_ae547f2a53633fd8b936d4dc812447c17}{Pump\+Tx\+Pin}}, \mbox{\hyperlink{pin__definitions_8hpp_a98300bbbce3a65d992bbf4be3a84600b}{Pump\+Rx\+Pin}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a719f315363a42d399582066b011803a0}\label{main_8cpp_a719f315363a42d399582066b011803a0}} 
+\index{main.cpp@{main.cpp}!irrecv@{irrecv}}
+\index{irrecv@{irrecv}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{irrecv()}{irrecv()}}
+{\footnotesize\ttfamily IRrecv irrecv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pin__definitions_8hpp_aca6f3616097e746f44b630d09fa99c98}{IRRXPin}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_afe461d27b9c48d5921c00d521181f12f}\label{main_8cpp_afe461d27b9c48d5921c00d521181f12f}} 
+\index{main.cpp@{main.cpp}!loop@{loop}}
+\index{loop@{loop}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+do not put anything here, task scheduler will take over\mbox{\Hypertarget{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
+\index{main.cpp@{main.cpp}!setup@{setup}}
+\index{setup@{setup}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_aa3890dc13ad641f783b713ac4bd4a749}\label{main_8cpp_aa3890dc13ad641f783b713ac4bd4a749}} 
+\index{main.cpp@{main.cpp}!Sonar1@{Sonar1}}
+\index{Sonar1@{Sonar1}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{Sonar1()}{Sonar1()}}
+{\footnotesize\ttfamily New\+Ping Sonar1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pin__definitions_8hpp_a9a54be5fe92c6d16578982bf6cecd891}{SSensor\+Pin1}}}]{,  }\item[{\mbox{\hyperlink{pin__definitions_8hpp_aea99235fa3eef529e3ca42c55036d49a}{Sonar\+Echo\+Pin}}}]{,  }\item[{400}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a13056dab98115394b132ce9e388cd66f}\label{main_8cpp_a13056dab98115394b132ce9e388cd66f}} 
+\index{main.cpp@{main.cpp}!Sonar2@{Sonar2}}
+\index{Sonar2@{Sonar2}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{Sonar2()}{Sonar2()}}
+{\footnotesize\ttfamily New\+Ping Sonar2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pin__definitions_8hpp_acbebe49963630ffe7894925f9af6929e}{SSensor\+Pin2}}}]{,  }\item[{\mbox{\hyperlink{pin__definitions_8hpp_aea99235fa3eef529e3ca42c55036d49a}{Sonar\+Echo\+Pin}}}]{,  }\item[{400}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a8b8365b51c26f340cc7c21a6eddc1146}\label{main_8cpp_a8b8365b51c26f340cc7c21a6eddc1146}} 
+\index{main.cpp@{main.cpp}!PumpController@{PumpController}}
+\index{PumpController@{PumpController}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{PumpController}{PumpController}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_r_i0050}{DRI0050}} Pump\+Controller(\mbox{\hyperlink{pin__definitions_8hpp_ae547f2a53633fd8b936d4dc812447c17}{Pump\+Tx\+Pin}}, \mbox{\hyperlink{pin__definitions_8hpp_a98300bbbce3a65d992bbf4be3a84600b}{Pump\+Rx\+Pin}}) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pin__definitions_8hpp_ae547f2a53633fd8b936d4dc812447c17}{Pump\+Tx\+Pin}}}]{,  }\item[{\mbox{\hyperlink{pin__definitions_8hpp_a98300bbbce3a65d992bbf4be3a84600b}{Pump\+Rx\+Pin}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_abf193c5fdc2f45cdabb593b689213741}\label{main_8cpp_abf193c5fdc2f45cdabb593b689213741}} 
+\index{main.cpp@{main.cpp}!TempSensor1@{TempSensor1}}
+\index{TempSensor1@{TempSensor1}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{TempSensor1}{TempSensor1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s18_b20}{DS18\+B20}} Temp\+Sensor1(\mbox{\hyperlink{pin__definitions_8hpp_a671f1d97cbed333ba37efc31c19176d4}{TSensor\+Pin1}}) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pin__definitions_8hpp_a671f1d97cbed333ba37efc31c19176d4}{TSensor\+Pin1}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_ae6a8ea5c1f475f84c3a2fd12ccca81a1}\label{main_8cpp_ae6a8ea5c1f475f84c3a2fd12ccca81a1}} 
+\index{main.cpp@{main.cpp}!TempSensor2@{TempSensor2}}
+\index{TempSensor2@{TempSensor2}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{TempSensor2}{TempSensor2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_s18_b20}{DS18\+B20}} Temp\+Sensor2(\mbox{\hyperlink{pin__definitions_8hpp_a1b12e63467a86c1176ada2ca6dfd6ba1}{TSensor\+Pin2}}) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pin__definitions_8hpp_a1b12e63467a86c1176ada2ca6dfd6ba1}{TSensor\+Pin2}}}]{ }\end{DoxyParamCaption})}
+

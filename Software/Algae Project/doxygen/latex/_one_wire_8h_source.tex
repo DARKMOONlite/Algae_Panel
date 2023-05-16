@@ -1,0 +1,235 @@
+\hypertarget{_one_wire_8h_source}{}\doxysection{One\+Wire.\+h}
+\label{_one_wire_8h_source}\index{lib/DS18B20/src/OneWire.h@{lib/DS18B20/src/OneWire.h}}
+\mbox{\hyperlink{_one_wire_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef OneWire\_h}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define OneWire\_h}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <inttypes.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#if ARDUINO >= 100}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}Arduino.h"{}}       \textcolor{comment}{// for delayMicroseconds, digitalPinToBitMask, etc}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}WProgram.h"{}}      \textcolor{comment}{// for delayMicroseconds}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}pins\_arduino.h"{}}  \textcolor{comment}{// for digitalPinToBitMask, etc}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// You can exclude certain features from OneWire.  In theory, this}}
+\DoxyCodeLine{14 \textcolor{comment}{// might save some space.  In practice, the compiler automatically}}
+\DoxyCodeLine{15 \textcolor{comment}{// removes unused code (technically, the linker, using -\/fdata-\/sections}}
+\DoxyCodeLine{16 \textcolor{comment}{// and -\/ffunction-\/sections when compiling, and Wl,-\/-\/gc-\/sections}}
+\DoxyCodeLine{17 \textcolor{comment}{// when linking), so most of these will not result in any code size}}
+\DoxyCodeLine{18 \textcolor{comment}{// reduction.  Well, unless you try to use the missing features}}
+\DoxyCodeLine{19 \textcolor{comment}{// and redesign your program to not need them!  ONEWIRE\_CRC8\_TABLE}}
+\DoxyCodeLine{20 \textcolor{comment}{// is the exception, because it selects a fast but large algorithm}}
+\DoxyCodeLine{21 \textcolor{comment}{// or a small but slow algorithm.}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{// you can exclude onewire\_search by defining that to 0}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#ifndef ONEWIRE\_SEARCH}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define ONEWIRE\_SEARCH 1}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{// You can exclude CRC checks altogether by defining this to 0}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#ifndef ONEWIRE\_CRC}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define ONEWIRE\_CRC 1}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{// Select the table-\/lookup method of computing the 8-\/bit CRC}}
+\DoxyCodeLine{34 \textcolor{comment}{// by setting this to 1.  The lookup table enlarges code size by}}
+\DoxyCodeLine{35 \textcolor{comment}{// about 250 bytes.  It does NOT consume RAM (but did in very}}
+\DoxyCodeLine{36 \textcolor{comment}{// old versions of OneWire).  If you disable this, a slower}}
+\DoxyCodeLine{37 \textcolor{comment}{// but very compact algorithm is used.}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#ifndef ONEWIRE\_CRC8\_TABLE}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define ONEWIRE\_CRC8\_TABLE 1}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{// You can allow 16-\/bit CRC checks by defining this to 1}}
+\DoxyCodeLine{43 \textcolor{comment}{// (Note that ONEWIRE\_CRC must also be 1.)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#ifndef ONEWIRE\_CRC16}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define ONEWIRE\_CRC16 1}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define FALSE 0}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define TRUE  1}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{comment}{// Platform specific I/O definitions}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#if defined(\_\_AVR\_\_)}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define PIN\_TO\_BASEREG(pin)             (portInputRegister(digitalPinToPort(pin)))}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define PIN\_TO\_BITMASK(pin)             (digitalPinToBitMask(pin))}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define IO\_REG\_TYPE uint8\_t}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define IO\_REG\_ASM asm("{}r30"{}})}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define DIRECT\_READ(base, mask)         (((*(base)) \& (mask)) ? 1 : 0)}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define DIRECT\_MODE\_INPUT(base, mask)   ((*((base)+1)) \&= \string~(mask))}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define DIRECT\_MODE\_OUTPUT(base, mask)  ((*((base)+1)) |= (mask))}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define DIRECT\_WRITE\_LOW(base, mask)    ((*((base)+2)) \&= \string~(mask))}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define DIRECT\_WRITE\_HIGH(base, mask)   ((*((base)+2)) |= (mask))}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#elif defined(\_\_MK20DX128\_\_)}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define PIN\_TO\_BASEREG(pin)             (portOutputRegister(pin))}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define PIN\_TO\_BITMASK(pin)             (1)}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define IO\_REG\_TYPE uint8\_t}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define IO\_REG\_ASM}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define DIRECT\_READ(base, mask)         (*((base)+512))}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define DIRECT\_MODE\_INPUT(base, mask)   (*((base)+640) = 0)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define DIRECT\_MODE\_OUTPUT(base, mask)  (*((base)+640) = 1)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define DIRECT\_WRITE\_LOW(base, mask)    (*((base)+256) = 1)}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define DIRECT\_WRITE\_HIGH(base, mask)   (*((base)+128) = 1)}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#elif defined(\_\_SAM3X8E\_\_)}}
+\DoxyCodeLine{76 \textcolor{comment}{// Arduino 1.5.1 may have a bug in delayMicroseconds() on Arduino Due.}}
+\DoxyCodeLine{77 \textcolor{comment}{// http://arduino.cc/forum/index.php/topic,141030.msg1076268.html\#msg1076268}}
+\DoxyCodeLine{78 \textcolor{comment}{// If you have trouble with OneWire on Arduino Due, please check the}}
+\DoxyCodeLine{79 \textcolor{comment}{// status of delayMicroseconds() before reporting a bug in OneWire!}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define PIN\_TO\_BASEREG(pin)             (\&(digitalPinToPort(pin)-\/>PIO\_PER))}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define PIN\_TO\_BITMASK(pin)             (digitalPinToBitMask(pin))}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define IO\_REG\_TYPE uint32\_t}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define IO\_REG\_ASM}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define DIRECT\_READ(base, mask)         (((*((base)+15)) \& (mask)) ? 1 : 0)}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define DIRECT\_MODE\_INPUT(base, mask)   ((*((base)+5)) = (mask))}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define DIRECT\_MODE\_OUTPUT(base, mask)  ((*((base)+4)) = (mask))}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define DIRECT\_WRITE\_LOW(base, mask)    ((*((base)+13)) = (mask))}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define DIRECT\_WRITE\_HIGH(base, mask)   ((*((base)+12)) = (mask))}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#ifndef PROGMEM}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define PROGMEM}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#ifndef pgm\_read\_byte}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define pgm\_read\_byte(addr) (*(const uint8\_t *)(addr))}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#elif defined(\_\_PIC32MX\_\_)}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define PIN\_TO\_BASEREG(pin)             (portModeRegister(digitalPinToPort(pin)))}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define PIN\_TO\_BITMASK(pin)             (digitalPinToBitMask(pin))}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define IO\_REG\_TYPE uint32\_t}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define IO\_REG\_ASM}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define DIRECT\_READ(base, mask)         (((*(base+4)) \& (mask)) ? 1 : 0)  }\textcolor{comment}{//PORTX + 0x10}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define DIRECT\_MODE\_INPUT(base, mask)   ((*(base+2)) = (mask))            }\textcolor{comment}{//TRISXSET + 0x08}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define DIRECT\_MODE\_OUTPUT(base, mask)  ((*(base+1)) = (mask))            }\textcolor{comment}{//TRISXCLR + 0x04}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define DIRECT\_WRITE\_LOW(base, mask)    ((*(base+8+1)) = (mask))          }\textcolor{comment}{//LATXCLR  + 0x24}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define DIRECT\_WRITE\_HIGH(base, mask)   ((*(base+8+2)) = (mask))          }\textcolor{comment}{//LATXSET + 0x28}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#error "{}Please define I/O register types here"{}}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{keyword}{class }\mbox{\hyperlink{class_one_wire}{OneWire}}}
+\DoxyCodeLine{113 \{}
+\DoxyCodeLine{114   \textcolor{keyword}{private}:}
+\DoxyCodeLine{115     IO\_REG\_TYPE bitmask;}
+\DoxyCodeLine{116     \textcolor{keyword}{volatile} IO\_REG\_TYPE *baseReg;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#if ONEWIRE\_SEARCH}}
+\DoxyCodeLine{119     \textcolor{comment}{// global search state}}
+\DoxyCodeLine{120     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} ROM\_NO[8];}
+\DoxyCodeLine{121     uint8\_t LastDiscrepancy;}
+\DoxyCodeLine{122     uint8\_t LastFamilyDiscrepancy;}
+\DoxyCodeLine{123     uint8\_t LastDeviceFlag;}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126   \textcolor{keyword}{public}:}
+\DoxyCodeLine{127     \mbox{\hyperlink{class_one_wire_aa3f23dc51d861a8d257648c507b14e8d}{OneWire}}( uint8\_t pin);}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{comment}{// Perform a 1-\/Wire reset cycle. Returns 1 if a device responds}}
+\DoxyCodeLine{130     \textcolor{comment}{// with a presence pulse.  Returns 0 if there is no device or the}}
+\DoxyCodeLine{131     \textcolor{comment}{// bus is shorted or otherwise held low for more than 250uS}}
+\DoxyCodeLine{132     uint8\_t \mbox{\hyperlink{class_one_wire_a6a742a9112392567eae3d06dde067c07}{reset}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     \textcolor{comment}{// Issue a 1-\/Wire rom select command, you do the reset first.}}
+\DoxyCodeLine{135     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_one_wire_accf808390abd63d3c7bce35677784384}{select}}(\textcolor{keyword}{const} uint8\_t rom[8]);}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     \textcolor{comment}{// Issue a 1-\/Wire rom skip command, to address all on bus.}}
+\DoxyCodeLine{138     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_one_wire_ae3780e2b0ea2ebf6be88298412ac7798}{skip}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140     \textcolor{comment}{// Write a byte. If 'power' is one then the wire is held high at}}
+\DoxyCodeLine{141     \textcolor{comment}{// the end for parasitically powered devices. You are responsible}}
+\DoxyCodeLine{142     \textcolor{comment}{// for eventually depowering it by calling depower() or doing}}
+\DoxyCodeLine{143     \textcolor{comment}{// another read or write.}}
+\DoxyCodeLine{144     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_one_wire_a843e9e7e57ed615b4880be0b76b40b7d}{write}}(uint8\_t v, uint8\_t power = 0);}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_one_wire_a0fc1e0bdc2ab1f062c98567fa60a69ae}{write\_bytes}}(\textcolor{keyword}{const} uint8\_t *buf, uint16\_t count, \textcolor{keywordtype}{bool} power = 0);}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{comment}{// Read a byte.}}
+\DoxyCodeLine{149     uint8\_t \mbox{\hyperlink{class_one_wire_afd9bdb8b5a5b69b394dfc76352e00e21}{read}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_one_wire_a2407440e8e25b624617593f8ad6447d4}{read\_bytes}}(uint8\_t *buf, uint16\_t count);}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     \textcolor{comment}{// Write a bit. The bus is always left powered at the end, see}}
+\DoxyCodeLine{154     \textcolor{comment}{// note in write() about that.}}
+\DoxyCodeLine{155     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_one_wire_a6bbc58276d1cb08653dab3ea35378f94}{write\_bit}}(uint8\_t v);}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157     \textcolor{comment}{// Read a bit.}}
+\DoxyCodeLine{158     uint8\_t \mbox{\hyperlink{class_one_wire_aeae4c2798b70d9d0ba3091c03ee2d056}{read\_bit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \textcolor{comment}{// Stop forcing power onto the bus. You only need to do this if}}
+\DoxyCodeLine{161     \textcolor{comment}{// you used the 'power' flag to write() or used a write\_bit() call}}
+\DoxyCodeLine{162     \textcolor{comment}{// and aren't about to do another read or write. You would rather}}
+\DoxyCodeLine{163     \textcolor{comment}{// not leave this powered if you don't have to, just in case}}
+\DoxyCodeLine{164     \textcolor{comment}{// someone shorts your bus.}}
+\DoxyCodeLine{165     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_one_wire_aa8e0f62e830ad05d8035e55c7a309256}{depower}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#if ONEWIRE\_SEARCH}}
+\DoxyCodeLine{168     \textcolor{comment}{// Clear the search state so that if will start from the beginning again.}}
+\DoxyCodeLine{169     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_one_wire_aae5efdf67928b5ee312ab7d7906416fa}{reset\_search}}();}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171     \textcolor{comment}{// Setup the search to find the device type 'family\_code' on the next call}}
+\DoxyCodeLine{172     \textcolor{comment}{// to search(*newAddr) if it is present.}}
+\DoxyCodeLine{173     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_one_wire_a0a1b8457adb609a693b865dd474e5116}{target\_search}}(uint8\_t family\_code);}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175     \textcolor{comment}{// Look for the next device. Returns 1 if a new address has been}}
+\DoxyCodeLine{176     \textcolor{comment}{// returned. A zero might mean that the bus is shorted, there are}}
+\DoxyCodeLine{177     \textcolor{comment}{// no devices, or you have already retrieved all of them.  It}}
+\DoxyCodeLine{178     \textcolor{comment}{// might be a good idea to check the CRC to make sure you didn't}}
+\DoxyCodeLine{179     \textcolor{comment}{// get garbage.  The order is deterministic. You will always get}}
+\DoxyCodeLine{180     \textcolor{comment}{// the same devices in the same order.}}
+\DoxyCodeLine{181     uint8\_t \mbox{\hyperlink{class_one_wire_a383dc74fc9f8a27b76366a2859c3820a}{search}}(uint8\_t *newAddr);}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#if ONEWIRE\_CRC}}
+\DoxyCodeLine{185     \textcolor{comment}{// Compute a Dallas Semiconductor 8 bit CRC, these are used in the}}
+\DoxyCodeLine{186     \textcolor{comment}{// ROM and scratchpad registers.}}
+\DoxyCodeLine{187     \textcolor{keyword}{static} uint8\_t \mbox{\hyperlink{class_one_wire_ae3486a669581b750e4fdf3f3a12b05f1}{crc8}}(\textcolor{keyword}{const} uint8\_t *addr, uint8\_t len);}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#if ONEWIRE\_CRC16}}
+\DoxyCodeLine{190     \textcolor{comment}{// Compute the 1-\/Wire CRC16 and compare it against the received CRC.}}
+\DoxyCodeLine{191     \textcolor{comment}{// Example usage (reading a DS2408):}}
+\DoxyCodeLine{192     \textcolor{comment}{//    // Put everything in a buffer so we can compute the CRC easily.}}
+\DoxyCodeLine{193     \textcolor{comment}{//    uint8\_t buf[13];}}
+\DoxyCodeLine{194     \textcolor{comment}{//    buf[0] = 0xF0;    // Read PIO Registers}}
+\DoxyCodeLine{195     \textcolor{comment}{//    buf[1] = 0x88;    // LSB address}}
+\DoxyCodeLine{196     \textcolor{comment}{//    buf[2] = 0x00;    // MSB address}}
+\DoxyCodeLine{197     \textcolor{comment}{//    WriteBytes(net, buf, 3);    // Write 3 cmd bytes}}
+\DoxyCodeLine{198     \textcolor{comment}{//    ReadBytes(net, buf+3, 10);  // Read 6 data bytes, 2 0xFF, 2 CRC16}}
+\DoxyCodeLine{199     \textcolor{comment}{//    if (!CheckCRC16(buf, 11, \&buf[11])) \{}}
+\DoxyCodeLine{200     \textcolor{comment}{//        // Handle error.}}
+\DoxyCodeLine{201     \textcolor{comment}{//    \}     }}
+\DoxyCodeLine{202     \textcolor{comment}{//          }}
+\DoxyCodeLine{203     \textcolor{comment}{// @param input -\/ Array of bytes to checksum.}}
+\DoxyCodeLine{204     \textcolor{comment}{// @param len -\/ How many bytes to use.}}
+\DoxyCodeLine{205     \textcolor{comment}{// @param inverted\_crc -\/ The two CRC16 bytes in the received data.}}
+\DoxyCodeLine{206     \textcolor{comment}{//                       This should just point into the received data,}}
+\DoxyCodeLine{207     \textcolor{comment}{//                       *not* at a 16-\/bit integer.}}
+\DoxyCodeLine{208     \textcolor{comment}{// @param crc -\/ The crc starting value (optional)}}
+\DoxyCodeLine{209     \textcolor{comment}{// @return True, iff the CRC matches.}}
+\DoxyCodeLine{210     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_one_wire_a089c502d26caca5214264261db82d011}{check\_crc16}}(\textcolor{keyword}{const} uint8\_t* input, uint16\_t len, \textcolor{keyword}{const} uint8\_t* inverted\_crc, uint16\_t crc = 0);}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212     \textcolor{comment}{// Compute a Dallas Semiconductor 16 bit CRC.  This is required to check}}
+\DoxyCodeLine{213     \textcolor{comment}{// the integrity of data received from many 1-\/Wire devices.  Note that the}}
+\DoxyCodeLine{214     \textcolor{comment}{// CRC computed here is *not* what you'll get from the 1-\/Wire network,}}
+\DoxyCodeLine{215     \textcolor{comment}{// for two reasons:}}
+\DoxyCodeLine{216     \textcolor{comment}{//   1) The CRC is transmitted bitwise inverted.}}
+\DoxyCodeLine{217     \textcolor{comment}{//   2) Depending on the endian-\/ness of your processor, the binary}}
+\DoxyCodeLine{218     \textcolor{comment}{//      representation of the two-\/byte return value may have a different}}
+\DoxyCodeLine{219     \textcolor{comment}{//      byte order than the two bytes you get from 1-\/Wire.}}
+\DoxyCodeLine{220     \textcolor{comment}{// @param input -\/ Array of bytes to checksum.}}
+\DoxyCodeLine{221     \textcolor{comment}{// @param len -\/ How many bytes to use.}}
+\DoxyCodeLine{222     \textcolor{comment}{// @param crc -\/ The crc starting value (optional)}}
+\DoxyCodeLine{223     \textcolor{comment}{// @return The CRC16, as defined by Dallas Semiconductor.}}
+\DoxyCodeLine{224     \textcolor{keyword}{static} uint16\_t \mbox{\hyperlink{class_one_wire_a685131803ff9bd250926de68fb477998}{crc16}}(\textcolor{keyword}{const} uint8\_t* input, uint16\_t len, uint16\_t crc = 0);}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{227 \};}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

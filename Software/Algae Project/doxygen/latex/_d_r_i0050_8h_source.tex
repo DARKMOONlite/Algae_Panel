@@ -1,0 +1,81 @@
+\hypertarget{_d_r_i0050_8h_source}{}\doxysection{DRI0050.\+h}
+\label{_d_r_i0050_8h_source}\index{lib/DRI0050/src/DRI0050.h@{lib/DRI0050/src/DRI0050.h}}
+\mbox{\hyperlink{_d_r_i0050_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef DRI0050\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define DRI0050\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <Arduino.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <SoftwareSerial.h>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define  PWM\_ENABLE           0x01}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define  PWM\_DISENABLE        0x00}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define  DEV\_ADDR             0x32}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define  DUTY\_REG\_ADDR        0x0006}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define  FREQ\_REG\_ADDR        0x0007}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define  PWM\_EN\_REG\_ADDR      0x0008}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_d_r_i0050}{DRI0050}} \{}
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_d_r_i0050_ab6b14f5204ecdcb092dafecf5921a09b}{DRI0050}}(uint8\_t tx, uint8\_t rx):\mbox{\hyperlink{class_d_r_i0050_a1414350d2842b9b6196ea13451af7cf3}{COMS}}(rx,tx)\{}
+\DoxyCodeLine{27         \mbox{\hyperlink{class_d_r_i0050_a1414350d2842b9b6196ea13451af7cf3}{COMS}}.begin(9600);}
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     SoftwareSerial \mbox{\hyperlink{class_d_r_i0050_a1414350d2842b9b6196ea13451af7cf3}{COMS}};}
+\DoxyCodeLine{32 \textcolor{keyword}{private}:}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{41     uint16\_t CheckCRC(uint8\_t *\mbox{\hyperlink{_s_e_n0311__test_8cpp_a1313fbf2e999ad021f220cbf61ec9688}{data}}, uint8\_t len)\{}
+\DoxyCodeLine{42         uint16\_t crc = 0xFFFF;}
+\DoxyCodeLine{43         \textcolor{keywordflow}{for}(uint8\_t pos = 0; pos < len; pos++)\{}
+\DoxyCodeLine{44             crc \string^= (uint16\_t)\mbox{\hyperlink{_s_e_n0311__test_8cpp_a1313fbf2e999ad021f220cbf61ec9688}{data}}[pos];}
+\DoxyCodeLine{45             \textcolor{keywordflow}{for}(uint8\_t i = 8; i != 0; i-\/-\/ )\{}
+\DoxyCodeLine{46             \textcolor{keywordflow}{if}((crc \& 0x0001) != 0)\{}
+\DoxyCodeLine{47                 crc >>= 1;}
+\DoxyCodeLine{48                 crc \string^= 0xA001;}
+\DoxyCodeLine{49             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{50                 crc >>= 1;}
+\DoxyCodeLine{51             \}}
+\DoxyCodeLine{52             \}}
+\DoxyCodeLine{53         \}}
+\DoxyCodeLine{54         crc = ((crc \& 0x00FF) << 8) | ((crc \& 0xFF00) >> 8);}
+\DoxyCodeLine{55         \textcolor{keywordflow}{return} crc;}
+\DoxyCodeLine{56     \}}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} WriteRegValue(uint16\_t regAddr, uint16\_t value)\{}
+\DoxyCodeLine{64         uint8\_t tempData[8];}
+\DoxyCodeLine{65         uint16\_t crc;}
+\DoxyCodeLine{66         tempData[0] = \mbox{\hyperlink{_d_r_i0050_8h_a68c4ed924017f3a22265a40cc4e34b18}{DEV\_ADDR}};}
+\DoxyCodeLine{67         tempData[1] = 0x06;}
+\DoxyCodeLine{68         tempData[2] = (regAddr >> 8) \& 0xFF;}
+\DoxyCodeLine{69         tempData[3] = regAddr \& 0xFF;}
+\DoxyCodeLine{70         tempData[4] = (value >> 8) \& 0xFF;}
+\DoxyCodeLine{71         tempData[5] =  value \& 0xFF;}
+\DoxyCodeLine{72         crc = CheckCRC(tempData, 6);}
+\DoxyCodeLine{73         tempData[6] = (crc >> 8) \& 0xFF;}
+\DoxyCodeLine{74         tempData[7] = crc \& 0xFF;}
+\DoxyCodeLine{75         \textcolor{keywordflow}{for}(uint8\_t i = 0 ;i < 8; i++)\{}
+\DoxyCodeLine{76             \mbox{\hyperlink{class_d_r_i0050_a1414350d2842b9b6196ea13451af7cf3}{COMS}}.print((\textcolor{keywordtype}{char})tempData[i]);}
+\DoxyCodeLine{77             }
+\DoxyCodeLine{78         \}}
+\DoxyCodeLine{79         \mbox{\hyperlink{class_d_r_i0050_a1414350d2842b9b6196ea13451af7cf3}{COMS}}.flush();}
+\DoxyCodeLine{80     \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{keyword}{public}:}
+\DoxyCodeLine{88      \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_r_i0050_a8beda065eb56d357012c82ca0b5bec0c}{setPwmDuty}}(uint8\_t duty)\{}
+\DoxyCodeLine{89     WriteRegValue(\mbox{\hyperlink{_d_r_i0050_8h_a66cd653c1a98c6d75a77957ca4a42635}{DUTY\_REG\_ADDR}}, (uint16\_t)duty);}
+\DoxyCodeLine{90     \}}
+\DoxyCodeLine{96      \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_r_i0050_a01d081fa09a103ccdcd0a9e924c96f0b}{setPwmFreq}}(uint8\_t freq)\{}
+\DoxyCodeLine{97     WriteRegValue(\mbox{\hyperlink{_d_r_i0050_8h_ac74260571856986ba9012f0ad8c1565e}{FREQ\_REG\_ADDR}}, (uint16\_t)freq);}
+\DoxyCodeLine{98     \}}
+\DoxyCodeLine{104     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_r_i0050_a08906cb4c497c2753c1dc1fa6fe92a10}{setPwmEnable}}(uint8\_t pwmStatus)\{}
+\DoxyCodeLine{105     WriteRegValue(\mbox{\hyperlink{_d_r_i0050_8h_a145323c8b2e9e716a57308e91d47be73}{PWM\_EN\_REG\_ADDR}}, (uint16\_t)pwmStatus);}
+\DoxyCodeLine{106     \}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

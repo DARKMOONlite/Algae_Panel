@@ -1,0 +1,113 @@
+\hypertarget{class_e_e_p_r_o_m___manager}{}\doxysection{EEPROM\+\_\+\+Manager Class Reference}
+\label{class_e_e_p_r_o_m___manager}\index{EEPROM\_Manager@{EEPROM\_Manager}}
+
+
+Allows for simple management of multiple EEPROM variable objects.  
+
+
+
+
+{\ttfamily \#include $<$EEPROM\+\_\+\+Manager.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_e_e_p_r_o_m___manager_abdf85dbd2a4ae73d27ec0fa6903e86dc}{EEPROM\+\_\+\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new eeprom manager object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a3f06460dcaf379593a0b235c24bf8582}{Store}} ()
+\begin{DoxyCompactList}\small\item\em Calls the Store function of all managed EEPROM variables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a05f8d0296bab8657d22c900a2e0a5970}{Retrieve}} ()
+\begin{DoxyCompactList}\small\item\em Calls the retrieve function of all managed EEPROM variables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a078eeb631effb3c535a287015373a9d8}{Reset}} ()
+\begin{DoxyCompactList}\small\item\em Calls the Reset function of all managed EEPROM variables. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a4d810ea53386ad9d6609d3f6deb0bf56}{Add}} (\mbox{\hyperlink{class_e_e_p_r_o_m___variable}{EEPROM\+\_\+\+Variable}} $\ast$variable, uint8\+\_\+t EEPROM\+\_\+\+LOC)
+\begin{DoxyCompactList}\small\item\em Adds an EEPROM variable to the manage list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a5f546db7495c918ce450044833e30f2b}{print\+\_\+errors}} ()
+\begin{DoxyCompactList}\small\item\em Prints to serial if any variables are doubled up or overflowed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Allows for simple management of multiple EEPROM variable objects. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_e_e_p_r_o_m___manager_abdf85dbd2a4ae73d27ec0fa6903e86dc}\label{class_e_e_p_r_o_m___manager_abdf85dbd2a4ae73d27ec0fa6903e86dc}} 
+\index{EEPROM\_Manager@{EEPROM\_Manager}!EEPROM\_Manager@{EEPROM\_Manager}}
+\index{EEPROM\_Manager@{EEPROM\_Manager}!EEPROM\_Manager@{EEPROM\_Manager}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_Manager()}{EEPROM\_Manager()}}
+{\footnotesize\ttfamily EEPROM\+\_\+\+Manager\+::\+EEPROM\+\_\+\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new eeprom manager object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_e_e_p_r_o_m___manager_a4d810ea53386ad9d6609d3f6deb0bf56}\label{class_e_e_p_r_o_m___manager_a4d810ea53386ad9d6609d3f6deb0bf56}} 
+\index{EEPROM\_Manager@{EEPROM\_Manager}!Add@{Add}}
+\index{Add@{Add}!EEPROM\_Manager@{EEPROM\_Manager}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily bool EEPROM\+\_\+\+Manager\+::\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_e_e_p_r_o_m___variable}{EEPROM\+\_\+\+Variable}} $\ast$}]{variable,  }\item[{uint8\+\_\+t}]{EEPROM\+\_\+\+LOC }\end{DoxyParamCaption})}
+
+
+
+Adds an EEPROM variable to the manage list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em variable} & pointer to object to access function calls \\
+\hline
+{\em EEPROM\+\_\+\+LOC} & requested location of EEPROM \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if its available 
+
+false if its not available 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_e_e_p_r_o_m___manager_a5f546db7495c918ce450044833e30f2b}\label{class_e_e_p_r_o_m___manager_a5f546db7495c918ce450044833e30f2b}} 
+\index{EEPROM\_Manager@{EEPROM\_Manager}!print\_errors@{print\_errors}}
+\index{print\_errors@{print\_errors}!EEPROM\_Manager@{EEPROM\_Manager}}
+\doxysubsubsection{\texorpdfstring{print\_errors()}{print\_errors()}}
+{\footnotesize\ttfamily void EEPROM\+\_\+\+Manager\+::print\+\_\+errors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints to serial if any variables are doubled up or overflowed. 
+
+\mbox{\Hypertarget{class_e_e_p_r_o_m___manager_a078eeb631effb3c535a287015373a9d8}\label{class_e_e_p_r_o_m___manager_a078eeb631effb3c535a287015373a9d8}} 
+\index{EEPROM\_Manager@{EEPROM\_Manager}!Reset@{Reset}}
+\index{Reset@{Reset}!EEPROM\_Manager@{EEPROM\_Manager}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void EEPROM\+\_\+\+Manager\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls the Reset function of all managed EEPROM variables. 
+
+\mbox{\Hypertarget{class_e_e_p_r_o_m___manager_a05f8d0296bab8657d22c900a2e0a5970}\label{class_e_e_p_r_o_m___manager_a05f8d0296bab8657d22c900a2e0a5970}} 
+\index{EEPROM\_Manager@{EEPROM\_Manager}!Retrieve@{Retrieve}}
+\index{Retrieve@{Retrieve}!EEPROM\_Manager@{EEPROM\_Manager}}
+\doxysubsubsection{\texorpdfstring{Retrieve()}{Retrieve()}}
+{\footnotesize\ttfamily void EEPROM\+\_\+\+Manager\+::\+Retrieve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls the retrieve function of all managed EEPROM variables. 
+
+\mbox{\Hypertarget{class_e_e_p_r_o_m___manager_a3f06460dcaf379593a0b235c24bf8582}\label{class_e_e_p_r_o_m___manager_a3f06460dcaf379593a0b235c24bf8582}} 
+\index{EEPROM\_Manager@{EEPROM\_Manager}!Store@{Store}}
+\index{Store@{Store}!EEPROM\_Manager@{EEPROM\_Manager}}
+\doxysubsubsection{\texorpdfstring{Store()}{Store()}}
+{\footnotesize\ttfamily void EEPROM\+\_\+\+Manager\+::\+Store (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls the Store function of all managed EEPROM variables. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+EEPROM\+\_\+\+Manager/src/\mbox{\hyperlink{_e_e_p_r_o_m___manager_8h}{EEPROM\+\_\+\+Manager.\+h}}\item 
+lib/\+EEPROM\+\_\+\+Manager/src/\mbox{\hyperlink{_e_e_p_r_o_m___manager_8cpp}{EEPROM\+\_\+\+Manager.\+cpp}}\end{DoxyCompactItemize}

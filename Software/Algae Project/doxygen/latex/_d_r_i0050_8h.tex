@@ -1,0 +1,63 @@
+\hypertarget{_d_r_i0050_8h}{}\doxysection{lib/\+DRI0050/src/\+DRI0050.h File Reference}
+\label{_d_r_i0050_8h}\index{lib/DRI0050/src/DRI0050.h@{lib/DRI0050/src/DRI0050.h}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$Software\+Serial.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_d_r_i0050}{DRI0050}}
+\begin{DoxyCompactList}\small\item\em Used for controlling the \mbox{\hyperlink{class_d_r_i0050}{DRI0050}} PWM motor driver board \href{https://www.dfrobot.com/product-2429.html}{\texttt{ https\+://www.\+dfrobot.\+com/product-\/2429.\+html}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_d_r_i0050_8h_ae5421149122a9165e18f65a31b9f2cbf}{PWM\+\_\+\+ENABLE}}~0x01
+\item 
+\#define \mbox{\hyperlink{_d_r_i0050_8h_a0566719d8faa29702da0ffa1fa372784}{PWM\+\_\+\+DISENABLE}}~0x00
+\item 
+\#define \mbox{\hyperlink{_d_r_i0050_8h_a68c4ed924017f3a22265a40cc4e34b18}{DEV\+\_\+\+ADDR}}~0x32
+\item 
+\#define \mbox{\hyperlink{_d_r_i0050_8h_a66cd653c1a98c6d75a77957ca4a42635}{DUTY\+\_\+\+REG\+\_\+\+ADDR}}~0x0006
+\item 
+\#define \mbox{\hyperlink{_d_r_i0050_8h_ac74260571856986ba9012f0ad8c1565e}{FREQ\+\_\+\+REG\+\_\+\+ADDR}}~0x0007
+\item 
+\#define \mbox{\hyperlink{_d_r_i0050_8h_a145323c8b2e9e716a57308e91d47be73}{PWM\+\_\+\+EN\+\_\+\+REG\+\_\+\+ADDR}}~0x0008
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_d_r_i0050_8h_a68c4ed924017f3a22265a40cc4e34b18}\label{_d_r_i0050_8h_a68c4ed924017f3a22265a40cc4e34b18}} 
+\index{DRI0050.h@{DRI0050.h}!DEV\_ADDR@{DEV\_ADDR}}
+\index{DEV\_ADDR@{DEV\_ADDR}!DRI0050.h@{DRI0050.h}}
+\doxysubsubsection{\texorpdfstring{DEV\_ADDR}{DEV\_ADDR}}
+{\footnotesize\ttfamily \#define DEV\+\_\+\+ADDR~0x32}
+
+\mbox{\Hypertarget{_d_r_i0050_8h_a66cd653c1a98c6d75a77957ca4a42635}\label{_d_r_i0050_8h_a66cd653c1a98c6d75a77957ca4a42635}} 
+\index{DRI0050.h@{DRI0050.h}!DUTY\_REG\_ADDR@{DUTY\_REG\_ADDR}}
+\index{DUTY\_REG\_ADDR@{DUTY\_REG\_ADDR}!DRI0050.h@{DRI0050.h}}
+\doxysubsubsection{\texorpdfstring{DUTY\_REG\_ADDR}{DUTY\_REG\_ADDR}}
+{\footnotesize\ttfamily \#define DUTY\+\_\+\+REG\+\_\+\+ADDR~0x0006}
+
+\mbox{\Hypertarget{_d_r_i0050_8h_ac74260571856986ba9012f0ad8c1565e}\label{_d_r_i0050_8h_ac74260571856986ba9012f0ad8c1565e}} 
+\index{DRI0050.h@{DRI0050.h}!FREQ\_REG\_ADDR@{FREQ\_REG\_ADDR}}
+\index{FREQ\_REG\_ADDR@{FREQ\_REG\_ADDR}!DRI0050.h@{DRI0050.h}}
+\doxysubsubsection{\texorpdfstring{FREQ\_REG\_ADDR}{FREQ\_REG\_ADDR}}
+{\footnotesize\ttfamily \#define FREQ\+\_\+\+REG\+\_\+\+ADDR~0x0007}
+
+\mbox{\Hypertarget{_d_r_i0050_8h_a0566719d8faa29702da0ffa1fa372784}\label{_d_r_i0050_8h_a0566719d8faa29702da0ffa1fa372784}} 
+\index{DRI0050.h@{DRI0050.h}!PWM\_DISENABLE@{PWM\_DISENABLE}}
+\index{PWM\_DISENABLE@{PWM\_DISENABLE}!DRI0050.h@{DRI0050.h}}
+\doxysubsubsection{\texorpdfstring{PWM\_DISENABLE}{PWM\_DISENABLE}}
+{\footnotesize\ttfamily \#define PWM\+\_\+\+DISENABLE~0x00}
+
+\mbox{\Hypertarget{_d_r_i0050_8h_a145323c8b2e9e716a57308e91d47be73}\label{_d_r_i0050_8h_a145323c8b2e9e716a57308e91d47be73}} 
+\index{DRI0050.h@{DRI0050.h}!PWM\_EN\_REG\_ADDR@{PWM\_EN\_REG\_ADDR}}
+\index{PWM\_EN\_REG\_ADDR@{PWM\_EN\_REG\_ADDR}!DRI0050.h@{DRI0050.h}}
+\doxysubsubsection{\texorpdfstring{PWM\_EN\_REG\_ADDR}{PWM\_EN\_REG\_ADDR}}
+{\footnotesize\ttfamily \#define PWM\+\_\+\+EN\+\_\+\+REG\+\_\+\+ADDR~0x0008}
+
+\mbox{\Hypertarget{_d_r_i0050_8h_ae5421149122a9165e18f65a31b9f2cbf}\label{_d_r_i0050_8h_ae5421149122a9165e18f65a31b9f2cbf}} 
+\index{DRI0050.h@{DRI0050.h}!PWM\_ENABLE@{PWM\_ENABLE}}
+\index{PWM\_ENABLE@{PWM\_ENABLE}!DRI0050.h@{DRI0050.h}}
+\doxysubsubsection{\texorpdfstring{PWM\_ENABLE}{PWM\_ENABLE}}
+{\footnotesize\ttfamily \#define PWM\+\_\+\+ENABLE~0x01}
+

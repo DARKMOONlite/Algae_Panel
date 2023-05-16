@@ -1,0 +1,344 @@
+\hypertarget{class_dallas_temperature}{}\doxysection{Dallas\+Temperature Class Reference}
+\label{class_dallas_temperature}\index{DallasTemperature@{DallasTemperature}}
+
+
+{\ttfamily \#include $<$Dallas\+Temperature.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dallas_temperature_af46e868b6702ff5f77263985cd990e01}{Dallas\+Temperature}} ()
+\item 
+\mbox{\hyperlink{class_dallas_temperature_a37139ebd1a6122e232800528aee8cb2b}{Dallas\+Temperature}} (\mbox{\hyperlink{class_one_wire}{One\+Wire}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_dallas_temperature_af985bf5f9ed6857424e8a9532eaf5e2f}{set\+One\+Wire}} (\mbox{\hyperlink{class_one_wire}{One\+Wire}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_dallas_temperature_aea297b5f2a720a5455245c0fbf7333ec}{begin}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_dallas_temperature_a8bf92c0b6b8c3167daca4c2046ade13a}{get\+Device\+Count}} (void)
+\item 
+bool \mbox{\hyperlink{class_dallas_temperature_a71e4744b8d7b2f1c05a96cd158c83007}{valid\+Address}} (const uint8\+\_\+t $\ast$)
+\item 
+bool \mbox{\hyperlink{class_dallas_temperature_a3f3678c8defd473e8eebd9cfe793b329}{valid\+Family}} (const uint8\+\_\+t $\ast$device\+Address)
+\item 
+bool \mbox{\hyperlink{class_dallas_temperature_afa644bebf50c81b6641a31c585b62538}{get\+Address}} (uint8\+\_\+t $\ast$, uint8\+\_\+t)
+\item 
+bool \mbox{\hyperlink{class_dallas_temperature_a19afa5e594de0ab6caa5a48a70650927}{is\+Connected}} (const uint8\+\_\+t $\ast$)
+\item 
+bool \mbox{\hyperlink{class_dallas_temperature_a624f64b186c13927d4f74bd7c5b92c2e}{is\+Connected}} (const uint8\+\_\+t $\ast$, uint8\+\_\+t $\ast$)
+\item 
+bool \mbox{\hyperlink{class_dallas_temperature_a2b55774207d0211fd679247a7137142b}{read\+Scratch\+Pad}} (const uint8\+\_\+t $\ast$, uint8\+\_\+t $\ast$)
+\item 
+void \mbox{\hyperlink{class_dallas_temperature_a74c275dabf103f268c5a271d379dcb7e}{write\+Scratch\+Pad}} (const uint8\+\_\+t $\ast$, const uint8\+\_\+t $\ast$)
+\item 
+bool \mbox{\hyperlink{class_dallas_temperature_af6a28c1d1009dd6d010d97dffaf5942d}{read\+Power\+Supply}} (const uint8\+\_\+t $\ast$)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_dallas_temperature_a9dac13206229d7c8fb75f21bf44e75ed}{get\+Resolution}} ()
+\item 
+void \mbox{\hyperlink{class_dallas_temperature_a43363ee4b227f1ecf9c33cd4e072c0c9}{set\+Resolution}} (uint8\+\_\+t)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_dallas_temperature_a2266822561e864c4921955697c1ac7f5}{get\+Resolution}} (const uint8\+\_\+t $\ast$)
+\item 
+bool \mbox{\hyperlink{class_dallas_temperature_ae55879b2bb213b67cf67cbf26364fabc}{set\+Resolution}} (const uint8\+\_\+t $\ast$, uint8\+\_\+t)
+\item 
+void \mbox{\hyperlink{class_dallas_temperature_aa5f90d9f12327f39de97ed2244a4ad6f}{set\+Wait\+For\+Conversion}} (bool)
+\item 
+bool \mbox{\hyperlink{class_dallas_temperature_abb49c5903d68b86c0cf2da5e2b849a43}{get\+Wait\+For\+Conversion}} (void)
+\item 
+void \mbox{\hyperlink{class_dallas_temperature_ae8ef644d60236af12963f37fe145a49a}{set\+Check\+For\+Conversion}} (bool)
+\item 
+bool \mbox{\hyperlink{class_dallas_temperature_a7541728802904b0ed8d17a7f5ef00801}{get\+Check\+For\+Conversion}} (void)
+\item 
+void \mbox{\hyperlink{class_dallas_temperature_a5d28cff0d7e317c28e28c0f1a62fbe6d}{request\+Temperatures}} (void)
+\item 
+bool \mbox{\hyperlink{class_dallas_temperature_aee2a2abd5f8293df9a0a030b3e982c90}{request\+Temperatures\+By\+Address}} (const uint8\+\_\+t $\ast$)
+\item 
+bool \mbox{\hyperlink{class_dallas_temperature_ae9a7bf62321615519242d2421c8b349a}{request\+Temperatures\+By\+Index}} (uint8\+\_\+t)
+\item 
+int16\+\_\+t \mbox{\hyperlink{class_dallas_temperature_a37c3723cc15d5e46d0a6caa96a3c4781}{get\+Temp}} (const uint8\+\_\+t $\ast$)
+\item 
+float \mbox{\hyperlink{class_dallas_temperature_a20f94b59909b46e55a77b399d99591a2}{get\+TempC}} (const uint8\+\_\+t $\ast$)
+\item 
+float \mbox{\hyperlink{class_dallas_temperature_ace033fbd8e4c7e17c4bcd7ecc8f3ebea}{get\+TempF}} (const uint8\+\_\+t $\ast$)
+\item 
+float \mbox{\hyperlink{class_dallas_temperature_a7e3e2e23257aac6b6c896df205d5b3b5}{get\+Temp\+CBy\+Index}} (uint8\+\_\+t)
+\item 
+float \mbox{\hyperlink{class_dallas_temperature_a96318d36b313e1f4f413e2ed2b7501c7}{get\+Temp\+FBy\+Index}} (uint8\+\_\+t)
+\item 
+bool \mbox{\hyperlink{class_dallas_temperature_a835945ed3e8d78c31791e55f22084691}{is\+Parasite\+Power\+Mode}} (void)
+\item 
+bool \mbox{\hyperlink{class_dallas_temperature_adaf460a3b8004218e97af7059d41053a}{is\+Conversion\+Available}} (const uint8\+\_\+t $\ast$)
+\item 
+bool \mbox{\hyperlink{class_dallas_temperature_a9e92719781d3ead44b95964d59edd41d}{is\+Conversion\+Complete}} (void)
+\item 
+void \mbox{\hyperlink{class_dallas_temperature_a0ed69b03ed848936ea0c8deea0e5c2ba}{set\+User\+Data}} (const uint8\+\_\+t $\ast$, int16\+\_\+t)
+\item 
+void \mbox{\hyperlink{class_dallas_temperature_a65ae6994218200e92ce43bffd122d46b}{set\+User\+Data\+By\+Index}} (uint8\+\_\+t, int16\+\_\+t)
+\item 
+int16\+\_\+t \mbox{\hyperlink{class_dallas_temperature_a3601e8ee63c4770b716817ed68664400}{get\+User\+Data}} (const uint8\+\_\+t $\ast$)
+\item 
+int16\+\_\+t \mbox{\hyperlink{class_dallas_temperature_a4af999e72b9c5b85430666ad90fa9644}{get\+User\+Data\+By\+Index}} (uint8\+\_\+t)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{class_dallas_temperature_a2169f7bdd26479bbbf9f6fb3bf4e5bb2}{to\+Fahrenheit}} (float)
+\item 
+static float \mbox{\hyperlink{class_dallas_temperature_af6dfbcc587ae244c0508b6a51f2085a5}{to\+Celsius}} (float)
+\item 
+static float \mbox{\hyperlink{class_dallas_temperature_a75accb4a56858189accda00e5eabb06e}{raw\+To\+Celsius}} (int16\+\_\+t)
+\item 
+static float \mbox{\hyperlink{class_dallas_temperature_a48bc1a4d0e33f1735964c22c8bd2f6fb}{raw\+To\+Fahrenheit}} (int16\+\_\+t)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_dallas_temperature_af46e868b6702ff5f77263985cd990e01}\label{class_dallas_temperature_af46e868b6702ff5f77263985cd990e01}} 
+\index{DallasTemperature@{DallasTemperature}!DallasTemperature@{DallasTemperature}}
+\index{DallasTemperature@{DallasTemperature}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{DallasTemperature()}{DallasTemperature()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Dallas\+Temperature\+::\+Dallas\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a37139ebd1a6122e232800528aee8cb2b}\label{class_dallas_temperature_a37139ebd1a6122e232800528aee8cb2b}} 
+\index{DallasTemperature@{DallasTemperature}!DallasTemperature@{DallasTemperature}}
+\index{DallasTemperature@{DallasTemperature}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{DallasTemperature()}{DallasTemperature()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Dallas\+Temperature\+::\+Dallas\+Temperature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_one_wire}{One\+Wire}} $\ast$}]{\+\_\+one\+Wire }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dallas_temperature_aea297b5f2a720a5455245c0fbf7333ec}\label{class_dallas_temperature_aea297b5f2a720a5455245c0fbf7333ec}} 
+\index{DallasTemperature@{DallasTemperature}!begin@{begin}}
+\index{begin@{begin}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily void Dallas\+Temperature\+::begin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_afa644bebf50c81b6641a31c585b62538}\label{class_dallas_temperature_afa644bebf50c81b6641a31c585b62538}} 
+\index{DallasTemperature@{DallasTemperature}!getAddress@{getAddress}}
+\index{getAddress@{getAddress}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{getAddress()}{getAddress()}}
+{\footnotesize\ttfamily bool Dallas\+Temperature\+::get\+Address (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{device\+Address,  }\item[{uint8\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a7541728802904b0ed8d17a7f5ef00801}\label{class_dallas_temperature_a7541728802904b0ed8d17a7f5ef00801}} 
+\index{DallasTemperature@{DallasTemperature}!getCheckForConversion@{getCheckForConversion}}
+\index{getCheckForConversion@{getCheckForConversion}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{getCheckForConversion()}{getCheckForConversion()}}
+{\footnotesize\ttfamily bool Dallas\+Temperature\+::get\+Check\+For\+Conversion (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a8bf92c0b6b8c3167daca4c2046ade13a}\label{class_dallas_temperature_a8bf92c0b6b8c3167daca4c2046ade13a}} 
+\index{DallasTemperature@{DallasTemperature}!getDeviceCount@{getDeviceCount}}
+\index{getDeviceCount@{getDeviceCount}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{getDeviceCount()}{getDeviceCount()}}
+{\footnotesize\ttfamily uint8\+\_\+t Dallas\+Temperature\+::get\+Device\+Count (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a9dac13206229d7c8fb75f21bf44e75ed}\label{class_dallas_temperature_a9dac13206229d7c8fb75f21bf44e75ed}} 
+\index{DallasTemperature@{DallasTemperature}!getResolution@{getResolution}}
+\index{getResolution@{getResolution}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{getResolution()}{getResolution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t Dallas\+Temperature\+::get\+Resolution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a2266822561e864c4921955697c1ac7f5}\label{class_dallas_temperature_a2266822561e864c4921955697c1ac7f5}} 
+\index{DallasTemperature@{DallasTemperature}!getResolution@{getResolution}}
+\index{getResolution@{getResolution}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{getResolution()}{getResolution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t Dallas\+Temperature\+::get\+Resolution (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{device\+Address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a37c3723cc15d5e46d0a6caa96a3c4781}\label{class_dallas_temperature_a37c3723cc15d5e46d0a6caa96a3c4781}} 
+\index{DallasTemperature@{DallasTemperature}!getTemp@{getTemp}}
+\index{getTemp@{getTemp}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{getTemp()}{getTemp()}}
+{\footnotesize\ttfamily int16\+\_\+t Dallas\+Temperature\+::get\+Temp (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{device\+Address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a20f94b59909b46e55a77b399d99591a2}\label{class_dallas_temperature_a20f94b59909b46e55a77b399d99591a2}} 
+\index{DallasTemperature@{DallasTemperature}!getTempC@{getTempC}}
+\index{getTempC@{getTempC}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{getTempC()}{getTempC()}}
+{\footnotesize\ttfamily float Dallas\+Temperature\+::get\+TempC (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{device\+Address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a7e3e2e23257aac6b6c896df205d5b3b5}\label{class_dallas_temperature_a7e3e2e23257aac6b6c896df205d5b3b5}} 
+\index{DallasTemperature@{DallasTemperature}!getTempCByIndex@{getTempCByIndex}}
+\index{getTempCByIndex@{getTempCByIndex}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{getTempCByIndex()}{getTempCByIndex()}}
+{\footnotesize\ttfamily float Dallas\+Temperature\+::get\+Temp\+CBy\+Index (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{device\+Index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_ace033fbd8e4c7e17c4bcd7ecc8f3ebea}\label{class_dallas_temperature_ace033fbd8e4c7e17c4bcd7ecc8f3ebea}} 
+\index{DallasTemperature@{DallasTemperature}!getTempF@{getTempF}}
+\index{getTempF@{getTempF}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{getTempF()}{getTempF()}}
+{\footnotesize\ttfamily float Dallas\+Temperature\+::get\+TempF (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{device\+Address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a96318d36b313e1f4f413e2ed2b7501c7}\label{class_dallas_temperature_a96318d36b313e1f4f413e2ed2b7501c7}} 
+\index{DallasTemperature@{DallasTemperature}!getTempFByIndex@{getTempFByIndex}}
+\index{getTempFByIndex@{getTempFByIndex}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{getTempFByIndex()}{getTempFByIndex()}}
+{\footnotesize\ttfamily float Dallas\+Temperature\+::get\+Temp\+FBy\+Index (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{device\+Index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a3601e8ee63c4770b716817ed68664400}\label{class_dallas_temperature_a3601e8ee63c4770b716817ed68664400}} 
+\index{DallasTemperature@{DallasTemperature}!getUserData@{getUserData}}
+\index{getUserData@{getUserData}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{getUserData()}{getUserData()}}
+{\footnotesize\ttfamily int16\+\_\+t Dallas\+Temperature\+::get\+User\+Data (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{device\+Address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a4af999e72b9c5b85430666ad90fa9644}\label{class_dallas_temperature_a4af999e72b9c5b85430666ad90fa9644}} 
+\index{DallasTemperature@{DallasTemperature}!getUserDataByIndex@{getUserDataByIndex}}
+\index{getUserDataByIndex@{getUserDataByIndex}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{getUserDataByIndex()}{getUserDataByIndex()}}
+{\footnotesize\ttfamily int16\+\_\+t Dallas\+Temperature\+::get\+User\+Data\+By\+Index (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{device\+Index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_abb49c5903d68b86c0cf2da5e2b849a43}\label{class_dallas_temperature_abb49c5903d68b86c0cf2da5e2b849a43}} 
+\index{DallasTemperature@{DallasTemperature}!getWaitForConversion@{getWaitForConversion}}
+\index{getWaitForConversion@{getWaitForConversion}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{getWaitForConversion()}{getWaitForConversion()}}
+{\footnotesize\ttfamily bool Dallas\+Temperature\+::get\+Wait\+For\+Conversion (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a19afa5e594de0ab6caa5a48a70650927}\label{class_dallas_temperature_a19afa5e594de0ab6caa5a48a70650927}} 
+\index{DallasTemperature@{DallasTemperature}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{isConnected()}{isConnected()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Dallas\+Temperature\+::is\+Connected (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{device\+Address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a624f64b186c13927d4f74bd7c5b92c2e}\label{class_dallas_temperature_a624f64b186c13927d4f74bd7c5b92c2e}} 
+\index{DallasTemperature@{DallasTemperature}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{isConnected()}{isConnected()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Dallas\+Temperature\+::is\+Connected (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{device\+Address,  }\item[{uint8\+\_\+t $\ast$}]{scratch\+Pad }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_adaf460a3b8004218e97af7059d41053a}\label{class_dallas_temperature_adaf460a3b8004218e97af7059d41053a}} 
+\index{DallasTemperature@{DallasTemperature}!isConversionAvailable@{isConversionAvailable}}
+\index{isConversionAvailable@{isConversionAvailable}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{isConversionAvailable()}{isConversionAvailable()}}
+{\footnotesize\ttfamily bool Dallas\+Temperature\+::is\+Conversion\+Available (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{device\+Address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a9e92719781d3ead44b95964d59edd41d}\label{class_dallas_temperature_a9e92719781d3ead44b95964d59edd41d}} 
+\index{DallasTemperature@{DallasTemperature}!isConversionComplete@{isConversionComplete}}
+\index{isConversionComplete@{isConversionComplete}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{isConversionComplete()}{isConversionComplete()}}
+{\footnotesize\ttfamily bool Dallas\+Temperature\+::is\+Conversion\+Complete (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a835945ed3e8d78c31791e55f22084691}\label{class_dallas_temperature_a835945ed3e8d78c31791e55f22084691}} 
+\index{DallasTemperature@{DallasTemperature}!isParasitePowerMode@{isParasitePowerMode}}
+\index{isParasitePowerMode@{isParasitePowerMode}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{isParasitePowerMode()}{isParasitePowerMode()}}
+{\footnotesize\ttfamily bool Dallas\+Temperature\+::is\+Parasite\+Power\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a75accb4a56858189accda00e5eabb06e}\label{class_dallas_temperature_a75accb4a56858189accda00e5eabb06e}} 
+\index{DallasTemperature@{DallasTemperature}!rawToCelsius@{rawToCelsius}}
+\index{rawToCelsius@{rawToCelsius}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{rawToCelsius()}{rawToCelsius()}}
+{\footnotesize\ttfamily float Dallas\+Temperature\+::raw\+To\+Celsius (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{raw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_dallas_temperature_a48bc1a4d0e33f1735964c22c8bd2f6fb}\label{class_dallas_temperature_a48bc1a4d0e33f1735964c22c8bd2f6fb}} 
+\index{DallasTemperature@{DallasTemperature}!rawToFahrenheit@{rawToFahrenheit}}
+\index{rawToFahrenheit@{rawToFahrenheit}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{rawToFahrenheit()}{rawToFahrenheit()}}
+{\footnotesize\ttfamily float Dallas\+Temperature\+::raw\+To\+Fahrenheit (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{raw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_dallas_temperature_af6a28c1d1009dd6d010d97dffaf5942d}\label{class_dallas_temperature_af6a28c1d1009dd6d010d97dffaf5942d}} 
+\index{DallasTemperature@{DallasTemperature}!readPowerSupply@{readPowerSupply}}
+\index{readPowerSupply@{readPowerSupply}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{readPowerSupply()}{readPowerSupply()}}
+{\footnotesize\ttfamily bool Dallas\+Temperature\+::read\+Power\+Supply (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{device\+Address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a2b55774207d0211fd679247a7137142b}\label{class_dallas_temperature_a2b55774207d0211fd679247a7137142b}} 
+\index{DallasTemperature@{DallasTemperature}!readScratchPad@{readScratchPad}}
+\index{readScratchPad@{readScratchPad}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{readScratchPad()}{readScratchPad()}}
+{\footnotesize\ttfamily bool Dallas\+Temperature\+::read\+Scratch\+Pad (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{device\+Address,  }\item[{uint8\+\_\+t $\ast$}]{scratch\+Pad }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a5d28cff0d7e317c28e28c0f1a62fbe6d}\label{class_dallas_temperature_a5d28cff0d7e317c28e28c0f1a62fbe6d}} 
+\index{DallasTemperature@{DallasTemperature}!requestTemperatures@{requestTemperatures}}
+\index{requestTemperatures@{requestTemperatures}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{requestTemperatures()}{requestTemperatures()}}
+{\footnotesize\ttfamily void Dallas\+Temperature\+::request\+Temperatures (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_aee2a2abd5f8293df9a0a030b3e982c90}\label{class_dallas_temperature_aee2a2abd5f8293df9a0a030b3e982c90}} 
+\index{DallasTemperature@{DallasTemperature}!requestTemperaturesByAddress@{requestTemperaturesByAddress}}
+\index{requestTemperaturesByAddress@{requestTemperaturesByAddress}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{requestTemperaturesByAddress()}{requestTemperaturesByAddress()}}
+{\footnotesize\ttfamily bool Dallas\+Temperature\+::request\+Temperatures\+By\+Address (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{device\+Address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_ae9a7bf62321615519242d2421c8b349a}\label{class_dallas_temperature_ae9a7bf62321615519242d2421c8b349a}} 
+\index{DallasTemperature@{DallasTemperature}!requestTemperaturesByIndex@{requestTemperaturesByIndex}}
+\index{requestTemperaturesByIndex@{requestTemperaturesByIndex}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{requestTemperaturesByIndex()}{requestTemperaturesByIndex()}}
+{\footnotesize\ttfamily bool Dallas\+Temperature\+::request\+Temperatures\+By\+Index (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{device\+Index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_ae8ef644d60236af12963f37fe145a49a}\label{class_dallas_temperature_ae8ef644d60236af12963f37fe145a49a}} 
+\index{DallasTemperature@{DallasTemperature}!setCheckForConversion@{setCheckForConversion}}
+\index{setCheckForConversion@{setCheckForConversion}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{setCheckForConversion()}{setCheckForConversion()}}
+{\footnotesize\ttfamily void Dallas\+Temperature\+::set\+Check\+For\+Conversion (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_af985bf5f9ed6857424e8a9532eaf5e2f}\label{class_dallas_temperature_af985bf5f9ed6857424e8a9532eaf5e2f}} 
+\index{DallasTemperature@{DallasTemperature}!setOneWire@{setOneWire}}
+\index{setOneWire@{setOneWire}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{setOneWire()}{setOneWire()}}
+{\footnotesize\ttfamily void Dallas\+Temperature\+::set\+One\+Wire (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_one_wire}{One\+Wire}} $\ast$}]{\+\_\+one\+Wire }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_ae55879b2bb213b67cf67cbf26364fabc}\label{class_dallas_temperature_ae55879b2bb213b67cf67cbf26364fabc}} 
+\index{DallasTemperature@{DallasTemperature}!setResolution@{setResolution}}
+\index{setResolution@{setResolution}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{setResolution()}{setResolution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Dallas\+Temperature\+::set\+Resolution (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{device\+Address,  }\item[{uint8\+\_\+t}]{new\+Resolution }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a43363ee4b227f1ecf9c33cd4e072c0c9}\label{class_dallas_temperature_a43363ee4b227f1ecf9c33cd4e072c0c9}} 
+\index{DallasTemperature@{DallasTemperature}!setResolution@{setResolution}}
+\index{setResolution@{setResolution}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{setResolution()}{setResolution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Dallas\+Temperature\+::set\+Resolution (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{new\+Resolution }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a0ed69b03ed848936ea0c8deea0e5c2ba}\label{class_dallas_temperature_a0ed69b03ed848936ea0c8deea0e5c2ba}} 
+\index{DallasTemperature@{DallasTemperature}!setUserData@{setUserData}}
+\index{setUserData@{setUserData}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{setUserData()}{setUserData()}}
+{\footnotesize\ttfamily void Dallas\+Temperature\+::set\+User\+Data (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{device\+Address,  }\item[{int16\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a65ae6994218200e92ce43bffd122d46b}\label{class_dallas_temperature_a65ae6994218200e92ce43bffd122d46b}} 
+\index{DallasTemperature@{DallasTemperature}!setUserDataByIndex@{setUserDataByIndex}}
+\index{setUserDataByIndex@{setUserDataByIndex}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{setUserDataByIndex()}{setUserDataByIndex()}}
+{\footnotesize\ttfamily void Dallas\+Temperature\+::set\+User\+Data\+By\+Index (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{device\+Index,  }\item[{int16\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_aa5f90d9f12327f39de97ed2244a4ad6f}\label{class_dallas_temperature_aa5f90d9f12327f39de97ed2244a4ad6f}} 
+\index{DallasTemperature@{DallasTemperature}!setWaitForConversion@{setWaitForConversion}}
+\index{setWaitForConversion@{setWaitForConversion}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{setWaitForConversion()}{setWaitForConversion()}}
+{\footnotesize\ttfamily void Dallas\+Temperature\+::set\+Wait\+For\+Conversion (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_af6dfbcc587ae244c0508b6a51f2085a5}\label{class_dallas_temperature_af6dfbcc587ae244c0508b6a51f2085a5}} 
+\index{DallasTemperature@{DallasTemperature}!toCelsius@{toCelsius}}
+\index{toCelsius@{toCelsius}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{toCelsius()}{toCelsius()}}
+{\footnotesize\ttfamily float Dallas\+Temperature\+::to\+Celsius (\begin{DoxyParamCaption}\item[{float}]{fahrenheit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_dallas_temperature_a2169f7bdd26479bbbf9f6fb3bf4e5bb2}\label{class_dallas_temperature_a2169f7bdd26479bbbf9f6fb3bf4e5bb2}} 
+\index{DallasTemperature@{DallasTemperature}!toFahrenheit@{toFahrenheit}}
+\index{toFahrenheit@{toFahrenheit}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{toFahrenheit()}{toFahrenheit()}}
+{\footnotesize\ttfamily float Dallas\+Temperature\+::to\+Fahrenheit (\begin{DoxyParamCaption}\item[{float}]{celsius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_dallas_temperature_a71e4744b8d7b2f1c05a96cd158c83007}\label{class_dallas_temperature_a71e4744b8d7b2f1c05a96cd158c83007}} 
+\index{DallasTemperature@{DallasTemperature}!validAddress@{validAddress}}
+\index{validAddress@{validAddress}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{validAddress()}{validAddress()}}
+{\footnotesize\ttfamily bool Dallas\+Temperature\+::valid\+Address (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{device\+Address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a3f3678c8defd473e8eebd9cfe793b329}\label{class_dallas_temperature_a3f3678c8defd473e8eebd9cfe793b329}} 
+\index{DallasTemperature@{DallasTemperature}!validFamily@{validFamily}}
+\index{validFamily@{validFamily}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{validFamily()}{validFamily()}}
+{\footnotesize\ttfamily bool Dallas\+Temperature\+::valid\+Family (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{device\+Address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dallas_temperature_a74c275dabf103f268c5a271d379dcb7e}\label{class_dallas_temperature_a74c275dabf103f268c5a271d379dcb7e}} 
+\index{DallasTemperature@{DallasTemperature}!writeScratchPad@{writeScratchPad}}
+\index{writeScratchPad@{writeScratchPad}!DallasTemperature@{DallasTemperature}}
+\doxysubsubsection{\texorpdfstring{writeScratchPad()}{writeScratchPad()}}
+{\footnotesize\ttfamily void Dallas\+Temperature\+::write\+Scratch\+Pad (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{device\+Address,  }\item[{const uint8\+\_\+t $\ast$}]{scratch\+Pad }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+DS18\+B20/src/\mbox{\hyperlink{_dallas_temperature_8h}{Dallas\+Temperature.\+h}}\item 
+lib/\+DS18\+B20/src/\mbox{\hyperlink{_dallas_temperature_8cpp}{Dallas\+Temperature.\+cpp}}\end{DoxyCompactItemize}

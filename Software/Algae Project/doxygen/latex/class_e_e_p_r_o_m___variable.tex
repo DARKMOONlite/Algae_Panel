@@ -1,0 +1,121 @@
+\hypertarget{class_e_e_p_r_o_m___variable}{}\doxysection{EEPROM\+\_\+\+Variable Class Reference}
+\label{class_e_e_p_r_o_m___variable}\index{EEPROM\_Variable@{EEPROM\_Variable}}
+
+
+Class for for saving and editing to EEPROM.  
+
+
+
+
+{\ttfamily \#include $<$EEPROM\+\_\+\+Manager.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_e_e_p_r_o_m___variable_a57cb7170ef1d9e9eb11aa522951919b5}{EEPROM\+\_\+\+Variable}} (int \+\_\+\+Variable)
+\begin{DoxyCompactList}\small\item\em DEPRECATED, does not use a manager, should not be used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_e_e_p_r_o_m___variable_ae39e4bcda9737895899c4db6f1512477}{EEPROM\+\_\+\+Variable}} (int \+\_\+\+Variable, uint8\+\_\+t \+\_\+\+EE\+\_\+\+Loc, \mbox{\hyperlink{class_e_e_p_r_o_m___manager}{EEPROM\+\_\+\+Manager}} $\ast$\+\_\+\+Manager)
+\begin{DoxyCompactList}\small\item\em Constructs a variable to be stored in EEPROM to persist between resets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_e_e_p_r_o_m___variable_afa286c605bfe0063635bc543f591dd09}{Store}} ()
+\begin{DoxyCompactList}\small\item\em Stores Value to EEPROM, should be called by the user, because EEPROM only has 100,000 writes. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_e_e_p_r_o_m___variable_a0381e7239d894c1087df5e39e0319808}{Retrieve}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves Value from EEPROM, should be done on startup. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_e_e_p_r_o_m___variable_a39e241d2ee3b49061f66b3f9e1cfa967}{Reset}} ()
+\begin{DoxyCompactList}\small\item\em sets the variable var to the default var \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_e_e_p_r_o_m___variable_aef9b508ea8a71974877c9863d6b7a8cb}{var}}
+\begin{DoxyCompactList}\small\item\em integer variable in question \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for for saving and editing to EEPROM. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_e_e_p_r_o_m___variable_a57cb7170ef1d9e9eb11aa522951919b5}\label{class_e_e_p_r_o_m___variable_a57cb7170ef1d9e9eb11aa522951919b5}} 
+\index{EEPROM\_Variable@{EEPROM\_Variable}!EEPROM\_Variable@{EEPROM\_Variable}}
+\index{EEPROM\_Variable@{EEPROM\_Variable}!EEPROM\_Variable@{EEPROM\_Variable}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_Variable()}{EEPROM\_Variable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily EEPROM\+\_\+\+Variable\+::\+EEPROM\+\_\+\+Variable (\begin{DoxyParamCaption}\item[{int}]{\+\_\+\+Variable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+DEPRECATED, does not use a manager, should not be used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+Variable} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_e_e_p_r_o_m___variable_ae39e4bcda9737895899c4db6f1512477}\label{class_e_e_p_r_o_m___variable_ae39e4bcda9737895899c4db6f1512477}} 
+\index{EEPROM\_Variable@{EEPROM\_Variable}!EEPROM\_Variable@{EEPROM\_Variable}}
+\index{EEPROM\_Variable@{EEPROM\_Variable}!EEPROM\_Variable@{EEPROM\_Variable}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_Variable()}{EEPROM\_Variable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily EEPROM\+\_\+\+Variable\+::\+EEPROM\+\_\+\+Variable (\begin{DoxyParamCaption}\item[{int}]{\+\_\+\+Variable,  }\item[{uint8\+\_\+t}]{\+\_\+\+EE\+\_\+\+Loc,  }\item[{\mbox{\hyperlink{class_e_e_p_r_o_m___manager}{EEPROM\+\_\+\+Manager}} $\ast$}]{\+\_\+\+Manager }\end{DoxyParamCaption})}
+
+
+
+Constructs a variable to be stored in EEPROM to persist between resets. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+Variable} & starting value of variable \\
+\hline
+{\em \+\_\+\+EE\+\_\+\+Loc} & location in EEPROM to store int variable (4 bytes). arduino uno has 1024 bytes of EEPROM so this variable is between 0 \& 255 \\
+\hline
+{\em \+\_\+\+Manager} & pointer to manager that will check if EE\+\_\+\+LOC is already taken by another variable/ aids in function calls \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_e_e_p_r_o_m___variable_a39e241d2ee3b49061f66b3f9e1cfa967}\label{class_e_e_p_r_o_m___variable_a39e241d2ee3b49061f66b3f9e1cfa967}} 
+\index{EEPROM\_Variable@{EEPROM\_Variable}!Reset@{Reset}}
+\index{Reset@{Reset}!EEPROM\_Variable@{EEPROM\_Variable}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void EEPROM\+\_\+\+Variable\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+sets the variable var to the default var 
+
+\mbox{\Hypertarget{class_e_e_p_r_o_m___variable_a0381e7239d894c1087df5e39e0319808}\label{class_e_e_p_r_o_m___variable_a0381e7239d894c1087df5e39e0319808}} 
+\index{EEPROM\_Variable@{EEPROM\_Variable}!Retrieve@{Retrieve}}
+\index{Retrieve@{Retrieve}!EEPROM\_Variable@{EEPROM\_Variable}}
+\doxysubsubsection{\texorpdfstring{Retrieve()}{Retrieve()}}
+{\footnotesize\ttfamily int EEPROM\+\_\+\+Variable\+::\+Retrieve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves Value from EEPROM, should be done on startup. 
+
+check if this is little or big endian\mbox{\Hypertarget{class_e_e_p_r_o_m___variable_afa286c605bfe0063635bc543f591dd09}\label{class_e_e_p_r_o_m___variable_afa286c605bfe0063635bc543f591dd09}} 
+\index{EEPROM\_Variable@{EEPROM\_Variable}!Store@{Store}}
+\index{Store@{Store}!EEPROM\_Variable@{EEPROM\_Variable}}
+\doxysubsubsection{\texorpdfstring{Store()}{Store()}}
+{\footnotesize\ttfamily void EEPROM\+\_\+\+Variable\+::\+Store (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stores Value to EEPROM, should be called by the user, because EEPROM only has 100,000 writes. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_e_e_p_r_o_m___variable_aef9b508ea8a71974877c9863d6b7a8cb}\label{class_e_e_p_r_o_m___variable_aef9b508ea8a71974877c9863d6b7a8cb}} 
+\index{EEPROM\_Variable@{EEPROM\_Variable}!var@{var}}
+\index{var@{var}!EEPROM\_Variable@{EEPROM\_Variable}}
+\doxysubsubsection{\texorpdfstring{var}{var}}
+{\footnotesize\ttfamily int EEPROM\+\_\+\+Variable\+::var}
+
+
+
+integer variable in question 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+EEPROM\+\_\+\+Manager/src/\mbox{\hyperlink{_e_e_p_r_o_m___manager_8h}{EEPROM\+\_\+\+Manager.\+h}}\item 
+lib/\+EEPROM\+\_\+\+Manager/src/\mbox{\hyperlink{_e_e_p_r_o_m___manager_8cpp}{EEPROM\+\_\+\+Manager.\+cpp}}\end{DoxyCompactItemize}

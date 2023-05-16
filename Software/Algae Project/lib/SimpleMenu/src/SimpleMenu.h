@@ -8,7 +8,10 @@
 #include <WProgram.h>
 #include <wiring.h>
 #endif
-
+/**
+ * @brief SimpleMenu structure
+ * https://github.com/tinkersprojects/LCD-Simple-Menu-Library
+ */
 class SimpleMenu
 {
     public:

@@ -1,0 +1,36 @@
+\hypertarget{_d_s18_b20_8h_source}{}\doxysection{DS18\+B20.\+h}
+\label{_d_s18_b20_8h_source}\index{lib/DS18B20/src/DS18B20.h@{lib/DS18B20/src/DS18B20.h}}
+\mbox{\hyperlink{_d_s18_b20_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_DS18B20\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_DS18B20\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_dallas_temperature_8h}{DallasTemperature.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_one_wire_8h}{OneWire.h}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_d_s18_b20}{DS18B20}} \textcolor{comment}{// : public DallasTemperature //-\/ uncomment for inheritance}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14     \textcolor{keyword}{public}:}
+\DoxyCodeLine{20         \mbox{\hyperlink{class_d_s18_b20_a77cd6d506050b89d10ff7eb232e6c132}{DS18B20}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} pin);}
+\DoxyCodeLine{21         \textcolor{comment}{// These two function connect to the sensor over one wire communication and gets the current temperature in degrees celsius and fahrenheit}}
+\DoxyCodeLine{27 \textcolor{comment}{}        \textcolor{keywordtype}{float} \mbox{\hyperlink{class_d_s18_b20_a53093f3fe2832dc3acdfb594e106f41d}{readTempC}}();}
+\DoxyCodeLine{33         \textcolor{keywordtype}{float} \mbox{\hyperlink{class_d_s18_b20_a06090f6ef8cf2622a4aeef0536c89b9e}{readTempF}}();}
+\DoxyCodeLine{34           }
+\DoxyCodeLine{35     \textcolor{keyword}{private}:    }
+\DoxyCodeLine{36         \textcolor{comment}{// Create OneWire bus object}}
+\DoxyCodeLine{37         \mbox{\hyperlink{class_one_wire}{OneWire}} oneWire;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39         \textcolor{comment}{// Create Temperature sensor object}}
+\DoxyCodeLine{40         \mbox{\hyperlink{class_dallas_temperature}{DallasTemperature}} sensor;}
+\DoxyCodeLine{41                 }
+\DoxyCodeLine{42         \textcolor{comment}{// pin connected to sensor}}
+\DoxyCodeLine{43         \textcolor{keyword}{const} \textcolor{keywordtype}{int} m\_pin;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45        }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//\_DS18B20\_H\_}}
+
+\end{DoxyCode}

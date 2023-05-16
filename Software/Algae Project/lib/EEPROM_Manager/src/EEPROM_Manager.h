@@ -11,6 +11,11 @@ class EEPROM_Manager;
  */
 class EEPROM_Variable {
     public:
+    /**
+     * @brief DEPRECATED, does not use a manager, should not be used.
+     * 
+     * @param _Variable 
+     */
         EEPROM_Variable(int _Variable)
         :default_var(_Variable)
         {
@@ -61,10 +66,17 @@ class EEPROM_Variable {
         const int default_var;
 };
 
-
+/**
+ * @brief Allows for simple management of multiple EEPROM variable objects
+ * 
+ */
 class EEPROM_Manager{
 
     public:
+    /**
+     * @brief Construct a new eeprom manager object
+     * 
+     */
         EEPROM_Manager();
         /**
          * @brief Calls the Store function of all managed EEPROM variables
@@ -91,17 +103,26 @@ class EEPROM_Manager{
          */
         bool Add(EEPROM_Variable* variable,uint8_t EEPROM_LOC);
 
-
+    /**
+     * @brief Prints to serial if any variables are doubled up or overflowed.
+     * 
+     */
         void print_errors();
 
         private:
-
+        /**
+         * @brief EEPROM memmory map
+         * 
+         */
         uint8_t EEPROM_MAP;
-        
+
         std::vector<uint8_t> double_error;
         std::vector<uint8_t> overflow_error;
 
-
+    /**
+     * @brief vector of managed variables
+     * 
+     */
         std::vector<EEPROM_Variable*> EEPROM_Vector;
 };
 

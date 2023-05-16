@@ -1,0 +1,283 @@
+\hypertarget{menu_8cpp}{}\doxysection{src/menu.cpp File Reference}
+\label{menu_8cpp}\index{src/menu.cpp@{src/menu.cpp}}
+{\ttfamily \#include $<$menu.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8cpp_a7e7bd34f7f80ad8b5e5950e026446989}{display}} (\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+menu)
+\begin{DoxyCompactList}\small\item\em required simplemenu function, DO NOT EDIT \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8cpp_ac4b4b89e3c4f3338993cf6382856a47d}{display\+Value}} (\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$\+\_\+menu)
+\begin{DoxyCompactList}\small\item\em required simplemenu function, DO NOT EDIT \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8cpp_a518dcef4869031bbcc886e41a054fae3}{Pump\+\_\+\+Ctrl}} (int \+\_\+state)
+\begin{DoxyCompactList}\small\item\em set the control state of the solanoid \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8cpp_a13507063323ae611f3d47b515d02ae20}{Solanoid\+\_\+\+Ctrl}} (int \+\_\+state)
+\begin{DoxyCompactList}\small\item\em Set the control state of the solanoid. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{menu_8cpp_a5e22482079cf2d4a65867971a1a670b9}{Menu\+\_\+\+IR\+\_\+\+Input}} (uint16\+\_\+t \+\_\+input)
+\begin{DoxyCompactList}\small\item\em Allows for the menu to accept IR input. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8cpp_a0c6717e502f384991e45600e263a630e}{Menu\+\_\+\+Serial\+\_\+\+Input}} (int \+\_\+input)
+\begin{DoxyCompactList}\small\item\em Allows for the menu to take serial input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} \mbox{\hyperlink{menu_8cpp_ade3079dbd0224bab46c1049b03a54d78}{Manual\+Pump\+Settings}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} \mbox{\hyperlink{menu_8cpp_ac6cf2cdc34dc515b7057c4319e8f7e88}{Pump\+\_\+\+Menu}} \mbox{[}3\mbox{]}
+\item 
+\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} \mbox{\hyperlink{menu_8cpp_af05e1b8e97e44dfc69a75e57b95bbcad}{Depth\+Menu}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} \mbox{\hyperlink{menu_8cpp_ac2ffde53c74127501ea15500b2cffa51}{Temp\+Menu}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} \mbox{\hyperlink{menu_8cpp_a8d8404dc8adbbcce6f0aaab3ffe37f3c}{Sensor\+\_\+\+Menu}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} \mbox{\hyperlink{menu_8cpp_a0bb9e1c25c5c79adfd50e3ccfbb4ec01}{Solanoid\+\_\+\+Menu}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} \mbox{\hyperlink{menu_8cpp_a8e64000c95fb278eeea7b1c91831e09b}{Save\+\_\+\+Menu}} \mbox{[}3\mbox{]}
+\item 
+\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} \mbox{\hyperlink{menu_8cpp_a5521310a2ae10f21306aaa7e03f474bc}{SD\+\_\+\+Menu}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} \mbox{\hyperlink{menu_8cpp_adf9e37a03564972b583bc9e17e30a93d}{Menu}} \mbox{[}5\mbox{]}
+\item 
+\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} \mbox{\hyperlink{menu_8cpp_aac12b325f03593cd32016b244db49b7a}{Top\+Menu}} (5, \mbox{\hyperlink{menu_8cpp_adf9e37a03564972b583bc9e17e30a93d}{Menu}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{menu_8cpp_a7e7bd34f7f80ad8b5e5950e026446989}\label{menu_8cpp_a7e7bd34f7f80ad8b5e5950e026446989}} 
+\index{menu.cpp@{menu.cpp}!display@{display}}
+\index{display@{display}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void display (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$}]{\+\_\+menu }\end{DoxyParamCaption})}
+
+
+
+required simplemenu function, DO NOT EDIT 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+menu} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{menu_8cpp_ac4b4b89e3c4f3338993cf6382856a47d}\label{menu_8cpp_ac4b4b89e3c4f3338993cf6382856a47d}} 
+\index{menu.cpp@{menu.cpp}!displayValue@{displayValue}}
+\index{displayValue@{displayValue}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{displayValue()}{displayValue()}}
+{\footnotesize\ttfamily void display\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} $\ast$}]{\+\_\+menu }\end{DoxyParamCaption})}
+
+
+
+required simplemenu function, DO NOT EDIT 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+menu} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{menu_8cpp_a5e22482079cf2d4a65867971a1a670b9}\label{menu_8cpp_a5e22482079cf2d4a65867971a1a670b9}} 
+\index{menu.cpp@{menu.cpp}!Menu\_IR\_Input@{Menu\_IR\_Input}}
+\index{Menu\_IR\_Input@{Menu\_IR\_Input}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{Menu\_IR\_Input()}{Menu\_IR\_Input()}}
+{\footnotesize\ttfamily uint16\+\_\+t Menu\+\_\+\+IR\+\_\+\+Input (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{\+\_\+input }\end{DoxyParamCaption})}
+
+
+
+Allows for the menu to accept IR input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+input} & command received from IR receiver \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t same as input, unless command unknown then return 0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{menu_8cpp_a0c6717e502f384991e45600e263a630e}\label{menu_8cpp_a0c6717e502f384991e45600e263a630e}} 
+\index{menu.cpp@{menu.cpp}!Menu\_Serial\_Input@{Menu\_Serial\_Input}}
+\index{Menu\_Serial\_Input@{Menu\_Serial\_Input}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{Menu\_Serial\_Input()}{Menu\_Serial\_Input()}}
+{\footnotesize\ttfamily int Menu\+\_\+\+Serial\+\_\+\+Input (\begin{DoxyParamCaption}\item[{int}]{\+\_\+input }\end{DoxyParamCaption})}
+
+
+
+Allows for the menu to take serial input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+input} & command received from Serial \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t same as input, unless command unknown then return 0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{menu_8cpp_a518dcef4869031bbcc886e41a054fae3}\label{menu_8cpp_a518dcef4869031bbcc886e41a054fae3}} 
+\index{menu.cpp@{menu.cpp}!Pump\_Ctrl@{Pump\_Ctrl}}
+\index{Pump\_Ctrl@{Pump\_Ctrl}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{Pump\_Ctrl()}{Pump\_Ctrl()}}
+{\footnotesize\ttfamily void Pump\+\_\+\+Ctrl (\begin{DoxyParamCaption}\item[{int}]{\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+set the control state of the solanoid 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+state} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{menu_8cpp_a13507063323ae611f3d47b515d02ae20}\label{menu_8cpp_a13507063323ae611f3d47b515d02ae20}} 
+\index{menu.cpp@{menu.cpp}!Solanoid\_Ctrl@{Solanoid\_Ctrl}}
+\index{Solanoid\_Ctrl@{Solanoid\_Ctrl}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{Solanoid\_Ctrl()}{Solanoid\_Ctrl()}}
+{\footnotesize\ttfamily void Solanoid\+\_\+\+Ctrl (\begin{DoxyParamCaption}\item[{int}]{\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+Set the control state of the solanoid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+state} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{menu_8cpp_af05e1b8e97e44dfc69a75e57b95bbcad}\label{menu_8cpp_af05e1b8e97e44dfc69a75e57b95bbcad}} 
+\index{menu.cpp@{menu.cpp}!DepthMenu@{DepthMenu}}
+\index{DepthMenu@{DepthMenu}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{DepthMenu}{DepthMenu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} Depth\+Menu\mbox{[}2\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Panel Depth"{}},\&\mbox{\hyperlink{global__variables_8cpp_a026dac3ac8ce79dd32e750d83f417cc7}{SonarDist1}}), }
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Resevoir Depth"{}},\&\mbox{\hyperlink{global__variables_8cpp_ab0b58094c0206004e941f653f2b143d5}{SonarDist2}})}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{menu_8cpp_ade3079dbd0224bab46c1049b03a54d78}\label{menu_8cpp_ade3079dbd0224bab46c1049b03a54d78}} 
+\index{menu.cpp@{menu.cpp}!ManualPumpSettings@{ManualPumpSettings}}
+\index{ManualPumpSettings@{ManualPumpSettings}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{ManualPumpSettings}{ManualPumpSettings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} Manual\+Pump\+Settings\mbox{[}2\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\{}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Duty Cycle"{}},\&\mbox{\hyperlink{global__variables_8cpp_a90ab7f98979031ec04fb9d755240df1e}{manual\_dutycycle}}.\mbox{\hyperlink{class_e_e_p_r_o_m___variable_aef9b508ea8a71974877c9863d6b7a8cb}{var}},0,25),}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Manual On"{}},[]()\{\textcolor{keywordflow}{return}(\mbox{\hyperlink{menu_8cpp_a518dcef4869031bbcc886e41a054fae3}{Pump\_Ctrl}}(1));\})}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{menu_8cpp_adf9e37a03564972b583bc9e17e30a93d}\label{menu_8cpp_adf9e37a03564972b583bc9e17e30a93d}} 
+\index{menu.cpp@{menu.cpp}!Menu@{Menu}}
+\index{Menu@{Menu}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{Menu}{Menu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} Menu\mbox{[}5\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Save Settings:"{}},3,\mbox{\hyperlink{menu_8cpp_a8e64000c95fb278eeea7b1c91831e09b}{Save\_Menu}}),}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Solanoid:"{}},2,\mbox{\hyperlink{menu_8cpp_a0bb9e1c25c5c79adfd50e3ccfbb4ec01}{Solanoid\_Menu}}),}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Pump Controls:"{}},3,\mbox{\hyperlink{menu_8cpp_ac6cf2cdc34dc515b7057c4319e8f7e88}{Pump\_Menu}}),}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Sensors:"{}},2,\mbox{\hyperlink{menu_8cpp_a8d8404dc8adbbcce6f0aaab3ffe37f3c}{Sensor\_Menu}}),}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}SD Menu"{}},2,\mbox{\hyperlink{menu_8cpp_a5521310a2ae10f21306aaa7e03f474bc}{SD\_Menu}})}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    }
+\DoxyCodeLine{}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{menu_8cpp_ac6cf2cdc34dc515b7057c4319e8f7e88}\label{menu_8cpp_ac6cf2cdc34dc515b7057c4319e8f7e88}} 
+\index{menu.cpp@{menu.cpp}!Pump\_Menu@{Pump\_Menu}}
+\index{Pump\_Menu@{Pump\_Menu}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{Pump\_Menu}{Pump\_Menu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} Pump\+\_\+\+Menu\mbox{[}3\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Off"{}},[]()\{\textcolor{keywordflow}{return}(\mbox{\hyperlink{menu_8cpp_a518dcef4869031bbcc886e41a054fae3}{Pump\_Ctrl}}(0));\}),}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Manual:"{}},2,\mbox{\hyperlink{menu_8cpp_ade3079dbd0224bab46c1049b03a54d78}{ManualPumpSettings}}),}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Automatic On"{}},[]()\{\textcolor{keywordflow}{return}(\mbox{\hyperlink{menu_8cpp_a518dcef4869031bbcc886e41a054fae3}{Pump\_Ctrl}}(2));\}),}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{menu_8cpp_a8e64000c95fb278eeea7b1c91831e09b}\label{menu_8cpp_a8e64000c95fb278eeea7b1c91831e09b}} 
+\index{menu.cpp@{menu.cpp}!Save\_Menu@{Save\_Menu}}
+\index{Save\_Menu@{Save\_Menu}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{Save\_Menu}{Save\_Menu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} Save\+\_\+\+Menu\mbox{[}3\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\{}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Save!"{}},[]()\{\textcolor{keywordflow}{return}(\mbox{\hyperlink{global__variables_8cpp_ab06c714ee161cf34440fdb53fb5a6d24}{rom\_manager}}.\mbox{\hyperlink{class_e_e_p_r_o_m___manager_a3f06460dcaf379593a0b235c24bf8582}{Store}}());\}),}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Soft Reset!"{}},[]()\{\textcolor{keywordflow}{return}(\mbox{\hyperlink{global__variables_8cpp_ab06c714ee161cf34440fdb53fb5a6d24}{rom\_manager}}.\mbox{\hyperlink{class_e_e_p_r_o_m___manager_a05f8d0296bab8657d22c900a2e0a5970}{Retrieve}}());\}),}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Hard Reset!"{}},[]()\{\textcolor{keywordflow}{return}(\mbox{\hyperlink{global__variables_8cpp_ab06c714ee161cf34440fdb53fb5a6d24}{rom\_manager}}.\mbox{\hyperlink{class_e_e_p_r_o_m___manager_a078eeb631effb3c535a287015373a9d8}{Reset}}());\})}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{menu_8cpp_a5521310a2ae10f21306aaa7e03f474bc}\label{menu_8cpp_a5521310a2ae10f21306aaa7e03f474bc}} 
+\index{menu.cpp@{menu.cpp}!SD\_Menu@{SD\_Menu}}
+\index{SD\_Menu@{SD\_Menu}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{SD\_Menu}{SD\_Menu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} SD\+\_\+\+Menu\mbox{[}2\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\{}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}autosave period"{}},\&\mbox{\hyperlink{global__variables_8cpp_a3be615e2bc312f27ae417081e70dd276}{autosave}}.\mbox{\hyperlink{class_e_e_p_r_o_m___variable_aef9b508ea8a71974877c9863d6b7a8cb}{var}},0,60),}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}manual save!"{}},[]()\{\})}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{menu_8cpp_a8d8404dc8adbbcce6f0aaab3ffe37f3c}\label{menu_8cpp_a8d8404dc8adbbcce6f0aaab3ffe37f3c}} 
+\index{menu.cpp@{menu.cpp}!Sensor\_Menu@{Sensor\_Menu}}
+\index{Sensor\_Menu@{Sensor\_Menu}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{Sensor\_Menu}{Sensor\_Menu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} Sensor\+\_\+\+Menu\mbox{[}2\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\{}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Temperature:"{}},2,\mbox{\hyperlink{menu_8cpp_ac2ffde53c74127501ea15500b2cffa51}{TempMenu}}),}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Depth:"{}},2,\mbox{\hyperlink{menu_8cpp_af05e1b8e97e44dfc69a75e57b95bbcad}{DepthMenu}})}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{menu_8cpp_a0bb9e1c25c5c79adfd50e3ccfbb4ec01}\label{menu_8cpp_a0bb9e1c25c5c79adfd50e3ccfbb4ec01}} 
+\index{menu.cpp@{menu.cpp}!Solanoid\_Menu@{Solanoid\_Menu}}
+\index{Solanoid\_Menu@{Solanoid\_Menu}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{Solanoid\_Menu}{Solanoid\_Menu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} Solanoid\+\_\+\+Menu\mbox{[}2\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\{}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Open"{}},[]()\{\textcolor{keywordflow}{return}(\mbox{\hyperlink{menu_8cpp_a13507063323ae611f3d47b515d02ae20}{Solanoid\_Ctrl}}(1));\}),}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Close"{}},[]()\{\textcolor{keywordflow}{return}(\mbox{\hyperlink{menu_8cpp_a13507063323ae611f3d47b515d02ae20}{Solanoid\_Ctrl}}(0));\})}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{menu_8cpp_ac2ffde53c74127501ea15500b2cffa51}\label{menu_8cpp_ac2ffde53c74127501ea15500b2cffa51}} 
+\index{menu.cpp@{menu.cpp}!TempMenu@{TempMenu}}
+\index{TempMenu@{TempMenu}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{TempMenu}{TempMenu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} Temp\+Menu\mbox{[}2\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\{}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Panel Temp"{}},\&\mbox{\hyperlink{global__variables_8cpp_ab627b25fe931b42061d8f6a3a6febbe2}{Temp1}}),}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Resevoir Temp"{}},\&\mbox{\hyperlink{global__variables_8cpp_a06d01255d6054de9b58a273d6cce6cc7}{Temp2}})}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{menu_8cpp_aac12b325f03593cd32016b244db49b7a}\label{menu_8cpp_aac12b325f03593cd32016b244db49b7a}} 
+\index{menu.cpp@{menu.cpp}!TopMenu@{TopMenu}}
+\index{TopMenu@{TopMenu}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{TopMenu}{TopMenu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} Top\+Menu(5, \mbox{\hyperlink{menu_8cpp_adf9e37a03564972b583bc9e17e30a93d}{Menu}}) (\begin{DoxyParamCaption}\item[{5}]{,  }\item[{\mbox{\hyperlink{menu_8cpp_adf9e37a03564972b583bc9e17e30a93d}{Menu}}}]{ }\end{DoxyParamCaption})}
+

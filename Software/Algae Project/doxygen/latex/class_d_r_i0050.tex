@@ -1,0 +1,112 @@
+\hypertarget{class_d_r_i0050}{}\doxysection{DRI0050 Class Reference}
+\label{class_d_r_i0050}\index{DRI0050@{DRI0050}}
+
+
+Used for controlling the \mbox{\hyperlink{class_d_r_i0050}{DRI0050}} PWM motor driver board \href{https://www.dfrobot.com/product-2429.html}{\texttt{ https\+://www.\+dfrobot.\+com/product-\/2429.\+html}}.  
+
+
+
+
+{\ttfamily \#include $<$DRI0050.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_i0050_ab6b14f5204ecdcb092dafecf5921a09b}{DRI0050}} (uint8\+\_\+t tx, uint8\+\_\+t rx)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_d_r_i0050}{DRI0050}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_r_i0050_a8beda065eb56d357012c82ca0b5bec0c}{set\+Pwm\+Duty}} (uint8\+\_\+t duty)
+\begin{DoxyCompactList}\small\item\em Set the Pwm Duty. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_r_i0050_a01d081fa09a103ccdcd0a9e924c96f0b}{set\+Pwm\+Freq}} (uint8\+\_\+t freq)
+\begin{DoxyCompactList}\small\item\em Set the Pwm Freq. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_r_i0050_a08906cb4c497c2753c1dc1fa6fe92a10}{set\+Pwm\+Enable}} (uint8\+\_\+t pwm\+Status)
+\begin{DoxyCompactList}\small\item\em Set the Pwm Enable register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Software\+Serial \mbox{\hyperlink{class_d_r_i0050_a1414350d2842b9b6196ea13451af7cf3}{COMS}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Used for controlling the \mbox{\hyperlink{class_d_r_i0050}{DRI0050}} PWM motor driver board \href{https://www.dfrobot.com/product-2429.html}{\texttt{ https\+://www.\+dfrobot.\+com/product-\/2429.\+html}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_r_i0050_ab6b14f5204ecdcb092dafecf5921a09b}\label{class_d_r_i0050_ab6b14f5204ecdcb092dafecf5921a09b}} 
+\index{DRI0050@{DRI0050}!DRI0050@{DRI0050}}
+\index{DRI0050@{DRI0050}!DRI0050@{DRI0050}}
+\doxysubsubsection{\texorpdfstring{DRI0050()}{DRI0050()}}
+{\footnotesize\ttfamily DRI0050\+::\+DRI0050 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{tx,  }\item[{uint8\+\_\+t}]{rx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_d_r_i0050}{DRI0050}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tx} & Serial tx pin \\
+\hline
+{\em rx} & Serial rx pin \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_r_i0050_a8beda065eb56d357012c82ca0b5bec0c}\label{class_d_r_i0050_a8beda065eb56d357012c82ca0b5bec0c}} 
+\index{DRI0050@{DRI0050}!setPwmDuty@{setPwmDuty}}
+\index{setPwmDuty@{setPwmDuty}!DRI0050@{DRI0050}}
+\doxysubsubsection{\texorpdfstring{setPwmDuty()}{setPwmDuty()}}
+{\footnotesize\ttfamily void DRI0050\+::set\+Pwm\+Duty (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{duty }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Pwm Duty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duty} & 0-\/255 for 0\%-\/100\% \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_d_r_i0050_a08906cb4c497c2753c1dc1fa6fe92a10}\label{class_d_r_i0050_a08906cb4c497c2753c1dc1fa6fe92a10}} 
+\index{DRI0050@{DRI0050}!setPwmEnable@{setPwmEnable}}
+\index{setPwmEnable@{setPwmEnable}!DRI0050@{DRI0050}}
+\doxysubsubsection{\texorpdfstring{setPwmEnable()}{setPwmEnable()}}
+{\footnotesize\ttfamily void DRI0050\+::set\+Pwm\+Enable (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pwm\+Status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Pwm Enable register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pwm\+Status} & 1 for enable 0 for disable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_d_r_i0050_a01d081fa09a103ccdcd0a9e924c96f0b}\label{class_d_r_i0050_a01d081fa09a103ccdcd0a9e924c96f0b}} 
+\index{DRI0050@{DRI0050}!setPwmFreq@{setPwmFreq}}
+\index{setPwmFreq@{setPwmFreq}!DRI0050@{DRI0050}}
+\doxysubsubsection{\texorpdfstring{setPwmFreq()}{setPwmFreq()}}
+{\footnotesize\ttfamily void DRI0050\+::set\+Pwm\+Freq (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{freq }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Pwm Freq. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq} & 0-\/255, PWM frequency is 12,000,000/(256/(freq+1)) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_d_r_i0050_a1414350d2842b9b6196ea13451af7cf3}\label{class_d_r_i0050_a1414350d2842b9b6196ea13451af7cf3}} 
+\index{DRI0050@{DRI0050}!COMS@{COMS}}
+\index{COMS@{COMS}!DRI0050@{DRI0050}}
+\doxysubsubsection{\texorpdfstring{COMS}{COMS}}
+{\footnotesize\ttfamily Software\+Serial DRI0050\+::\+COMS}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+DRI0050/src/\mbox{\hyperlink{_d_r_i0050_8h}{DRI0050.\+h}}\end{DoxyCompactItemize}

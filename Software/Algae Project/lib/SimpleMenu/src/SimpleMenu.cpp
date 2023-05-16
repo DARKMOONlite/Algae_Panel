@@ -1,6 +1,6 @@
 /**********************************************************************************************
  * Arduino LED RGB Library - version 2.0
- * by William Bailes <williambailes@gmail.com> http://tinkersprojects.com/
+ * by William Bailes <williambailes@gmail.com> https://github.com/tinkersprojects/LCD-Simple-Menu-Library
  *
  * This Library is licensed under a GPLv3 License
  **********************************************************************************************/

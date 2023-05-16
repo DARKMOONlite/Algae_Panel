@@ -1,0 +1,278 @@
+\hypertarget{_dallas_temperature_8h_source}{}\doxysection{Dallas\+Temperature.\+h}
+\label{_dallas_temperature_8h_source}\index{lib/DS18B20/src/DallasTemperature.h@{lib/DS18B20/src/DallasTemperature.h}}
+\mbox{\hyperlink{_dallas_temperature_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef DallasTemperature\_h}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define DallasTemperature\_h}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define DALLASTEMPLIBVERSION "{}3.7.7"{}} \textcolor{comment}{// To be deprecated}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{comment}{// This library is free software; you can redistribute it and/or}}
+\DoxyCodeLine{7 \textcolor{comment}{// modify it under the terms of the GNU Lesser General Public}}
+\DoxyCodeLine{8 \textcolor{comment}{// License as published by the Free Software Foundation; either}}
+\DoxyCodeLine{9 \textcolor{comment}{// version 2.1 of the License, or (at your option) any later version.}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{// set to true to include code for new and delete operators}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef REQUIRESNEW}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define REQUIRESNEW false}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{// set to true to include code implementing alarm search functions}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef REQUIRESALARMS}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define REQUIRESALARMS true}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <inttypes.h>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_one_wire_8h}{OneWire.h}}"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{// Model IDs}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define DS18S20MODEL 0x10  }\textcolor{comment}{// also DS1820}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define DS18B20MODEL 0x28}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define DS1822MODEL  0x22}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define DS1825MODEL  0x3B}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{// OneWire commands}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define STARTCONVO      0x44  }\textcolor{comment}{// Tells device to take a temperature reading and put it on the scratchpad}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define COPYSCRATCH     0x48  }\textcolor{comment}{// Copy EEPROM}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define READSCRATCH     0xBE  }\textcolor{comment}{// Read EEPROM}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define WRITESCRATCH    0x4E  }\textcolor{comment}{// Write to EEPROM}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define RECALLSCRATCH   0xB8  }\textcolor{comment}{// Reload from last known}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define READPOWERSUPPLY 0xB4  }\textcolor{comment}{// Determine if device needs parasite power}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define ALARMSEARCH     0xEC  }\textcolor{comment}{// Query bus for devices with an alarm condition}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{// Scratchpad locations}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define TEMP\_LSB        0}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define TEMP\_MSB        1}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define HIGH\_ALARM\_TEMP 2}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define LOW\_ALARM\_TEMP  3}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define CONFIGURATION   4}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define INTERNAL\_BYTE   5}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define COUNT\_REMAIN    6}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define COUNT\_PER\_C     7}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define SCRATCHPAD\_CRC  8}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{comment}{// Device resolution}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define TEMP\_9\_BIT  0x1F }\textcolor{comment}{//  9 bit}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define TEMP\_10\_BIT 0x3F }\textcolor{comment}{// 10 bit}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define TEMP\_11\_BIT 0x5F }\textcolor{comment}{// 11 bit}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define TEMP\_12\_BIT 0x7F }\textcolor{comment}{// 12 bit}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{comment}{// Error Codes}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define DEVICE\_DISCONNECTED\_C -\/127}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define DEVICE\_DISCONNECTED\_F -\/196.6}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define DEVICE\_DISCONNECTED\_RAW -\/7040}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{typedef} uint8\_t \mbox{\hyperlink{_dallas_temperature_8h_a7a5445edfac5eacc4404ae5ed58d7880}{DeviceAddress}}[8];}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{class }\mbox{\hyperlink{class_dallas_temperature}{DallasTemperature}}}
+\DoxyCodeLine{64 \{}
+\DoxyCodeLine{65 \textcolor{keyword}{public}:}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \mbox{\hyperlink{class_dallas_temperature_af46e868b6702ff5f77263985cd990e01}{DallasTemperature}}();}
+\DoxyCodeLine{68     \mbox{\hyperlink{class_dallas_temperature_af46e868b6702ff5f77263985cd990e01}{DallasTemperature}}(\mbox{\hyperlink{class_one_wire}{OneWire}}*);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dallas_temperature_af985bf5f9ed6857424e8a9532eaf5e2f}{setOneWire}}(\mbox{\hyperlink{class_one_wire}{OneWire}}*);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{comment}{// initialise bus}}
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dallas_temperature_aea297b5f2a720a5455245c0fbf7333ec}{begin}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{comment}{// returns the number of devices found on the bus}}
+\DoxyCodeLine{76     uint8\_t \mbox{\hyperlink{class_dallas_temperature_a8bf92c0b6b8c3167daca4c2046ade13a}{getDeviceCount}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{comment}{// returns true if address is valid}}
+\DoxyCodeLine{79     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_dallas_temperature_a71e4744b8d7b2f1c05a96cd158c83007}{validAddress}}(\textcolor{keyword}{const} uint8\_t*);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{comment}{// returns true if address is of the family of sensors the lib supports.}}
+\DoxyCodeLine{82     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_dallas_temperature_a3f3678c8defd473e8eebd9cfe793b329}{validFamily}}(\textcolor{keyword}{const} uint8\_t* deviceAddress);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{comment}{// finds an address at a given index on the bus}}
+\DoxyCodeLine{85     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_dallas_temperature_afa644bebf50c81b6641a31c585b62538}{getAddress}}(uint8\_t*, uint8\_t);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{comment}{// attempt to determine if the device at the given address is connected to the bus}}
+\DoxyCodeLine{88     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_dallas_temperature_a19afa5e594de0ab6caa5a48a70650927}{isConnected}}(\textcolor{keyword}{const} uint8\_t*);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{comment}{// attempt to determine if the device at the given address is connected to the bus}}
+\DoxyCodeLine{91     \textcolor{comment}{// also allows for updating the read scratchpad}}
+\DoxyCodeLine{92     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_dallas_temperature_a19afa5e594de0ab6caa5a48a70650927}{isConnected}}(\textcolor{keyword}{const} uint8\_t*, uint8\_t*);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{comment}{// read device's scratchpad}}
+\DoxyCodeLine{95     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_dallas_temperature_a2b55774207d0211fd679247a7137142b}{readScratchPad}}(\textcolor{keyword}{const} uint8\_t*, uint8\_t*);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{comment}{// write device's scratchpad}}
+\DoxyCodeLine{98     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dallas_temperature_a74c275dabf103f268c5a271d379dcb7e}{writeScratchPad}}(\textcolor{keyword}{const} uint8\_t*, \textcolor{keyword}{const} uint8\_t*);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{comment}{// read device's power requirements}}
+\DoxyCodeLine{101     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_dallas_temperature_af6a28c1d1009dd6d010d97dffaf5942d}{readPowerSupply}}(\textcolor{keyword}{const} uint8\_t*);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{comment}{// get global resolution}}
+\DoxyCodeLine{104     uint8\_t \mbox{\hyperlink{class_dallas_temperature_a9dac13206229d7c8fb75f21bf44e75ed}{getResolution}}();}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{comment}{// set global resolution to 9, 10, 11, or 12 bits}}
+\DoxyCodeLine{107     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dallas_temperature_a43363ee4b227f1ecf9c33cd4e072c0c9}{setResolution}}(uint8\_t);}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{comment}{// returns the device resolution: 9, 10, 11, or 12 bits}}
+\DoxyCodeLine{110     uint8\_t \mbox{\hyperlink{class_dallas_temperature_a9dac13206229d7c8fb75f21bf44e75ed}{getResolution}}(\textcolor{keyword}{const} uint8\_t*);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{comment}{// set resolution of a device to 9, 10, 11, or 12 bits}}
+\DoxyCodeLine{113     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_dallas_temperature_a43363ee4b227f1ecf9c33cd4e072c0c9}{setResolution}}(\textcolor{keyword}{const} uint8\_t*, uint8\_t);}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115     \textcolor{comment}{// sets/gets the waitForConversion flag}}
+\DoxyCodeLine{116     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dallas_temperature_aa5f90d9f12327f39de97ed2244a4ad6f}{setWaitForConversion}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{117     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_dallas_temperature_abb49c5903d68b86c0cf2da5e2b849a43}{getWaitForConversion}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{comment}{// sets/gets the checkForConversion flag}}
+\DoxyCodeLine{120     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dallas_temperature_ae8ef644d60236af12963f37fe145a49a}{setCheckForConversion}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{121     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_dallas_temperature_a7541728802904b0ed8d17a7f5ef00801}{getCheckForConversion}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \textcolor{comment}{// sends command for all devices on the bus to perform a temperature conversion}}
+\DoxyCodeLine{124     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dallas_temperature_a5d28cff0d7e317c28e28c0f1a62fbe6d}{requestTemperatures}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     \textcolor{comment}{// sends command for one device to perform a temperature conversion by address}}
+\DoxyCodeLine{127     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_dallas_temperature_aee2a2abd5f8293df9a0a030b3e982c90}{requestTemperaturesByAddress}}(\textcolor{keyword}{const} uint8\_t*);}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{comment}{// sends command for one device to perform a temperature conversion by index}}
+\DoxyCodeLine{130     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_dallas_temperature_ae9a7bf62321615519242d2421c8b349a}{requestTemperaturesByIndex}}(uint8\_t);}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132     \textcolor{comment}{// returns temperature raw value (12 bit integer of 1/128 degrees C)}}
+\DoxyCodeLine{133     int16\_t \mbox{\hyperlink{class_dallas_temperature_a37c3723cc15d5e46d0a6caa96a3c4781}{getTemp}}(\textcolor{keyword}{const} uint8\_t*);}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     \textcolor{comment}{// returns temperature in degrees C}}
+\DoxyCodeLine{136     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_dallas_temperature_a20f94b59909b46e55a77b399d99591a2}{getTempC}}(\textcolor{keyword}{const} uint8\_t*);}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138     \textcolor{comment}{// returns temperature in degrees F}}
+\DoxyCodeLine{139     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_dallas_temperature_ace033fbd8e4c7e17c4bcd7ecc8f3ebea}{getTempF}}(\textcolor{keyword}{const} uint8\_t*);}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     \textcolor{comment}{// Get temperature for device index (slow)}}
+\DoxyCodeLine{142     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_dallas_temperature_a7e3e2e23257aac6b6c896df205d5b3b5}{getTempCByIndex}}(uint8\_t);}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144     \textcolor{comment}{// Get temperature for device index (slow)}}
+\DoxyCodeLine{145     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_dallas_temperature_a96318d36b313e1f4f413e2ed2b7501c7}{getTempFByIndex}}(uint8\_t);}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{comment}{// returns true if the bus requires parasite power}}
+\DoxyCodeLine{148     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_dallas_temperature_a835945ed3e8d78c31791e55f22084691}{isParasitePowerMode}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_dallas_temperature_adaf460a3b8004218e97af7059d41053a}{isConversionAvailable}}(\textcolor{keyword}{const} uint8\_t*);}
+\DoxyCodeLine{151     }
+\DoxyCodeLine{152      \textcolor{comment}{// Is a conversion complete on the wire?}}
+\DoxyCodeLine{153     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_dallas_temperature_a9e92719781d3ead44b95964d59edd41d}{isConversionComplete}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#if REQUIRESALARMS}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157     \textcolor{keyword}{typedef} \textcolor{keywordtype}{void} AlarmHandler(\textcolor{keyword}{const} uint8\_t*);}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159     \textcolor{comment}{// sets the high alarm temperature for a device}}
+\DoxyCodeLine{160     \textcolor{comment}{// accepts a char.  valid range is -\/55C -\/ 125C}}
+\DoxyCodeLine{161     \textcolor{keywordtype}{void} setHighAlarmTemp(\textcolor{keyword}{const} uint8\_t*, \textcolor{keywordtype}{char});}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163     \textcolor{comment}{// sets the low alarm temperature for a device}}
+\DoxyCodeLine{164     \textcolor{comment}{// accepts a char.  valid range is -\/55C -\/ 125C}}
+\DoxyCodeLine{165     \textcolor{keywordtype}{void} setLowAlarmTemp(\textcolor{keyword}{const} uint8\_t*, \textcolor{keywordtype}{char});}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167     \textcolor{comment}{// returns a signed char with the current high alarm temperature for a device}}
+\DoxyCodeLine{168     \textcolor{comment}{// in the range -\/55C -\/ 125C}}
+\DoxyCodeLine{169     \textcolor{keywordtype}{char} getHighAlarmTemp(\textcolor{keyword}{const} uint8\_t*);}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171     \textcolor{comment}{// returns a signed char with the current low alarm temperature for a device}}
+\DoxyCodeLine{172     \textcolor{comment}{// in the range -\/55C -\/ 125C}}
+\DoxyCodeLine{173     \textcolor{keywordtype}{char} getLowAlarmTemp(\textcolor{keyword}{const} uint8\_t*);}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175     \textcolor{comment}{// resets internal variables used for the alarm search}}
+\DoxyCodeLine{176     \textcolor{keywordtype}{void} resetAlarmSearch(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178     \textcolor{comment}{// search the wire for devices with active alarms}}
+\DoxyCodeLine{179     \textcolor{keywordtype}{bool} alarmSearch(uint8\_t*);}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181     \textcolor{comment}{// returns true if ia specific device has an alarm}}
+\DoxyCodeLine{182     \textcolor{keywordtype}{bool} hasAlarm(\textcolor{keyword}{const} uint8\_t*);}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184     \textcolor{comment}{// returns true if any device is reporting an alarm on the bus}}
+\DoxyCodeLine{185     \textcolor{keywordtype}{bool} hasAlarm(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187     \textcolor{comment}{// runs the alarm handler for all devices returned by alarmSearch()}}
+\DoxyCodeLine{188     \textcolor{keywordtype}{void} processAlarms(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190     \textcolor{comment}{// sets the alarm handler}}
+\DoxyCodeLine{191     \textcolor{keywordtype}{void} setAlarmHandler(\textcolor{keyword}{const} AlarmHandler *);}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193     \textcolor{comment}{// The default alarm handler}}
+\DoxyCodeLine{194     \textcolor{keyword}{static} \textcolor{keywordtype}{void} defaultAlarmHandler(\textcolor{keyword}{const} uint8\_t*);}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198     \textcolor{comment}{// if no alarm handler is used the two bytes can be used as user data}}
+\DoxyCodeLine{199     \textcolor{comment}{// example of such usage is an ID.}}
+\DoxyCodeLine{200     \textcolor{comment}{// note if device is not connected it will fail writing the data.}}
+\DoxyCodeLine{201     \textcolor{comment}{// note if address cannot be found no error will be reported.}}
+\DoxyCodeLine{202     \textcolor{comment}{// in short use carefully}}
+\DoxyCodeLine{203     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dallas_temperature_a0ed69b03ed848936ea0c8deea0e5c2ba}{setUserData}}(\textcolor{keyword}{const} uint8\_t*, int16\_t );}
+\DoxyCodeLine{204     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dallas_temperature_a65ae6994218200e92ce43bffd122d46b}{setUserDataByIndex}}(uint8\_t, int16\_t );}
+\DoxyCodeLine{205     int16\_t \mbox{\hyperlink{class_dallas_temperature_a3601e8ee63c4770b716817ed68664400}{getUserData}}(\textcolor{keyword}{const} uint8\_t* );}
+\DoxyCodeLine{206     int16\_t \mbox{\hyperlink{class_dallas_temperature_a4af999e72b9c5b85430666ad90fa9644}{getUserDataByIndex}}(uint8\_t );}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208     \textcolor{comment}{// convert from Celsius to Fahrenheit}}
+\DoxyCodeLine{209     \textcolor{keyword}{static} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_dallas_temperature_a2169f7bdd26479bbbf9f6fb3bf4e5bb2}{toFahrenheit}}(\textcolor{keywordtype}{float});}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211     \textcolor{comment}{// convert from Fahrenheit to Celsius}}
+\DoxyCodeLine{212     \textcolor{keyword}{static} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_dallas_temperature_af6dfbcc587ae244c0508b6a51f2085a5}{toCelsius}}(\textcolor{keywordtype}{float});}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214     \textcolor{comment}{// convert from raw to Celsius}}
+\DoxyCodeLine{215     \textcolor{keyword}{static} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_dallas_temperature_a75accb4a56858189accda00e5eabb06e}{rawToCelsius}}(int16\_t);}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217     \textcolor{comment}{// convert from raw to Fahrenheit}}
+\DoxyCodeLine{218     \textcolor{keyword}{static} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_dallas_temperature_a48bc1a4d0e33f1735964c22c8bd2f6fb}{rawToFahrenheit}}(int16\_t);}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#if REQUIRESNEW}}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222     \textcolor{comment}{// initialize memory area}}
+\DoxyCodeLine{223     \textcolor{keywordtype}{void}* \textcolor{keyword}{operator} \textcolor{keyword}{new} (\textcolor{keywordtype}{unsigned} int);}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225     \textcolor{comment}{// delete memory reference}}
+\DoxyCodeLine{226     \textcolor{keywordtype}{void} \textcolor{keyword}{operator} \textcolor{keyword}{delete}(\textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230 \textcolor{keyword}{private}:}
+\DoxyCodeLine{231     \textcolor{keyword}{typedef} uint8\_t ScratchPad[9];}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233     \textcolor{comment}{// parasite power on or off}}
+\DoxyCodeLine{234     \textcolor{keywordtype}{bool} parasite;}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236     \textcolor{comment}{// used to determine the delay amount needed to allow for the}}
+\DoxyCodeLine{237     \textcolor{comment}{// temperature conversion to take place}}
+\DoxyCodeLine{238     uint8\_t bitResolution;}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240     \textcolor{comment}{// used to requestTemperature with or without delay}}
+\DoxyCodeLine{241     \textcolor{keywordtype}{bool} waitForConversion;}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243     \textcolor{comment}{// used to requestTemperature to dynamically check if a conversion is complete}}
+\DoxyCodeLine{244     \textcolor{keywordtype}{bool} checkForConversion;}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246     \textcolor{comment}{// count of devices on the bus}}
+\DoxyCodeLine{247     uint8\_t devices;}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249     \textcolor{comment}{// Take a pointer to one wire instance}}
+\DoxyCodeLine{250     \mbox{\hyperlink{class_one_wire}{OneWire}}* \_wire;}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252     \textcolor{comment}{// reads scratchpad and returns the raw temperature}}
+\DoxyCodeLine{253     int16\_t calculateTemperature(\textcolor{keyword}{const} uint8\_t*, uint8\_t*);}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255     int16\_t millisToWaitForConversion(uint8\_t);}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257     \textcolor{keywordtype}{void}    blockTillConversionComplete(uint8\_t, \textcolor{keyword}{const} uint8\_t*);}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#if REQUIRESALARMS}}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261     \textcolor{comment}{// required for alarmSearch}}
+\DoxyCodeLine{262     uint8\_t alarmSearchAddress[8];}
+\DoxyCodeLine{263     \textcolor{keywordtype}{char} alarmSearchJunction;}
+\DoxyCodeLine{264     uint8\_t alarmSearchExhausted;}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266     \textcolor{comment}{// the alarm handler function pointer}}
+\DoxyCodeLine{267     AlarmHandler *\_AlarmHandler;}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 \};}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

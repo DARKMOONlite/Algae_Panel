@@ -1,0 +1,269 @@
+\hypertarget{_dallas_temperature_8h}{}\doxysection{lib/\+DS18\+B20/src/\+Dallas\+Temperature.h File Reference}
+\label{_dallas_temperature_8h}\index{lib/DS18B20/src/DallasTemperature.h@{lib/DS18B20/src/DallasTemperature.h}}
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}One\+Wire.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_dallas_temperature}{Dallas\+Temperature}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a2cb396fa143856c141c5bc62a73a0da4}{DALLASTEMPLIBVERSION}}~\char`\"{}3.\+7.\+7\char`\"{}
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a97e7894dad22248672f1a0c15ff5e89e}{REQUIRESNEW}}~false
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a77eede0598df5e35ecccadade2614420}{REQUIRESALARMS}}~true
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a35995eb038ced9c7c25f6c13126be9f1}{DS18\+S20\+MODEL}}~0x10
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a18255739b20e4f701b40d18aefcb8130}{DS18\+B20\+MODEL}}~0x28
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_adfdf0cdd9ef4946e5a8a637bd5fc8c25}{DS1822\+MODEL}}~0x22
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a090e56ed1226c81a311516443b657b3d}{DS1825\+MODEL}}~0x3B
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a8825862e1ce7be4f9bc841b9fb38fa2d}{STARTCONVO}}~0x44
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a155b81d518ec23fcf76f324eafe7f79d}{COPYSCRATCH}}~0x48
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a52761121324a6ee83ca7d1949ed21fbc}{READSCRATCH}}~0x\+BE
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_aa41d45853aeac8f06955e4f944c19b33}{WRITESCRATCH}}~0x4E
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_ae245ed53b4cd94ae3aecb51396c403e2}{RECALLSCRATCH}}~0x\+B8
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a13d91396539a459622333016e7caf065}{READPOWERSUPPLY}}~0x\+B4
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a6de67dc22cbcbf14db5697ab89987c33}{ALARMSEARCH}}~0x\+EC
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a50c6fe6c933616d6e014716c450b250d}{TEMP\+\_\+\+LSB}}~0
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_abca29bf63807a8319b6b8ee7af2bba53}{TEMP\+\_\+\+MSB}}~1
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a80e085e8540d59e6a84c59e12a4bcfc2}{HIGH\+\_\+\+ALARM\+\_\+\+TEMP}}~2
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a5cabe4c79bafbac7653fcc7acec33a9b}{LOW\+\_\+\+ALARM\+\_\+\+TEMP}}~3
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a5fa120064b78d91b6a77f868bbda5a99}{CONFIGURATION}}~4
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_aebc03f6ec6012ce2ccdad56fef72f796}{INTERNAL\+\_\+\+BYTE}}~5
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_ad4f3030cdf560af74faf18a34c155f27}{COUNT\+\_\+\+REMAIN}}~6
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a32ec8a9a258e8a70c4125d14b71ca7b2}{COUNT\+\_\+\+PER\+\_\+C}}~7
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a1dac037795f975b12a8914cbd5667711}{SCRATCHPAD\+\_\+\+CRC}}~8
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_ad8c0a8d6cdda8e4c7904db527d4201ee}{TEMP\+\_\+9\+\_\+\+BIT}}~0x1F
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a4dbc2b2f097e32571b1d432114847677}{TEMP\+\_\+10\+\_\+\+BIT}}~0x3F
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_afe512788bd1d37ff9f7388a2889261fe}{TEMP\+\_\+11\+\_\+\+BIT}}~0x5F
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_ae328535feed86c66430a4f5f550d909e}{TEMP\+\_\+12\+\_\+\+BIT}}~0x7F
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a164f6f267818ab7c75490529f046f28a}{DEVICE\+\_\+\+DISCONNECTED\+\_\+C}}~-\/127
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_ae9200847ca4d6801b55a353d5682d2ff}{DEVICE\+\_\+\+DISCONNECTED\+\_\+F}}~-\/196.\+6
+\item 
+\#define \mbox{\hyperlink{_dallas_temperature_8h_a34f9f3fbd4210dade23b0b82d2aa7eef}{DEVICE\+\_\+\+DISCONNECTED\+\_\+\+RAW}}~-\/7040
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{_dallas_temperature_8h_a7a5445edfac5eacc4404ae5ed58d7880}{Device\+Address}}\mbox{[}8\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_dallas_temperature_8h_a6de67dc22cbcbf14db5697ab89987c33}\label{_dallas_temperature_8h_a6de67dc22cbcbf14db5697ab89987c33}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!ALARMSEARCH@{ALARMSEARCH}}
+\index{ALARMSEARCH@{ALARMSEARCH}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{ALARMSEARCH}{ALARMSEARCH}}
+{\footnotesize\ttfamily \#define ALARMSEARCH~0x\+EC}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a5fa120064b78d91b6a77f868bbda5a99}\label{_dallas_temperature_8h_a5fa120064b78d91b6a77f868bbda5a99}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!CONFIGURATION@{CONFIGURATION}}
+\index{CONFIGURATION@{CONFIGURATION}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{CONFIGURATION}{CONFIGURATION}}
+{\footnotesize\ttfamily \#define CONFIGURATION~4}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a155b81d518ec23fcf76f324eafe7f79d}\label{_dallas_temperature_8h_a155b81d518ec23fcf76f324eafe7f79d}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!COPYSCRATCH@{COPYSCRATCH}}
+\index{COPYSCRATCH@{COPYSCRATCH}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{COPYSCRATCH}{COPYSCRATCH}}
+{\footnotesize\ttfamily \#define COPYSCRATCH~0x48}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a32ec8a9a258e8a70c4125d14b71ca7b2}\label{_dallas_temperature_8h_a32ec8a9a258e8a70c4125d14b71ca7b2}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!COUNT\_PER\_C@{COUNT\_PER\_C}}
+\index{COUNT\_PER\_C@{COUNT\_PER\_C}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{COUNT\_PER\_C}{COUNT\_PER\_C}}
+{\footnotesize\ttfamily \#define COUNT\+\_\+\+PER\+\_\+C~7}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_ad4f3030cdf560af74faf18a34c155f27}\label{_dallas_temperature_8h_ad4f3030cdf560af74faf18a34c155f27}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!COUNT\_REMAIN@{COUNT\_REMAIN}}
+\index{COUNT\_REMAIN@{COUNT\_REMAIN}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{COUNT\_REMAIN}{COUNT\_REMAIN}}
+{\footnotesize\ttfamily \#define COUNT\+\_\+\+REMAIN~6}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a2cb396fa143856c141c5bc62a73a0da4}\label{_dallas_temperature_8h_a2cb396fa143856c141c5bc62a73a0da4}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!DALLASTEMPLIBVERSION@{DALLASTEMPLIBVERSION}}
+\index{DALLASTEMPLIBVERSION@{DALLASTEMPLIBVERSION}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{DALLASTEMPLIBVERSION}{DALLASTEMPLIBVERSION}}
+{\footnotesize\ttfamily \#define DALLASTEMPLIBVERSION~\char`\"{}3.\+7.\+7\char`\"{}}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a164f6f267818ab7c75490529f046f28a}\label{_dallas_temperature_8h_a164f6f267818ab7c75490529f046f28a}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!DEVICE\_DISCONNECTED\_C@{DEVICE\_DISCONNECTED\_C}}
+\index{DEVICE\_DISCONNECTED\_C@{DEVICE\_DISCONNECTED\_C}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{DEVICE\_DISCONNECTED\_C}{DEVICE\_DISCONNECTED\_C}}
+{\footnotesize\ttfamily \#define DEVICE\+\_\+\+DISCONNECTED\+\_\+C~-\/127}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_ae9200847ca4d6801b55a353d5682d2ff}\label{_dallas_temperature_8h_ae9200847ca4d6801b55a353d5682d2ff}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!DEVICE\_DISCONNECTED\_F@{DEVICE\_DISCONNECTED\_F}}
+\index{DEVICE\_DISCONNECTED\_F@{DEVICE\_DISCONNECTED\_F}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{DEVICE\_DISCONNECTED\_F}{DEVICE\_DISCONNECTED\_F}}
+{\footnotesize\ttfamily \#define DEVICE\+\_\+\+DISCONNECTED\+\_\+F~-\/196.\+6}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a34f9f3fbd4210dade23b0b82d2aa7eef}\label{_dallas_temperature_8h_a34f9f3fbd4210dade23b0b82d2aa7eef}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!DEVICE\_DISCONNECTED\_RAW@{DEVICE\_DISCONNECTED\_RAW}}
+\index{DEVICE\_DISCONNECTED\_RAW@{DEVICE\_DISCONNECTED\_RAW}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{DEVICE\_DISCONNECTED\_RAW}{DEVICE\_DISCONNECTED\_RAW}}
+{\footnotesize\ttfamily \#define DEVICE\+\_\+\+DISCONNECTED\+\_\+\+RAW~-\/7040}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_adfdf0cdd9ef4946e5a8a637bd5fc8c25}\label{_dallas_temperature_8h_adfdf0cdd9ef4946e5a8a637bd5fc8c25}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!DS1822MODEL@{DS1822MODEL}}
+\index{DS1822MODEL@{DS1822MODEL}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{DS1822MODEL}{DS1822MODEL}}
+{\footnotesize\ttfamily \#define DS1822\+MODEL~0x22}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a090e56ed1226c81a311516443b657b3d}\label{_dallas_temperature_8h_a090e56ed1226c81a311516443b657b3d}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!DS1825MODEL@{DS1825MODEL}}
+\index{DS1825MODEL@{DS1825MODEL}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{DS1825MODEL}{DS1825MODEL}}
+{\footnotesize\ttfamily \#define DS1825\+MODEL~0x3B}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a18255739b20e4f701b40d18aefcb8130}\label{_dallas_temperature_8h_a18255739b20e4f701b40d18aefcb8130}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!DS18B20MODEL@{DS18B20MODEL}}
+\index{DS18B20MODEL@{DS18B20MODEL}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{DS18B20MODEL}{DS18B20MODEL}}
+{\footnotesize\ttfamily \#define DS18\+B20\+MODEL~0x28}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a35995eb038ced9c7c25f6c13126be9f1}\label{_dallas_temperature_8h_a35995eb038ced9c7c25f6c13126be9f1}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!DS18S20MODEL@{DS18S20MODEL}}
+\index{DS18S20MODEL@{DS18S20MODEL}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{DS18S20MODEL}{DS18S20MODEL}}
+{\footnotesize\ttfamily \#define DS18\+S20\+MODEL~0x10}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a80e085e8540d59e6a84c59e12a4bcfc2}\label{_dallas_temperature_8h_a80e085e8540d59e6a84c59e12a4bcfc2}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!HIGH\_ALARM\_TEMP@{HIGH\_ALARM\_TEMP}}
+\index{HIGH\_ALARM\_TEMP@{HIGH\_ALARM\_TEMP}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{HIGH\_ALARM\_TEMP}{HIGH\_ALARM\_TEMP}}
+{\footnotesize\ttfamily \#define HIGH\+\_\+\+ALARM\+\_\+\+TEMP~2}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_aebc03f6ec6012ce2ccdad56fef72f796}\label{_dallas_temperature_8h_aebc03f6ec6012ce2ccdad56fef72f796}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!INTERNAL\_BYTE@{INTERNAL\_BYTE}}
+\index{INTERNAL\_BYTE@{INTERNAL\_BYTE}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{INTERNAL\_BYTE}{INTERNAL\_BYTE}}
+{\footnotesize\ttfamily \#define INTERNAL\+\_\+\+BYTE~5}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a5cabe4c79bafbac7653fcc7acec33a9b}\label{_dallas_temperature_8h_a5cabe4c79bafbac7653fcc7acec33a9b}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!LOW\_ALARM\_TEMP@{LOW\_ALARM\_TEMP}}
+\index{LOW\_ALARM\_TEMP@{LOW\_ALARM\_TEMP}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{LOW\_ALARM\_TEMP}{LOW\_ALARM\_TEMP}}
+{\footnotesize\ttfamily \#define LOW\+\_\+\+ALARM\+\_\+\+TEMP~3}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a13d91396539a459622333016e7caf065}\label{_dallas_temperature_8h_a13d91396539a459622333016e7caf065}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!READPOWERSUPPLY@{READPOWERSUPPLY}}
+\index{READPOWERSUPPLY@{READPOWERSUPPLY}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{READPOWERSUPPLY}{READPOWERSUPPLY}}
+{\footnotesize\ttfamily \#define READPOWERSUPPLY~0x\+B4}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a52761121324a6ee83ca7d1949ed21fbc}\label{_dallas_temperature_8h_a52761121324a6ee83ca7d1949ed21fbc}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!READSCRATCH@{READSCRATCH}}
+\index{READSCRATCH@{READSCRATCH}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{READSCRATCH}{READSCRATCH}}
+{\footnotesize\ttfamily \#define READSCRATCH~0x\+BE}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_ae245ed53b4cd94ae3aecb51396c403e2}\label{_dallas_temperature_8h_ae245ed53b4cd94ae3aecb51396c403e2}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!RECALLSCRATCH@{RECALLSCRATCH}}
+\index{RECALLSCRATCH@{RECALLSCRATCH}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{RECALLSCRATCH}{RECALLSCRATCH}}
+{\footnotesize\ttfamily \#define RECALLSCRATCH~0x\+B8}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a77eede0598df5e35ecccadade2614420}\label{_dallas_temperature_8h_a77eede0598df5e35ecccadade2614420}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!REQUIRESALARMS@{REQUIRESALARMS}}
+\index{REQUIRESALARMS@{REQUIRESALARMS}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{REQUIRESALARMS}{REQUIRESALARMS}}
+{\footnotesize\ttfamily \#define REQUIRESALARMS~true}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a97e7894dad22248672f1a0c15ff5e89e}\label{_dallas_temperature_8h_a97e7894dad22248672f1a0c15ff5e89e}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!REQUIRESNEW@{REQUIRESNEW}}
+\index{REQUIRESNEW@{REQUIRESNEW}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{REQUIRESNEW}{REQUIRESNEW}}
+{\footnotesize\ttfamily \#define REQUIRESNEW~false}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a1dac037795f975b12a8914cbd5667711}\label{_dallas_temperature_8h_a1dac037795f975b12a8914cbd5667711}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!SCRATCHPAD\_CRC@{SCRATCHPAD\_CRC}}
+\index{SCRATCHPAD\_CRC@{SCRATCHPAD\_CRC}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{SCRATCHPAD\_CRC}{SCRATCHPAD\_CRC}}
+{\footnotesize\ttfamily \#define SCRATCHPAD\+\_\+\+CRC~8}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a8825862e1ce7be4f9bc841b9fb38fa2d}\label{_dallas_temperature_8h_a8825862e1ce7be4f9bc841b9fb38fa2d}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!STARTCONVO@{STARTCONVO}}
+\index{STARTCONVO@{STARTCONVO}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{STARTCONVO}{STARTCONVO}}
+{\footnotesize\ttfamily \#define STARTCONVO~0x44}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a4dbc2b2f097e32571b1d432114847677}\label{_dallas_temperature_8h_a4dbc2b2f097e32571b1d432114847677}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!TEMP\_10\_BIT@{TEMP\_10\_BIT}}
+\index{TEMP\_10\_BIT@{TEMP\_10\_BIT}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{TEMP\_10\_BIT}{TEMP\_10\_BIT}}
+{\footnotesize\ttfamily \#define TEMP\+\_\+10\+\_\+\+BIT~0x3F}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_afe512788bd1d37ff9f7388a2889261fe}\label{_dallas_temperature_8h_afe512788bd1d37ff9f7388a2889261fe}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!TEMP\_11\_BIT@{TEMP\_11\_BIT}}
+\index{TEMP\_11\_BIT@{TEMP\_11\_BIT}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{TEMP\_11\_BIT}{TEMP\_11\_BIT}}
+{\footnotesize\ttfamily \#define TEMP\+\_\+11\+\_\+\+BIT~0x5F}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_ae328535feed86c66430a4f5f550d909e}\label{_dallas_temperature_8h_ae328535feed86c66430a4f5f550d909e}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!TEMP\_12\_BIT@{TEMP\_12\_BIT}}
+\index{TEMP\_12\_BIT@{TEMP\_12\_BIT}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{TEMP\_12\_BIT}{TEMP\_12\_BIT}}
+{\footnotesize\ttfamily \#define TEMP\+\_\+12\+\_\+\+BIT~0x7F}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_ad8c0a8d6cdda8e4c7904db527d4201ee}\label{_dallas_temperature_8h_ad8c0a8d6cdda8e4c7904db527d4201ee}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!TEMP\_9\_BIT@{TEMP\_9\_BIT}}
+\index{TEMP\_9\_BIT@{TEMP\_9\_BIT}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{TEMP\_9\_BIT}{TEMP\_9\_BIT}}
+{\footnotesize\ttfamily \#define TEMP\+\_\+9\+\_\+\+BIT~0x1F}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_a50c6fe6c933616d6e014716c450b250d}\label{_dallas_temperature_8h_a50c6fe6c933616d6e014716c450b250d}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!TEMP\_LSB@{TEMP\_LSB}}
+\index{TEMP\_LSB@{TEMP\_LSB}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{TEMP\_LSB}{TEMP\_LSB}}
+{\footnotesize\ttfamily \#define TEMP\+\_\+\+LSB~0}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_abca29bf63807a8319b6b8ee7af2bba53}\label{_dallas_temperature_8h_abca29bf63807a8319b6b8ee7af2bba53}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!TEMP\_MSB@{TEMP\_MSB}}
+\index{TEMP\_MSB@{TEMP\_MSB}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{TEMP\_MSB}{TEMP\_MSB}}
+{\footnotesize\ttfamily \#define TEMP\+\_\+\+MSB~1}
+
+\mbox{\Hypertarget{_dallas_temperature_8h_aa41d45853aeac8f06955e4f944c19b33}\label{_dallas_temperature_8h_aa41d45853aeac8f06955e4f944c19b33}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!WRITESCRATCH@{WRITESCRATCH}}
+\index{WRITESCRATCH@{WRITESCRATCH}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{WRITESCRATCH}{WRITESCRATCH}}
+{\footnotesize\ttfamily \#define WRITESCRATCH~0x4E}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_dallas_temperature_8h_a7a5445edfac5eacc4404ae5ed58d7880}\label{_dallas_temperature_8h_a7a5445edfac5eacc4404ae5ed58d7880}} 
+\index{DallasTemperature.h@{DallasTemperature.h}!DeviceAddress@{DeviceAddress}}
+\index{DeviceAddress@{DeviceAddress}!DallasTemperature.h@{DallasTemperature.h}}
+\doxysubsubsection{\texorpdfstring{DeviceAddress}{DeviceAddress}}
+{\footnotesize\ttfamily typedef uint8\+\_\+t Device\+Address\mbox{[}8\mbox{]}}
+

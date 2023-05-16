@@ -11,13 +11,17 @@
 #include <pin_definitions.hpp>
 #include <AlgaePanelRemote.hpp>
 // -------------------------------      ENUM    --------------------------------------
-enum Joystick_State{
-  Up = 1,
-  Down = 2,
-  left =-1,
-  right = -2,
-  Centre = 0
-};
+// enum Joystick_State{
+//   Up = 1,
+//   Down = 2,
+//   left =-1,
+//   right = -2,
+//   Centre = 0
+// };
+/**
+ * @brief Control state for pump and solanoid
+ * 
+ */
 enum Control_State{
     Off=0,
     Manual = 1,

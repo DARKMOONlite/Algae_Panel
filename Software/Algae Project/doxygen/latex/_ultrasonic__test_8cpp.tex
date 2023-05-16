@@ -1,0 +1,94 @@
+\hypertarget{_ultrasonic__test_8cpp}{}\doxysection{src/functional\+\_\+tests/\+Ultrasonic\+\_\+test.cpp File Reference}
+\label{_ultrasonic__test_8cpp}\index{src/functional\_tests/Ultrasonic\_test.cpp@{src/functional\_tests/Ultrasonic\_test.cpp}}
+{\ttfamily \#include $<$New\+Ping.\+h$>$}\newline
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_ultrasonic__test_8cpp_adacee581176b7076b7baf0f72d81460f}{TRIGGER\+\_\+\+PIN}}~12
+\item 
+\#define \mbox{\hyperlink{_ultrasonic__test_8cpp_acea96cea4a13b6cb38e57a86788adf90}{ECHO\+\_\+\+PIN}}~11
+\item 
+\#define \mbox{\hyperlink{_ultrasonic__test_8cpp_a08e4da5f3d0c7936fa52467f40e4b6aa}{MAX\+\_\+\+DISTANCE}}~500
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+New\+Ping \mbox{\hyperlink{_ultrasonic__test_8cpp_a9a97a20c8deb22c7db7d5cbd5d10a98f}{sonar}} (\mbox{\hyperlink{_ultrasonic__test_8cpp_adacee581176b7076b7baf0f72d81460f}{TRIGGER\+\_\+\+PIN}}, \mbox{\hyperlink{_ultrasonic__test_8cpp_acea96cea4a13b6cb38e57a86788adf90}{ECHO\+\_\+\+PIN}}, \mbox{\hyperlink{_ultrasonic__test_8cpp_a08e4da5f3d0c7936fa52467f40e4b6aa}{MAX\+\_\+\+DISTANCE}})
+\item 
+void \mbox{\hyperlink{_ultrasonic__test_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\item 
+void \mbox{\hyperlink{_ultrasonic__test_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\item 
+void \mbox{\hyperlink{_ultrasonic__test_8cpp_ab164945a78c40972481227d24924f235}{echo\+Check}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{_ultrasonic__test_8cpp_a0b37eadccffdbbdee45469f0fb81d14d}{ping\+Speed}} = 50
+\item 
+unsigned long \mbox{\hyperlink{_ultrasonic__test_8cpp_a08db807b6be294101f69bafca8f088cf}{ping\+Timer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_ultrasonic__test_8cpp_acea96cea4a13b6cb38e57a86788adf90}\label{_ultrasonic__test_8cpp_acea96cea4a13b6cb38e57a86788adf90}} 
+\index{Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}!ECHO\_PIN@{ECHO\_PIN}}
+\index{ECHO\_PIN@{ECHO\_PIN}!Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{ECHO\_PIN}{ECHO\_PIN}}
+{\footnotesize\ttfamily \#define ECHO\+\_\+\+PIN~11}
+
+\mbox{\Hypertarget{_ultrasonic__test_8cpp_a08e4da5f3d0c7936fa52467f40e4b6aa}\label{_ultrasonic__test_8cpp_a08e4da5f3d0c7936fa52467f40e4b6aa}} 
+\index{Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}!MAX\_DISTANCE@{MAX\_DISTANCE}}
+\index{MAX\_DISTANCE@{MAX\_DISTANCE}!Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_DISTANCE}{MAX\_DISTANCE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+DISTANCE~500}
+
+\mbox{\Hypertarget{_ultrasonic__test_8cpp_adacee581176b7076b7baf0f72d81460f}\label{_ultrasonic__test_8cpp_adacee581176b7076b7baf0f72d81460f}} 
+\index{Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}!TRIGGER\_PIN@{TRIGGER\_PIN}}
+\index{TRIGGER\_PIN@{TRIGGER\_PIN}!Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TRIGGER\_PIN}{TRIGGER\_PIN}}
+{\footnotesize\ttfamily \#define TRIGGER\+\_\+\+PIN~12}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_ultrasonic__test_8cpp_ab164945a78c40972481227d24924f235}\label{_ultrasonic__test_8cpp_ab164945a78c40972481227d24924f235}} 
+\index{Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}!echoCheck@{echoCheck}}
+\index{echoCheck@{echoCheck}!Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{echoCheck()}{echoCheck()}}
+{\footnotesize\ttfamily void echo\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_ultrasonic__test_8cpp_afe461d27b9c48d5921c00d521181f12f}\label{_ultrasonic__test_8cpp_afe461d27b9c48d5921c00d521181f12f}} 
+\index{Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}!loop@{loop}}
+\index{loop@{loop}!Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_ultrasonic__test_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{_ultrasonic__test_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
+\index{Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}!setup@{setup}}
+\index{setup@{setup}!Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_ultrasonic__test_8cpp_a9a97a20c8deb22c7db7d5cbd5d10a98f}\label{_ultrasonic__test_8cpp_a9a97a20c8deb22c7db7d5cbd5d10a98f}} 
+\index{Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}!sonar@{sonar}}
+\index{sonar@{sonar}!Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{sonar()}{sonar()}}
+{\footnotesize\ttfamily New\+Ping sonar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_ultrasonic__test_8cpp_adacee581176b7076b7baf0f72d81460f}{TRIGGER\+\_\+\+PIN}}}]{,  }\item[{\mbox{\hyperlink{_ultrasonic__test_8cpp_acea96cea4a13b6cb38e57a86788adf90}{ECHO\+\_\+\+PIN}}}]{,  }\item[{\mbox{\hyperlink{_ultrasonic__test_8cpp_a08e4da5f3d0c7936fa52467f40e4b6aa}{MAX\+\_\+\+DISTANCE}}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_ultrasonic__test_8cpp_a0b37eadccffdbbdee45469f0fb81d14d}\label{_ultrasonic__test_8cpp_a0b37eadccffdbbdee45469f0fb81d14d}} 
+\index{Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}!pingSpeed@{pingSpeed}}
+\index{pingSpeed@{pingSpeed}!Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{pingSpeed}{pingSpeed}}
+{\footnotesize\ttfamily unsigned int ping\+Speed = 50}
+
+\mbox{\Hypertarget{_ultrasonic__test_8cpp_a08db807b6be294101f69bafca8f088cf}\label{_ultrasonic__test_8cpp_a08db807b6be294101f69bafca8f088cf}} 
+\index{Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}!pingTimer@{pingTimer}}
+\index{pingTimer@{pingTimer}!Ultrasonic\_test.cpp@{Ultrasonic\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{pingTimer}{pingTimer}}
+{\footnotesize\ttfamily unsigned long ping\+Timer}
+

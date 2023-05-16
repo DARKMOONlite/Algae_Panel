@@ -1,0 +1,73 @@
+\hypertarget{_simple_menu_8h_source}{}\doxysection{Simple\+Menu.\+h}
+\label{_simple_menu_8h_source}\index{lib/SimpleMenu/src/SimpleMenu.h@{lib/SimpleMenu/src/SimpleMenu.h}}
+\mbox{\hyperlink{_simple_menu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef SimpleMenu\_h}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define SimpleMenu\_h}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#if ARDUINO >= 100}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <Arduino.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <WProgram.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <wiring.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_simple_menu}{SimpleMenu}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     \textcolor{keyword}{public}:}
+\DoxyCodeLine{18         \mbox{\hyperlink{class_simple_menu_a21297bb9b5f6a94c8267941e814c310b}{SimpleMenu}}(\textcolor{keywordtype}{int} \_numberMenuItems, \mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_submenus); \textcolor{comment}{//defult}}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_simple_menu_a21297bb9b5f6a94c8267941e814c310b}{SimpleMenu}}(\textcolor{keywordtype}{void} (*\_CallBack)());}
+\DoxyCodeLine{20         \mbox{\hyperlink{class_simple_menu_a21297bb9b5f6a94c8267941e814c310b}{SimpleMenu}}(\textcolor{keywordtype}{bool} (*\_ListCallBack)(\textcolor{keywordtype}{int} \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}}), \textcolor{keywordtype}{void} (*\_CallBack)());}
+\DoxyCodeLine{21         \mbox{\hyperlink{class_simple_menu_a21297bb9b5f6a94c8267941e814c310b}{SimpleMenu}}(\textcolor{keywordtype}{bool} (*\_ListCallBack)(\textcolor{keywordtype}{int} \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}}), \mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_submenus);}
+\DoxyCodeLine{22         \mbox{\hyperlink{class_simple_menu_a21297bb9b5f6a94c8267941e814c310b}{SimpleMenu}}(String \_name,\textcolor{keywordtype}{int} \_numberMenuItems, \mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_submenus); \textcolor{comment}{//sub menu}}
+\DoxyCodeLine{23         \mbox{\hyperlink{class_simple_menu_a21297bb9b5f6a94c8267941e814c310b}{SimpleMenu}}(String \_name,\textcolor{keywordtype}{int} *\_value); \textcolor{comment}{//Value menu}}
+\DoxyCodeLine{24         \mbox{\hyperlink{class_simple_menu_a21297bb9b5f6a94c8267941e814c310b}{SimpleMenu}}(String \_name,\textcolor{keywordtype}{int} *\_value, \textcolor{keywordtype}{int} \_min, \textcolor{keywordtype}{int} \_max); \textcolor{comment}{//Value menu with min and max}}
+\DoxyCodeLine{25         \mbox{\hyperlink{class_simple_menu_a21297bb9b5f6a94c8267941e814c310b}{SimpleMenu}}(String \_name, \textcolor{keywordtype}{void} (*\_CallBack)()); \textcolor{comment}{//function menu}}
+\DoxyCodeLine{26         \mbox{\hyperlink{class_simple_menu_a21297bb9b5f6a94c8267941e814c310b}{SimpleMenu}}(String \_name, \textcolor{keywordtype}{bool} (*\_ListCallBack)(\textcolor{keywordtype}{int} \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}}), \mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_submenus); \textcolor{comment}{//List menu with function}}
+\DoxyCodeLine{27         \mbox{\hyperlink{class_simple_menu_a21297bb9b5f6a94c8267941e814c310b}{SimpleMenu}}(String \_name, \textcolor{keywordtype}{bool} (*\_ListCallBack)(\textcolor{keywordtype}{int} \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}}), \textcolor{keywordtype}{void} (*\_CallBack)()); \textcolor{comment}{//List menu with function}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_simple_menu_a5033d662129a5eeb754c040a3206c22d}{begin}}();}
+\DoxyCodeLine{30         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_simple_menu_a5033d662129a5eeb754c040a3206c22d}{begin}}(\textcolor{keywordtype}{void} (*\_displayCallBack)(\mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_menu));}
+\DoxyCodeLine{31         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_simple_menu_a5033d662129a5eeb754c040a3206c22d}{begin}}(\textcolor{keywordtype}{void} (*\_displayCallBack)(\mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_menu),\textcolor{keywordtype}{void} (*\_valueCallBack)(\mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_menu));}
+\DoxyCodeLine{32         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_simple_menu_a5033d662129a5eeb754c040a3206c22d}{begin}}(\mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_Top,\textcolor{keywordtype}{void} (*\_displayCallBack)(\mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_menu),\textcolor{keywordtype}{void} (*\_valueCallBack)(\mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_menu));}
+\DoxyCodeLine{33         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_simple_menu_a8d6980cc4dc29561aacb97476700a1df}{setFunctions}}(\textcolor{keywordtype}{void} (*\_displayCallBack)(\mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_menu),\textcolor{keywordtype}{void} (*\_valueCallBack)(\mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_menu));}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_simple_menu_a7be5c5e2fe22e97983d956e0c5afd9c0}{home}}();}
+\DoxyCodeLine{36         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_simple_menu_a250f04b4bd23360a8dc1a2bdc2450de6}{select}}();}
+\DoxyCodeLine{37         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_simple_menu_a5bee3699ff3f92f974bafae55da0cf5c}{back}}();}
+\DoxyCodeLine{38         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_simple_menu_a155cc048639907bfa66c656949cb7e25}{returned}}();}
+\DoxyCodeLine{39         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_simple_menu_ac8262d3fe7b7ef18c7ac1e4202fb3a91}{up}}();}
+\DoxyCodeLine{40         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_simple_menu_aa563392b6497716e6d96741014c141d7}{down}}();}
+\DoxyCodeLine{41         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}}(\textcolor{keywordtype}{int} \_index);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\mbox{\hyperlink{class_simple_menu_ab031b2b76bac664e84d15dfbcec443a4}{next}}();}
+\DoxyCodeLine{44         \mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\mbox{\hyperlink{class_simple_menu_ab031b2b76bac664e84d15dfbcec443a4}{next}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}});}
+\DoxyCodeLine{45         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_simple_menu_ad2ee78273a0e0ff8b709b1bea7592265}{getValue}}();}
+\DoxyCodeLine{46         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_simple_menu_af89ffba9fcfe83e85915f8b5ed2ebe21}{hasValue}}();}
+\DoxyCodeLine{47         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_simple_menu_a868844b553c0261e2983506b0eb17e1b}{getIndex}}();}
+\DoxyCodeLine{48         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_simple_menu_a85d3e7865facd410fc5bc4ca2685583e}{print}}();}
+\DoxyCodeLine{49             }
+\DoxyCodeLine{50         String \mbox{\hyperlink{class_simple_menu_a5e2c6c0e3dc5ca015f6db5e3a757f9c2}{name}};}
+\DoxyCodeLine{51         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_simple_menu_a782fd0d212dd47afcdd1f7a4625192af}{selectMenu}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{52         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_simple_menu_a88d3c8ac29625bd43c9b8e78e4f63b3f}{menuLocation}} = 0;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keyword}{private}:}
+\DoxyCodeLine{55         \mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *Top\_menu = NULL;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57         \textcolor{keywordtype}{int} numberMenuItems;}
+\DoxyCodeLine{58         \mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *submenus = NULL;}
+\DoxyCodeLine{59         \mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *subListmenus = NULL;}
+\DoxyCodeLine{60         \textcolor{keywordtype}{int} *value = NULL;}
+\DoxyCodeLine{61         void (*CallBack) () = NULL;}
+\DoxyCodeLine{62         bool (*ListCallBack)(\textcolor{keywordtype}{int} \mbox{\hyperlink{class_simple_menu_a5646aed47fad98b0bb0724ce1f2ea10d}{index}}) = NULL;}
+\DoxyCodeLine{63         void (*displayCallBack)(\mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_menu) = NULL;}
+\DoxyCodeLine{64         void (*valueCallBack)(\mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_menu) = NULL;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         \textcolor{keywordtype}{int} min;}
+\DoxyCodeLine{67         \textcolor{keywordtype}{int} max;}
+\DoxyCodeLine{68         \textcolor{keywordtype}{bool} minMaxSet = \textcolor{keyword}{false};}
+\DoxyCodeLine{69 \};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif }}
+
+\end{DoxyCode}

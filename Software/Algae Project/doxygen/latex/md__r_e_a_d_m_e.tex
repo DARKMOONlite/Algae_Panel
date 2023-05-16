@@ -1,0 +1,41 @@
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ File   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ File   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endhead
+\href{/Software/Algae\%20Project/src/main.cpp}{\texttt{ main.\+cpp}}   &Contains all running code    \\\cline{1-2}
+\href{/Software/Algae\%20Project/src/menu.h}{\texttt{ menu.\+hpp/cpp}}   &Contains definitions and declarations of menu system, custom functions related to the use of the menu are also placed here, if you want to add/rearrange the menu, it can be done by editing the menu class structure found here    \\\cline{1-2}
+\href{/Software/Algae\%20Project/src/global_variables.h}{\texttt{ global\+\_\+variables.\+h/cpp}}   &Contains all global variable that need to be accessed from all other files, this includes EEPROM variables which should be defined here    \\\cline{1-2}
+\href{/Software/Algae\%20Project/include/AlgaePanelRemote.hpp}{\texttt{ Algae\+Panel\+Remote.\+hpp}}   &Contains all definitions connected to controlling panel via remote, if you want to change remote, or add custom commands, you can do that by defining them here then using this inside the main switch case inside of main    \\\cline{1-2}
+\href{/Software/Algae\%20Project/include/pin_definitions.hpp}{\texttt{ pin\+\_\+definitions.\+hpp}}   &Contains all pin defintions, if you want to add new sensors using new pins or change what pins are currently being used, add/modify them here (ensure that new pin has all needed functionality, etc\+: PWM, Analog In)   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md0}{}\doxysection{Libraries, there are 2 types of libraries used, platform\+IO maintained and User maintained.}\label{md__r_e_a_d_m_e_autotoc_md0}
+
+\begin{DoxyItemize}
+\item \#\#\# Platform\+IO libraries can be found by opening the Platform\+IO Homepage, then selecting Libraries in the lefthand submenu.
+\begin{DoxyItemize}
+\item These libraries have their own repositories that can be explored to view tutorials and examples on their use.
+\end{DoxyItemize}
+\item \#\#\# Local libraries can be found inside the lib folder, the following is a list of libraries and their uses.
+\end{DoxyItemize}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endhead
+\mbox{\hyperlink{class_d_r_i0050}{DRI0050}}   &Manages the \mbox{\hyperlink{class_d_r_i0050}{DRI0050}} Pump PWM Controller    \\\cline{1-2}
+\mbox{\hyperlink{class_d_s18_b20}{DS18\+B20}}   &Taken from Dane\textquotesingle{}s original project, this reads the temperature of a one-\/wire temperature sensor    \\\cline{1-2}
+EEPPROM\+\_\+\+Manager   &contains an \mbox{\hyperlink{class_e_e_p_r_o_m___variable}{EEPROM\+\_\+\+Variable}} and Manager class that allows for easier read write access to EEPROM memory    \\\cline{1-2}
+Simple\+\_\+\+Menu   &Contains a library that greatly simplifies menu creation and management, allows for variable modification and function calls   \\\cline{1-2}
+\end{longtabu}
