@@ -22,6 +22,7 @@ void setup() {
   TopMenu.begin(display,displayValue);
   PumpController.setPwmFreq(10);
   PumpController.setPwmDuty(0);
+  irrecv.enableIRIn(); // starts interrupt for IR receiver
   // if you want to change values here in code, then comment out the retrieve call and save the changes to the arduino
   // rom_manager.Retrieve();
 
@@ -33,7 +34,11 @@ void loop() {//! do not put anything here, task scheduler will take over
 // ----------------------------------------     UI      ---------------------------------------------------------
 
 if(irrecv.decode()){ //if IR receiver is picking up something
-    Menu_IR_Input(irrecv.decodedIRData.command);
+    if(Menu_IR_Input(irrecv.decodedIRData.command)){
+      delay(20);
+    }
+    
+    irrecv.resume();
   }
 if(Serial.available()){
   Menu_Serial_Input(Serial.read());
@@ -41,10 +46,6 @@ if(Serial.available()){
 
 //--------------------------------------------------      Sensor Data     ----------------------------------------------------------
 
-      Temp1 = (int)TempSensor1.readTempC();
-      Temp2 = (int)TempSensor2.readTempC();
-      SonarDist1 = Sonar1.ping_cm();
-      SonarDist2 = Sonar2.ping_cm();
 
 
 
@@ -52,38 +53,53 @@ if(Serial.available()){
 Serial.print("Current PunpState: ");
 Serial.println(PumpState);
 
-if(PumpState != prevPumpState){
-  prevPumpState=PumpState;
-      if(PumpState==Control_State::Off){  // if the pumpstate is off then turn off the pump pwm controller
-        PumpController.setPwmEnable(PWM_DISENABLE);
-        digitalWrite(SolanoidPin2,LOW);
+
+
+if(millis()-lastStateUpdate >= STATE_RATE){
+    lastStateUpdate=millis();
+    if(PumpState != prevPumpState){
+      prevPumpState=PumpState;
+          if(PumpState==Control_State::Off){  // if the pumpstate is off then turn off the pump pwm controller
+            PumpController.setPwmEnable(PWM_DISENABLE);
+            digitalWrite(SolanoidPin2,LOW);
+            
+          }
+          if(PumpState==Control_State::Manual){ // if the state is set to manual, 
+            PumpController.setPwmDuty(manual_dutycycle.var);
+            PumpController.setPwmEnable(PWM_ENABLE);
+            digitalWrite(SolanoidPin2,HIGH);
+          }
+          
+      }
+    if(SolanoidState!=prevSolanoidState){
+      prevSolanoidState=SolanoidState;
+      if(SolanoidState==Control_State::Off){
+        digitalWrite(SolanoidPin1,LOW);
+      }
+      if(SolanoidState==Control_State::Manual){
+        digitalWrite(SolanoidPin1,HIGH);
+      }
+      
+    }
+
+
+    if(SolanoidState==Control_State::Automatic){
         
       }
-      if(PumpState==Control_State::Manual){ // if the state is set to manual, 
-        PumpController.setPwmDuty(manual_dutycycle.var);
-        PumpController.setPwmEnable(PWM_ENABLE);
-        digitalWrite(SolanoidPin2,HIGH);
-      }
-      
-  }
-  if(SolanoidState!=prevSolanoidState){
-    prevSolanoidState=SolanoidState;
-    if(SolanoidState==Control_State::Off){
-      digitalWrite(SolanoidPin1,LOW);
+
+
+      if(PumpState==Control_State::Automatic){
+
     }
-    if(SolanoidState==Control_State::Manual){
-      digitalWrite(SolanoidPin1,HIGH);
-    }
-    
   }
 
 
-  if(SolanoidState==Control_State::Automatic){
-      
-    }
+if(millis()-lastSensorUpdate >=SENSOR_RATE){
+      Temp1 = (int)TempSensor1.readTempC();
+      Temp2 = (int)TempSensor2.readTempC();
+      SonarDist1 = Sonar1.ping_cm();
+      SonarDist2 = Sonar2.ping_cm();
 
+}
 
-    if(PumpState==Control_State::Automatic){
-
-  }
 }

@@ -17,7 +17,7 @@ Serial.println("Starting IR sensor test");
 
 void loop(){
     if(irrecv.decode()){
-        Serial.print(irrecv.decodedIRData.command);
+        Serial.println(irrecv.decodedIRData.command);
         // irrecv.printIRResultRawFormatted(&Serial);
         
         irrecv.resume();

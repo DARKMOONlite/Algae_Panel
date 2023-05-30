@@ -36,6 +36,9 @@ extern int SonarDist1, SonarDist2;
 extern Control_State PumpState, SolanoidState, prevPumpState, prevSolanoidState;
 
 
+extern uint32_t lastStateUpdate, lastLCDUpdate, lastSensorUpdate;
+
+
 
 
     //-----------------------------     Global Objects Declarations  ----------------------------------
@@ -52,5 +55,7 @@ extern EEPROM_Variable autosave ;
 
     //-----------------------------     Other Stuff  ----------------------------------
 
-
+#define STATE_RATE 2000
+#define SENSOR_RATE 500
+#define LCD_RATE 500
 #endif
