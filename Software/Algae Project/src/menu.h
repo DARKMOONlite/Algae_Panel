@@ -53,5 +53,7 @@ uint16_t Menu_IR_Input(uint16_t _input);
  */
 int Menu_Serial_Input(int _input);
 
+float Average_Array(int* Array, int Size);
+
 
 #endif
