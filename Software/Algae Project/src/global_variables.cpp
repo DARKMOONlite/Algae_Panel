@@ -1,8 +1,13 @@
 #include <global_variables.h>
 
     //-----------------------------     Global Variables ---------------------------------------
-int Temp1=-1,Temp2=-1;
-int SonarDist1=-1, SonarDist2=-1;
+int Temp1[Cyclic_Array_Size],Temp2[Cyclic_Array_Size];
+int SonarDist1[Cyclic_Array_Size], IRDist2[Cyclic_Array_Size];
+uint8_t Cyclic_Array_Index=0;
+int Temp1Average=0, Temp2Average=0, SonarAverage=0, IRAverage=0;
+
+
+
 Control_State PumpState = Control_State::Off, SolanoidState = Control_State::Off;
 Control_State prevPumpState = Control_State::Off, prevSolanoidState = Control_State::Off;
     //-----------------------------     Global Objects Declarations  ----------------------------------

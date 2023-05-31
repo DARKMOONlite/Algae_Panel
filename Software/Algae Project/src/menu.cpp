@@ -17,12 +17,12 @@
 
 
   SimpleMenu DepthMenu[2] = {
-    SimpleMenu("Panel Depth",&SonarDist1), //! Change these variables to the calculated depths of each
-    SimpleMenu("Resevoir Depth",&SonarDist2)
+    SimpleMenu("Panel Depth",&IRAverage), //! Change these variables to the calculated depths of each
+    SimpleMenu("Resevoir Depth",&SonarAverage)
   };
   SimpleMenu TempMenu[2]={
-    SimpleMenu("Panel Temp",&Temp1),
-    SimpleMenu("Resevoir Temp",&Temp2)
+    SimpleMenu("Panel Temp",&Temp1Average),
+    SimpleMenu("Resevoir Temp",&Temp2Average)
   };
   
   SimpleMenu Sensor_Menu[2]={
@@ -134,3 +134,15 @@ int Menu_Serial_Input(int _input){
     }
   return(_input);
 }
+
+
+float Average_Array(int* Array, int Size){
+    float sum = 0;
+    for(int i=0; i<Size;i++){
+        sum+=Array[i];
+    }
+    return(sum/Size);
+}
+
+
+

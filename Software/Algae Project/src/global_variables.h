@@ -11,6 +11,7 @@
 #include <DS18B20.h>
 #include <pin_definitions.hpp>
 #include <AlgaePanelRemote.hpp>
+
 // -------------------------------      ENUM    --------------------------------------
 // enum Joystick_State{
 //   Up = 1,
@@ -31,8 +32,28 @@ enum Control_State{
 
 
     //-----------------------------     Global Variables ---------------------------------------
-extern int Temp1,Temp2;
-extern int SonarDist1, SonarDist2;
+/**
+ * @brief Cyclic_Array Size;
+ * 
+ */
+const int Cyclic_Array_Size = 10;
+/**
+ * @brief Current Index of Arrays
+ * 
+ */
+extern uint8_t Cyclic_Array_Index;
+/**
+ * @brief Array of last \var Cyclic_Array_Size values, used for getting rolling average
+ * 
+ */
+extern int Temp1[Cyclic_Array_Size],Temp2[Cyclic_Array_Size],SonarDist1[Cyclic_Array_Size], IRDist2[Cyclic_Array_Size];
+
+/**
+ * @brief Current Rolling Average of value
+ * 
+ */
+extern int Temp1Average, Temp2Average, SonarAverage, IRAverage;
+
 
 extern Control_State PumpState, SolanoidState, prevPumpState, prevSolanoidState;
 
@@ -49,7 +70,6 @@ extern LiquidCrystal_I2C lcd;
 
 
 extern EEPROM_Manager rom_manager;
-
 extern EEPROM_Variable manual_dutycycle ;
 extern EEPROM_Variable autosave ;
 
@@ -59,4 +79,6 @@ extern EEPROM_Variable autosave ;
 #define STATE_RATE 2000
 #define SENSOR_RATE 500
 #define LCD_RATE 500
+
+
 #endif
