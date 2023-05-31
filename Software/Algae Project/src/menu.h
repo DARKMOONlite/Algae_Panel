@@ -1,7 +1,7 @@
 #ifndef MENU_H
 #define MENU_H
 #include <SimpleMenu.h>
-#include <LiquidCrystal.h>
+#include <LiquidCrystal_I2C.h>
 #include <Arduino.h>
 #include <global_variables.h>
 

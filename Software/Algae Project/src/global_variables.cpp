@@ -6,7 +6,7 @@ int SonarDist1=-1, SonarDist2=-1;
 Control_State PumpState = Control_State::Off, SolanoidState = Control_State::Off;
 Control_State prevPumpState = Control_State::Off, prevSolanoidState = Control_State::Off;
     //-----------------------------     Global Objects Declarations  ----------------------------------
-LiquidCrystal lcd = LiquidCrystal(LCDRSPin,LCDEPin,LCDD4Pin,LCDD5Pin,LCDD6Pin,LCDD7Pin);
+LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27,20,4);
 
 
     //-----------------------------     EEPROM Variable Definitions  ----------------------------------

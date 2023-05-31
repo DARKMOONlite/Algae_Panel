@@ -1,4 +1,5 @@
 
+#include <Wire.h>
 #include <global_variables.h>
 #include <Arduino.h>
 #include <IRremote.h> //this needs to be included in a .cpp file, IDK why it doesn't work in a header file
@@ -18,7 +19,9 @@ void setup() {
 
   while(!Serial){;}
   Serial.println("Starting Up");
-  lcd.begin(16,2);
+  lcd.init();
+  lcd.backlight();
+  // lcd.begin(16,2);
   TopMenu.begin(display,displayValue);
   PumpController.setPwmFreq(10);
   PumpController.setPwmDuty(0);
@@ -74,10 +77,10 @@ if(millis()-lastStateUpdate >= STATE_RATE){
     if(SolanoidState!=prevSolanoidState){
       prevSolanoidState=SolanoidState;
       if(SolanoidState==Control_State::Off){
-        digitalWrite(SolanoidPin1,LOW);
+        digitalWrite(SolenoidPin1,LOW);
       }
       if(SolanoidState==Control_State::Manual){
-        digitalWrite(SolanoidPin1,HIGH);
+        digitalWrite(SolenoidPin1,HIGH);
       }
       
     }

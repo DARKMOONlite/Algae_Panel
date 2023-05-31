@@ -1,6 +1,7 @@
 #ifndef GLOBAL_VARIABLES_H
 #define GLOBAL_VARIABLES_H
-#include <LiquidCrystal.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
 #include <ArduinoSTL.h>
 #include <EEPROM_Manager.h>
 #include <menu.h>
@@ -42,7 +43,7 @@ extern uint32_t lastStateUpdate, lastLCDUpdate, lastSensorUpdate;
 
 
     //-----------------------------     Global Objects Declarations  ----------------------------------
-extern LiquidCrystal lcd;
+extern LiquidCrystal_I2C lcd;
 
     //-----------------------------     EEPROM Variable Declarations  ----------------------------------
 
