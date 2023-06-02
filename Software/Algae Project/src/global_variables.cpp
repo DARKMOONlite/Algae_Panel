@@ -16,7 +16,7 @@ LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27,20,4);
 
     //-----------------------------     EEPROM Variable Definitions  ----------------------------------
 EEPROM_Manager rom_manager;
-EEPROM_Variable manual_dutycycle(25,1,&rom_manager);
+EEPROM_Variable manual_dutycycle(100,1,&rom_manager);
 EEPROM_Variable autosave(10,2,&rom_manager);
 
 uint32_t lastStateUpdate=0, lastLCDUpdate=0, lastSensorUpdate=0;

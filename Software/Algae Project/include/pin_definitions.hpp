@@ -25,7 +25,6 @@
 
 #define IRRXPin 11
 
-#define 
 
 // ----------------------------     DEPRECATED      ---------------------------------
 // #define xinput  A0
