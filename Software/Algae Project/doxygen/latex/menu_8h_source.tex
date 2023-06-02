@@ -2,30 +2,33 @@
 \label{menu_8h_source}\index{src/menu.h@{src/menu.h}}
 \mbox{\hyperlink{menu_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MENU\_H}}
-\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MENU\_H}}
-\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_simple_menu_8h}{SimpleMenu.h}}>}}
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <LiquidCrystal.h>}}
-\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <Arduino.h>}}
-\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{global__variables_8h}{global\_variables.h}}>}}
-\DoxyCodeLine{7 }
-\DoxyCodeLine{8 }
-\DoxyCodeLine{9 }
-\DoxyCodeLine{10 \textcolor{keyword}{extern} \mbox{\hyperlink{class_simple_menu}{SimpleMenu}} \mbox{\hyperlink{menu_8h_ae0cdd28cb13fa33fd9665d59d56e841d}{TopMenu}};}
-\DoxyCodeLine{11 }
-\DoxyCodeLine{12 }
-\DoxyCodeLine{13     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/     Menu Functions  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{19 \textcolor{comment}{}\textcolor{keywordtype}{void} \mbox{\hyperlink{menu_8h_a7e7bd34f7f80ad8b5e5950e026446989}{display}}(\mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_menu);}
-\DoxyCodeLine{25 \textcolor{keywordtype}{void} \mbox{\hyperlink{menu_8h_ac4b4b89e3c4f3338993cf6382856a47d}{displayValue}}(\mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_menu);}
-\DoxyCodeLine{31 \textcolor{keywordtype}{void} \mbox{\hyperlink{menu_8h_a518dcef4869031bbcc886e41a054fae3}{Pump\_Ctrl}}(\textcolor{keywordtype}{int} \_state);}
-\DoxyCodeLine{32 }
-\DoxyCodeLine{38 \textcolor{keywordtype}{void} \mbox{\hyperlink{menu_8h_a13507063323ae611f3d47b515d02ae20}{Solanoid\_Ctrl}}(\textcolor{keywordtype}{int} \_state);}
-\DoxyCodeLine{39 }
-\DoxyCodeLine{46 uint16\_t \mbox{\hyperlink{menu_8h_a5e22482079cf2d4a65867971a1a670b9}{Menu\_IR\_Input}}(uint16\_t \_input);}
-\DoxyCodeLine{47 }
-\DoxyCodeLine{54 \textcolor{keywordtype}{int} \mbox{\hyperlink{menu_8h_a0c6717e502f384991e45600e263a630e}{Menu\_Serial\_Input}}(\textcolor{keywordtype}{int} \_input);}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56 }
-\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef MENU\_H}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define MENU\_H}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_simple_menu_8h}{SimpleMenu.h}}>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <LiquidCrystal\_I2C.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <Arduino.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{global__variables_8h}{global\_variables.h}}>}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{extern} \mbox{\hyperlink{class_simple_menu}{SimpleMenu}} \mbox{\hyperlink{menu_8h_ae0cdd28cb13fa33fd9665d59d56e841d}{TopMenu}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/     Menu Functions  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{29 \textcolor{comment}{}\textcolor{keywordtype}{void} \mbox{\hyperlink{menu_8h_a7e7bd34f7f80ad8b5e5950e026446989}{display}}(\mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_menu);}
+\DoxyCodeLine{35 \textcolor{keywordtype}{void} \mbox{\hyperlink{menu_8h_ac4b4b89e3c4f3338993cf6382856a47d}{displayValue}}(\mbox{\hyperlink{class_simple_menu}{SimpleMenu}} *\_menu);}
+\DoxyCodeLine{41 \textcolor{keywordtype}{void} \mbox{\hyperlink{menu_8h_a518dcef4869031bbcc886e41a054fae3}{Pump\_Ctrl}}(\textcolor{keywordtype}{int} \_state);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{48 \textcolor{keywordtype}{void} \mbox{\hyperlink{menu_8h_a13507063323ae611f3d47b515d02ae20}{Solanoid\_Ctrl}}(\textcolor{keywordtype}{int} \_state);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{56 uint16\_t \mbox{\hyperlink{menu_8h_a5e22482079cf2d4a65867971a1a670b9}{Menu\_IR\_Input}}(uint16\_t \_input);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{64 \textcolor{keywordtype}{int} \mbox{\hyperlink{menu_8h_a0c6717e502f384991e45600e263a630e}{Menu\_Serial\_Input}}(\textcolor{keywordtype}{int} \_input);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{keywordtype}{float} \mbox{\hyperlink{menu_8h_a713c6975f139b699328fbb48e4ad3854}{Average\_Array}}(\textcolor{keywordtype}{int}* Array, \textcolor{keywordtype}{int} Size);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

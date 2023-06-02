@@ -1,3 +1,13 @@
+/**
+ * @file global_variables.h
+ * @author your name (you@domain.com)
+ * @brief Declares global variables to be used throughout the code
+ * @version 0.1
+ * @date 2023-06-02
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #ifndef GLOBAL_VARIABLES_H
 #define GLOBAL_VARIABLES_H
 #include <Wire.h>

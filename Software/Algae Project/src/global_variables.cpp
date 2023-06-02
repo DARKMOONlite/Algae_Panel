@@ -1,3 +1,13 @@
+/**
+ * @file global_variables.cpp
+ * @author Sebastian Schroder
+ * @brief This contains the definitions of global variables declared in the .h file
+ * @version 0.1
+ * @date 2023-06-02
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <global_variables.h>
 
     //-----------------------------     Global Variables ---------------------------------------

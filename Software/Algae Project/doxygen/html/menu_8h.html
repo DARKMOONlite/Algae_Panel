@@ -72,8 +72,11 @@ $(function() {
   <div class="headertitle"><div class="title">menu.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Defines functions used by the meny, definitions are stored inside.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="_simple_menu_8h_source.html">SimpleMenu.h</a>&gt;</code><br />
-<code>#include &lt;LiquidCrystal.h&gt;</code><br />
+<code>#include &lt;LiquidCrystal_I2C.h&gt;</code><br />
 <code>#include &lt;Arduino.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="global__variables_8h_source.html">global_variables.h</a>&gt;</code><br />
 </div>
@@ -99,13 +102,49 @@ Functions</h2></td></tr>
 <tr class="memitem:a0c6717e502f384991e45600e263a630e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8h.html#a0c6717e502f384991e45600e263a630e">Menu_Serial_Input</a> (int _input)</td></tr>
 <tr class="memdesc:a0c6717e502f384991e45600e263a630e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows for the menu to take serial input.  <a href="menu_8h.html#a0c6717e502f384991e45600e263a630e">More...</a><br /></td></tr>
 <tr class="separator:a0c6717e502f384991e45600e263a630e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a713c6975f139b699328fbb48e4ad3854"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8h.html#a713c6975f139b699328fbb48e4ad3854">Average_Array</a> (int *Array, int Size)</td></tr>
+<tr class="separator:a713c6975f139b699328fbb48e4ad3854"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ae0cdd28cb13fa33fd9665d59d56e841d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_simple_menu.html">SimpleMenu</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8h.html#ae0cdd28cb13fa33fd9665d59d56e841d">TopMenu</a></td></tr>
 <tr class="separator:ae0cdd28cb13fa33fd9665d59d56e841d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Defines functions used by the meny, definitions are stored inside. </p>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2023-06-02</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2023</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Sebastian Schroder </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a713c6975f139b699328fbb48e4ad3854" name="a713c6975f139b699328fbb48e4ad3854"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a713c6975f139b699328fbb48e4ad3854">&#9670;&nbsp;</a></span>Average_Array()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Average_Array </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>Array</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a7e7bd34f7f80ad8b5e5950e026446989" name="a7e7bd34f7f80ad8b5e5950e026446989"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e7bd34f7f80ad8b5e5950e026446989">&#9670;&nbsp;</a></span>display()</h2>
 

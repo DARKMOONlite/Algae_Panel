@@ -1,3 +1,13 @@
+/**
+ * @file menu.h
+ * @author Sebastian Schroder
+ * @brief Defines functions used by the meny, definitions are stored inside @file menu.cpp
+ * @version 0.1
+ * @date 2023-06-02
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #ifndef MENU_H
 #define MENU_H
 #include <SimpleMenu.h>

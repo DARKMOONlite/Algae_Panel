@@ -72,12 +72,20 @@ $(function() {
   <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="global__variables_8h_source.html">global_variables.h</a>&gt;</code><br />
+
+<p>Main file, to run either select the main or mainmega environments inside platformio main may not run due to the large size of the menu inside.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;Wire.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="global__variables_8h_source.html">global_variables.h</a>&gt;</code><br />
 <code>#include &lt;Arduino.h&gt;</code><br />
 <code>#include &lt;IRremote.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:af9cf4ef7ebebb6c181594d5a1c6dc3a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af9cf4ef7ebebb6c181594d5a1c6dc3a2">Update_Sensor_State</a> ()</td></tr>
+<tr class="separator:af9cf4ef7ebebb6c181594d5a1c6dc3a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4be994af2b57ccfe32022694d07b4082"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4be994af2b57ccfe32022694d07b4082">Update_Control_State</a> ()</td></tr>
+<tr class="separator:a4be994af2b57ccfe32022694d07b4082"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3890dc13ad641f783b713ac4bd4a749"><td class="memItemLeft" align="right" valign="top">NewPing&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa3890dc13ad641f783b713ac4bd4a749">Sonar1</a> (<a class="el" href="pin__definitions_8hpp.html#a9a54be5fe92c6d16578982bf6cecd891">SSensorPin1</a>, <a class="el" href="pin__definitions_8hpp.html#aea99235fa3eef529e3ca42c55036d49a">SonarEchoPin</a>, 400)</td></tr>
 <tr class="separator:aa3890dc13ad641f783b713ac4bd4a749"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13056dab98115394b132ce9e388cd66f"><td class="memItemLeft" align="right" valign="top">NewPing&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a13056dab98115394b132ce9e388cd66f">Sonar2</a> (<a class="el" href="pin__definitions_8hpp.html#acbebe49963630ffe7894925f9af6929e">SSensorPin2</a>, <a class="el" href="pin__definitions_8hpp.html#aea99235fa3eef529e3ca42c55036d49a">SonarEchoPin</a>, 400)</td></tr>
@@ -98,7 +106,10 @@ Variables</h2></td></tr>
 <tr class="memitem:a8b8365b51c26f340cc7c21a6eddc1146"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_r_i0050.html">DRI0050</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8b8365b51c26f340cc7c21a6eddc1146">PumpController</a> (<a class="el" href="pin__definitions_8hpp.html#ae547f2a53633fd8b936d4dc812447c17">PumpTxPin</a>, <a class="el" href="pin__definitions_8hpp.html#a98300bbbce3a65d992bbf4be3a84600b">PumpRxPin</a>)</td></tr>
 <tr class="separator:a8b8365b51c26f340cc7c21a6eddc1146"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Main file, to run either select the main or mainmega environments inside platformio main may not run due to the large size of the menu inside. </p>
+<dl class="section author"><dt>Author</dt><dd>Sebastian Schroder </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a719f315363a42d399582066b011803a0" name="a719f315363a42d399582066b011803a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a719f315363a42d399582066b011803a0">&#9670;&nbsp;</a></span>irrecv()</h2>
 
@@ -131,7 +142,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >do not put anything here, task scheduler will take over</p>
 
 </div>
 </div>
@@ -214,6 +224,40 @@ Variables</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4be994af2b57ccfe32022694d07b4082" name="a4be994af2b57ccfe32022694d07b4082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4be994af2b57ccfe32022694d07b4082">&#9670;&nbsp;</a></span>Update_Control_State()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Update_Control_State </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af9cf4ef7ebebb6c181594d5a1c6dc3a2" name="af9cf4ef7ebebb6c181594d5a1c6dc3a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9cf4ef7ebebb6c181594d5a1c6dc3a2">&#9670;&nbsp;</a></span>Update_Sensor_State()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Update_Sensor_State </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">

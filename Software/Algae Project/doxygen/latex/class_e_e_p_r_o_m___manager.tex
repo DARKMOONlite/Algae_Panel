@@ -13,17 +13,17 @@ Allows for simple management of multiple EEPROM variable objects.
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_e_e_p_r_o_m___manager_abdf85dbd2a4ae73d27ec0fa6903e86dc}{EEPROM\+\_\+\+Manager}} ()
-\begin{DoxyCompactList}\small\item\em Construct a new eeprom manager object. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a3f06460dcaf379593a0b235c24bf8582}{Store}} ()
-\begin{DoxyCompactList}\small\item\em Calls the Store function of all managed EEPROM variables. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Stores all managed variables into EEPROM. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a05f8d0296bab8657d22c900a2e0a5970}{Retrieve}} ()
-\begin{DoxyCompactList}\small\item\em Calls the retrieve function of all managed EEPROM variables. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Retrieves all managed variables from EEPROM. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a078eeb631effb3c535a287015373a9d8}{Reset}} ()
-\begin{DoxyCompactList}\small\item\em Calls the Reset function of all managed EEPROM variables. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Resets all variables back to their default. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a4d810ea53386ad9d6609d3f6deb0bf56}{Add}} (\mbox{\hyperlink{class_e_e_p_r_o_m___variable}{EEPROM\+\_\+\+Variable}} $\ast$variable, uint8\+\_\+t EEPROM\+\_\+\+LOC)
-\begin{DoxyCompactList}\small\item\em Adds an EEPROM variable to the manage list. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds a variable to the EEPROM manager, this is done automatically in the EEPROM Variable constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a5f546db7495c918ce450044833e30f2b}{print\+\_\+errors}} ()
-\begin{DoxyCompactList}\small\item\em Prints to serial if any variables are doubled up or overflowed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Prints out to serial if any errors occured. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -38,10 +38,6 @@ Allows for simple management of multiple EEPROM variable objects.
 
 
 
-Construct a new eeprom manager object. 
-
-
-
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_e_e_p_r_o_m___manager_a4d810ea53386ad9d6609d3f6deb0bf56}\label{class_e_e_p_r_o_m___manager_a4d810ea53386ad9d6609d3f6deb0bf56}} 
 \index{EEPROM\_Manager@{EEPROM\_Manager}!Add@{Add}}
@@ -51,19 +47,19 @@ Construct a new eeprom manager object.
 
 
 
-Adds an EEPROM variable to the manage list. 
+Adds a variable to the EEPROM manager, this is done automatically in the EEPROM Variable constructor. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em variable} & pointer to object to access function calls \\
+{\em variable} & \\
 \hline
-{\em EEPROM\+\_\+\+LOC} & requested location of EEPROM \\
+{\em EEPROM\+\_\+\+LOC} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true if its available 
+true 
 
-false if its not available 
+false 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_e_e_p_r_o_m___manager_a5f546db7495c918ce450044833e30f2b}\label{class_e_e_p_r_o_m___manager_a5f546db7495c918ce450044833e30f2b}} 
 \index{EEPROM\_Manager@{EEPROM\_Manager}!print\_errors@{print\_errors}}
@@ -73,7 +69,7 @@ false if its not available
 
 
 
-Prints to serial if any variables are doubled up or overflowed. 
+Prints out to serial if any errors occured. 
 
 \mbox{\Hypertarget{class_e_e_p_r_o_m___manager_a078eeb631effb3c535a287015373a9d8}\label{class_e_e_p_r_o_m___manager_a078eeb631effb3c535a287015373a9d8}} 
 \index{EEPROM\_Manager@{EEPROM\_Manager}!Reset@{Reset}}
@@ -83,7 +79,7 @@ Prints to serial if any variables are doubled up or overflowed.
 
 
 
-Calls the Reset function of all managed EEPROM variables. 
+Resets all variables back to their default. 
 
 \mbox{\Hypertarget{class_e_e_p_r_o_m___manager_a05f8d0296bab8657d22c900a2e0a5970}\label{class_e_e_p_r_o_m___manager_a05f8d0296bab8657d22c900a2e0a5970}} 
 \index{EEPROM\_Manager@{EEPROM\_Manager}!Retrieve@{Retrieve}}
@@ -93,7 +89,7 @@ Calls the Reset function of all managed EEPROM variables.
 
 
 
-Calls the retrieve function of all managed EEPROM variables. 
+Retrieves all managed variables from EEPROM. 
 
 \mbox{\Hypertarget{class_e_e_p_r_o_m___manager_a3f06460dcaf379593a0b235c24bf8582}\label{class_e_e_p_r_o_m___manager_a3f06460dcaf379593a0b235c24bf8582}} 
 \index{EEPROM\_Manager@{EEPROM\_Manager}!Store@{Store}}
@@ -103,7 +99,7 @@ Calls the retrieve function of all managed EEPROM variables.
 
 
 
-Calls the Store function of all managed EEPROM variables. 
+Stores all managed variables into EEPROM. 
 
 
 

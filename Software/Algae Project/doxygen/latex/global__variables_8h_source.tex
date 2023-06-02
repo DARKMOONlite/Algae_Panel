@@ -2,57 +2,70 @@
 \label{global__variables_8h_source}\index{src/global\_variables.h@{src/global\_variables.h}}
 \mbox{\hyperlink{global__variables_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GLOBAL\_VARIABLES\_H}}
-\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GLOBAL\_VARIABLES\_H}}
-\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <LiquidCrystal.h>}}
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <ArduinoSTL.h>}}
-\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_e_e_p_r_o_m___manager_8h}{EEPROM\_Manager.h}}>}}
-\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{menu_8h}{menu.h}}>}}
-\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <NewPing.h>}}
-\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_d_r_i0050_8h}{DRI0050.h}}>}}
-\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <SoftwareSerial.h>}}
-\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_d_s18_b20_8h}{DS18B20.h}}>}}
-\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{pin__definitions_8hpp}{pin\_definitions.hpp}}>}}
-\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_algae_panel_remote_8hpp}{AlgaePanelRemote.hpp}}>}}
-\DoxyCodeLine{13 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/      ENUM    -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{14 \textcolor{comment}{// enum Joystick\_State\{}}
-\DoxyCodeLine{15 \textcolor{comment}{//   Up = 1,}}
-\DoxyCodeLine{16 \textcolor{comment}{//   Down = 2,}}
-\DoxyCodeLine{17 \textcolor{comment}{//   left =-\/1,}}
-\DoxyCodeLine{18 \textcolor{comment}{//   right = -\/2,}}
-\DoxyCodeLine{19 \textcolor{comment}{//   Centre = 0}}
-\DoxyCodeLine{20 \textcolor{comment}{// \};}}
-\DoxyCodeLine{25 \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{global__variables_8h_a7131f3b3e5d9a4980752d9ac3edaeea0}{Control\_State}}\{}
-\DoxyCodeLine{26     \mbox{\hyperlink{global__variables_8h_a7131f3b3e5d9a4980752d9ac3edaeea0ad8a892b94d3a94ea861543c085ae782b}{Off}}=0,}
-\DoxyCodeLine{27     \mbox{\hyperlink{global__variables_8h_a7131f3b3e5d9a4980752d9ac3edaeea0acad5010fb34447633f3139d69698a0f0}{Manual}} = 1,}
-\DoxyCodeLine{28     \mbox{\hyperlink{global__variables_8h_a7131f3b3e5d9a4980752d9ac3edaeea0a9248ea5dc540b00adb523d1b86fc1389}{Automatic}}=2}
-\DoxyCodeLine{29 \};}
-\DoxyCodeLine{30 }
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/     Global Variables -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{33 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{global__variables_8h_ab627b25fe931b42061d8f6a3a6febbe2}{Temp1}},\mbox{\hyperlink{global__variables_8h_a06d01255d6054de9b58a273d6cce6cc7}{Temp2}};}
-\DoxyCodeLine{34 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{global__variables_8h_a026dac3ac8ce79dd32e750d83f417cc7}{SonarDist1}}, \mbox{\hyperlink{global__variables_8h_ab0b58094c0206004e941f653f2b143d5}{SonarDist2}};}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{36 \textcolor{keyword}{extern} \mbox{\hyperlink{global__variables_8h_a7131f3b3e5d9a4980752d9ac3edaeea0}{Control\_State}} \mbox{\hyperlink{global__variables_8h_a2192d4871d46cdc3fba65146088bdcb9}{PumpState}}, \mbox{\hyperlink{global__variables_8h_a73b179801e50a86199223fbf88f5c12e}{SolanoidState}}, \mbox{\hyperlink{global__variables_8h_a430bb6acf8cdf613e077c6a7f7c3d015}{prevPumpState}}, \mbox{\hyperlink{global__variables_8h_a48b73615b2cf62582fb4c47f95971475}{prevSolanoidState}};}
-\DoxyCodeLine{37 }
-\DoxyCodeLine{38 }
-\DoxyCodeLine{39 }
-\DoxyCodeLine{40 }
-\DoxyCodeLine{41     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/     Global Objects Declarations  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{42 \textcolor{keyword}{extern} LiquidCrystal \mbox{\hyperlink{global__variables_8h_a9721c703fd950b5e771809e8c15329c6}{lcd}};}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef GLOBAL\_VARIABLES\_H}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GLOBAL\_VARIABLES\_H}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <Wire.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <LiquidCrystal\_I2C.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <ArduinoSTL.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_e_e_p_r_o_m___manager_8h}{EEPROM\_Manager.h}}>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{menu_8h}{menu.h}}>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <NewPing.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_d_r_i0050_8h}{DRI0050.h}}>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <SoftwareSerial.h>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_d_s18_b20_8h}{DS18B20.h}}>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{pin__definitions_8hpp}{pin\_definitions.hpp}}>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_algae_panel_remote_8hpp}{AlgaePanelRemote.hpp}}>}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/      ENUM    -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{26 \textcolor{comment}{// enum Joystick\_State\{}}
+\DoxyCodeLine{27 \textcolor{comment}{//   Up = 1,}}
+\DoxyCodeLine{28 \textcolor{comment}{//   Down = 2,}}
+\DoxyCodeLine{29 \textcolor{comment}{//   left =-\/1,}}
+\DoxyCodeLine{30 \textcolor{comment}{//   right = -\/2,}}
+\DoxyCodeLine{31 \textcolor{comment}{//   Centre = 0}}
+\DoxyCodeLine{32 \textcolor{comment}{// \};}}
+\DoxyCodeLine{37 \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{global__variables_8h_a7131f3b3e5d9a4980752d9ac3edaeea0}{Control\_State}}\{}
+\DoxyCodeLine{38     \mbox{\hyperlink{global__variables_8h_a7131f3b3e5d9a4980752d9ac3edaeea0ad8a892b94d3a94ea861543c085ae782b}{Off}}=0,}
+\DoxyCodeLine{39     \mbox{\hyperlink{global__variables_8h_a7131f3b3e5d9a4980752d9ac3edaeea0acad5010fb34447633f3139d69698a0f0}{Manual}} = 1,}
+\DoxyCodeLine{40     \mbox{\hyperlink{global__variables_8h_a7131f3b3e5d9a4980752d9ac3edaeea0a9248ea5dc540b00adb523d1b86fc1389}{Automatic}}=2}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
 \DoxyCodeLine{43 }
-\DoxyCodeLine{44     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/     EEPROM Variable Declarations  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{45 }
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47 \textcolor{keyword}{extern} \mbox{\hyperlink{class_e_e_p_r_o_m___manager}{EEPROM\_Manager}} \mbox{\hyperlink{global__variables_8h_ab06c714ee161cf34440fdb53fb5a6d24}{rom\_manager}};}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49 \textcolor{keyword}{extern} \mbox{\hyperlink{class_e_e_p_r_o_m___variable}{EEPROM\_Variable}} \mbox{\hyperlink{global__variables_8h_a306cb999495057968c9ebdaca2d99c44}{manual\_dutycycle}} ;}
-\DoxyCodeLine{50 \textcolor{keyword}{extern} \mbox{\hyperlink{class_e_e_p_r_o_m___variable}{EEPROM\_Variable}} \mbox{\hyperlink{global__variables_8h_a4402b0cf0598116bc1d727b00c74bf51}{autosave}} ;}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{52 }
-\DoxyCodeLine{53     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/     Other Stuff  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{54 }
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{44     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/     Global Variables -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{49 \textcolor{comment}{}\textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{global__variables_8h_ae0d7b8a179a4e00492f385d3e4c28875}{Cyclic\_Array\_Size}} = 10;}
+\DoxyCodeLine{54 \textcolor{keyword}{extern} uint8\_t \mbox{\hyperlink{global__variables_8h_a903dc10003a218620ea6bd4b59aca90f}{Cyclic\_Array\_Index}};}
+\DoxyCodeLine{59 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{global__variables_8h_a4aa978fdd8b2af0060581b4cf057aa15}{Temp1}}[\mbox{\hyperlink{global__variables_8h_ae0d7b8a179a4e00492f385d3e4c28875}{Cyclic\_Array\_Size}}],\mbox{\hyperlink{global__variables_8h_a349ef976a3c80acee90c13d5274c1012}{Temp2}}[\mbox{\hyperlink{global__variables_8h_ae0d7b8a179a4e00492f385d3e4c28875}{Cyclic\_Array\_Size}}],\mbox{\hyperlink{global__variables_8h_a7a4f9da5a5b03e3b620a52b326c99171}{SonarDist1}}[\mbox{\hyperlink{global__variables_8h_ae0d7b8a179a4e00492f385d3e4c28875}{Cyclic\_Array\_Size}}], \mbox{\hyperlink{global__variables_8h_aa7423da4abe01b3d4e3ca46efe227ecc}{IRDist2}}[\mbox{\hyperlink{global__variables_8h_ae0d7b8a179a4e00492f385d3e4c28875}{Cyclic\_Array\_Size}}];}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{65 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{global__variables_8h_ad2cddfbedfaa3c72c5ca3458123de2e6}{Temp1Average}}, \mbox{\hyperlink{global__variables_8h_a98a9f68d7aba6c3f37ea78974a6cc324}{Temp2Average}}, \mbox{\hyperlink{global__variables_8h_af8fa803a5d79a542c42ff09091f99f4c}{SonarAverage}}, \mbox{\hyperlink{global__variables_8h_ac2983004a8cc1f5eade6ee043f323f2f}{IRAverage}};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{keyword}{extern} \mbox{\hyperlink{global__variables_8h_a7131f3b3e5d9a4980752d9ac3edaeea0}{Control\_State}} \mbox{\hyperlink{global__variables_8h_a2192d4871d46cdc3fba65146088bdcb9}{PumpState}}, \mbox{\hyperlink{global__variables_8h_a73b179801e50a86199223fbf88f5c12e}{SolanoidState}}, \mbox{\hyperlink{global__variables_8h_a430bb6acf8cdf613e077c6a7f7c3d015}{prevPumpState}}, \mbox{\hyperlink{global__variables_8h_a48b73615b2cf62582fb4c47f95971475}{prevSolanoidState}};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keyword}{extern} uint32\_t \mbox{\hyperlink{global__variables_8h_a17ca7918be207c977093defdb63d0867}{lastStateUpdate}}, \mbox{\hyperlink{global__variables_8h_a549b506ca4e238d975211948ab268d2f}{lastLCDUpdate}}, \mbox{\hyperlink{global__variables_8h_ae7075b28a1b0396f31bba96665f4e903}{lastSensorUpdate}};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/     Global Objects Declarations  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{77 \textcolor{keyword}{extern} LiquidCrystal\_I2C \mbox{\hyperlink{global__variables_8h_a0b3886fc5d22cd9c3db5f0da7b01a2ce}{lcd}};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/     EEPROM Variable Declarations  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{keyword}{extern} \mbox{\hyperlink{class_e_e_p_r_o_m___manager}{EEPROM\_Manager}} \mbox{\hyperlink{global__variables_8h_ab06c714ee161cf34440fdb53fb5a6d24}{rom\_manager}};}
+\DoxyCodeLine{83 \textcolor{keyword}{extern} \mbox{\hyperlink{class_e_e_p_r_o_m___variable}{EEPROM\_Variable}} \mbox{\hyperlink{global__variables_8h_a306cb999495057968c9ebdaca2d99c44}{manual\_dutycycle}} ;}
+\DoxyCodeLine{84 \textcolor{keyword}{extern} \mbox{\hyperlink{class_e_e_p_r_o_m___variable}{EEPROM\_Variable}} \mbox{\hyperlink{global__variables_8h_a4402b0cf0598116bc1d727b00c74bf51}{autosave}} ;}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/     Other Stuff  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define STATE\_RATE 2000}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define SENSOR\_RATE 500}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define LCD\_RATE 500}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

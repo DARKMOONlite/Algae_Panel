@@ -1,4 +1,14 @@
-
+/**
+ * @file main.cpp
+ * @author Sebastian Schroder
+ * @brief Main file, to run either select the main or mainmega environments inside platformio
+ * main may not run due to the large size of the menu inside @file menu.h
+ * @version 0.1
+ * @date 2023-06-02
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <Wire.h>
 #include <global_variables.h>
 #include <Arduino.h>

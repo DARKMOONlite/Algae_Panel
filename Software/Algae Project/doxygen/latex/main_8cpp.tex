@@ -1,10 +1,20 @@
 \hypertarget{main_8cpp}{}\doxysection{src/main.cpp File Reference}
 \label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+
+
+Main file, to run either select the main or mainmega environments inside platformio main may not run due to the large size of the menu inside.  
+
+
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
 {\ttfamily \#include $<$global\+\_\+variables.\+h$>$}\newline
 {\ttfamily \#include $<$Arduino.\+h$>$}\newline
 {\ttfamily \#include $<$IRremote.\+h$>$}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_af9cf4ef7ebebb6c181594d5a1c6dc3a2}{Update\+\_\+\+Sensor\+\_\+\+State}} ()
+\item 
+void \mbox{\hyperlink{main_8cpp_a4be994af2b57ccfe32022694d07b4082}{Update\+\_\+\+Control\+\_\+\+State}} ()
 \item 
 New\+Ping \mbox{\hyperlink{main_8cpp_aa3890dc13ad641f783b713ac4bd4a749}{Sonar1}} (\mbox{\hyperlink{pin__definitions_8hpp_a9a54be5fe92c6d16578982bf6cecd891}{SSensor\+Pin1}}, \mbox{\hyperlink{pin__definitions_8hpp_aea99235fa3eef529e3ca42c55036d49a}{Sonar\+Echo\+Pin}}, 400)
 \item 
@@ -27,6 +37,14 @@ void \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Main file, to run either select the main or mainmega environments inside platformio main may not run due to the large size of the menu inside. 
+
+\begin{DoxyAuthor}{Author}
+Sebastian Schroder 
+\end{DoxyAuthor}
+
+
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{main_8cpp_a719f315363a42d399582066b011803a0}\label{main_8cpp_a719f315363a42d399582066b011803a0}} 
 \index{main.cpp@{main.cpp}!irrecv@{irrecv}}
@@ -40,7 +58,7 @@ void \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
 \doxysubsubsection{\texorpdfstring{loop()}{loop()}}
 {\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-do not put anything here, task scheduler will take over\mbox{\Hypertarget{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
+\mbox{\Hypertarget{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
 \index{main.cpp@{main.cpp}!setup@{setup}}
 \index{setup@{setup}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{setup()}{setup()}}
@@ -57,6 +75,18 @@ do not put anything here, task scheduler will take over\mbox{\Hypertarget{main_8
 \index{Sonar2@{Sonar2}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{Sonar2()}{Sonar2()}}
 {\footnotesize\ttfamily New\+Ping Sonar2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pin__definitions_8hpp_acbebe49963630ffe7894925f9af6929e}{SSensor\+Pin2}}}]{,  }\item[{\mbox{\hyperlink{pin__definitions_8hpp_aea99235fa3eef529e3ca42c55036d49a}{Sonar\+Echo\+Pin}}}]{,  }\item[{400}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a4be994af2b57ccfe32022694d07b4082}\label{main_8cpp_a4be994af2b57ccfe32022694d07b4082}} 
+\index{main.cpp@{main.cpp}!Update\_Control\_State@{Update\_Control\_State}}
+\index{Update\_Control\_State@{Update\_Control\_State}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{Update\_Control\_State()}{Update\_Control\_State()}}
+{\footnotesize\ttfamily void Update\+\_\+\+Control\+\_\+\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_af9cf4ef7ebebb6c181594d5a1c6dc3a2}\label{main_8cpp_af9cf4ef7ebebb6c181594d5a1c6dc3a2}} 
+\index{main.cpp@{main.cpp}!Update\_Sensor\_State@{Update\_Sensor\_State}}
+\index{Update\_Sensor\_State@{Update\_Sensor\_State}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{Update\_Sensor\_State()}{Update\_Sensor\_State()}}
+{\footnotesize\ttfamily void Update\+\_\+\+Sensor\+\_\+\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 

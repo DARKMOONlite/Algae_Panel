@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['manager_0',['manager',['../test___e_e_p_r_o_m_8cpp.html#a25a92b3c06c41751124213b5c1d6cdae',1,'test_EEPROM.cpp']]],
-  ['manual_5fdutycycle_1',['manual_dutycycle',['../global__variables_8cpp.html#a90ab7f98979031ec04fb9d755240df1e',1,'manual_dutycycle():&#160;global_variables.cpp'],['../global__variables_8h.html#a306cb999495057968c9ebdaca2d99c44',1,'manual_dutycycle():&#160;global_variables.h']]],
-  ['manualpumpsettings_2',['ManualPumpSettings',['../menu_8cpp.html#ade3079dbd0224bab46c1049b03a54d78',1,'menu.cpp']]],
-  ['menu_3',['Menu',['../menu_8cpp.html#adf9e37a03564972b583bc9e17e30a93d',1,'menu.cpp']]],
-  ['menulocation_4',['menuLocation',['../class_simple_menu.html#a88d3c8ac29625bd43c9b8e78e4f63b3f',1,'SimpleMenu']]]
+  ['lastlcdupdate_0',['lastLCDUpdate',['../global__variables_8cpp.html#a549b506ca4e238d975211948ab268d2f',1,'lastLCDUpdate():&#160;global_variables.cpp'],['../global__variables_8h.html#a549b506ca4e238d975211948ab268d2f',1,'lastLCDUpdate():&#160;global_variables.h']]],
+  ['lastsensorupdate_1',['lastSensorUpdate',['../global__variables_8cpp.html#ae7075b28a1b0396f31bba96665f4e903',1,'lastSensorUpdate():&#160;global_variables.cpp'],['../global__variables_8h.html#ae7075b28a1b0396f31bba96665f4e903',1,'lastSensorUpdate():&#160;global_variables.h']]],
+  ['laststateupdate_2',['lastStateUpdate',['../global__variables_8cpp.html#a17ca7918be207c977093defdb63d0867',1,'lastStateUpdate():&#160;global_variables.cpp'],['../global__variables_8h.html#a17ca7918be207c977093defdb63d0867',1,'lastStateUpdate():&#160;global_variables.cpp']]],
+  ['lcd_3',['lcd',['../global__variables_8cpp.html#a0b3886fc5d22cd9c3db5f0da7b01a2ce',1,'lcd():&#160;global_variables.cpp'],['../global__variables_8h.html#a0b3886fc5d22cd9c3db5f0da7b01a2ce',1,'lcd():&#160;global_variables.cpp']]]
 ];

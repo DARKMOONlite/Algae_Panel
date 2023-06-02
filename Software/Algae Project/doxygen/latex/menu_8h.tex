@@ -1,7 +1,12 @@
 \hypertarget{menu_8h}{}\doxysection{src/menu.h File Reference}
 \label{menu_8h}\index{src/menu.h@{src/menu.h}}
+
+
+Defines functions used by the meny, definitions are stored inside.  
+
+
 {\ttfamily \#include $<$Simple\+Menu.\+h$>$}\newline
-{\ttfamily \#include $<$Liquid\+Crystal.\+h$>$}\newline
+{\ttfamily \#include $<$Liquid\+Crystal\+\_\+\+I2\+C.\+h$>$}\newline
 {\ttfamily \#include $<$Arduino.\+h$>$}\newline
 {\ttfamily \#include $<$global\+\_\+variables.\+h$>$}\newline
 \doxysubsection*{Functions}
@@ -18,7 +23,9 @@ void \mbox{\hyperlink{menu_8h_a13507063323ae611f3d47b515d02ae20}{Solanoid\+\_\+\
 uint16\+\_\+t \mbox{\hyperlink{menu_8h_a5e22482079cf2d4a65867971a1a670b9}{Menu\+\_\+\+IR\+\_\+\+Input}} (uint16\+\_\+t \+\_\+input)
 \begin{DoxyCompactList}\small\item\em Allows for the menu to accept IR input. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{menu_8h_a0c6717e502f384991e45600e263a630e}{Menu\+\_\+\+Serial\+\_\+\+Input}} (int \+\_\+input)
-\begin{DoxyCompactList}\small\item\em Allows for the menu to take serial input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Allows for the menu to take serial input. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{menu_8h_a713c6975f139b699328fbb48e4ad3854}{Average\+\_\+\+Array}} (int $\ast$Array, int Size)
+\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,7 +33,30 @@ int \mbox{\hyperlink{menu_8h_a0c6717e502f384991e45600e263a630e}{Menu\+\_\+\+Seri
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Defines functions used by the meny, definitions are stored inside. 
+
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/06-\/02
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{Author}
+Sebastian Schroder 
+\end{DoxyAuthor}
+
+
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{menu_8h_a713c6975f139b699328fbb48e4ad3854}\label{menu_8h_a713c6975f139b699328fbb48e4ad3854}} 
+\index{menu.h@{menu.h}!Average\_Array@{Average\_Array}}
+\index{Average\_Array@{Average\_Array}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{Average\_Array()}{Average\_Array()}}
+{\footnotesize\ttfamily float Average\+\_\+\+Array (\begin{DoxyParamCaption}\item[{int $\ast$}]{Array,  }\item[{int}]{Size }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{menu_8h_a7e7bd34f7f80ad8b5e5950e026446989}\label{menu_8h_a7e7bd34f7f80ad8b5e5950e026446989}} 
 \index{menu.h@{menu.h}!display@{display}}
 \index{display@{display}!menu.h@{menu.h}}

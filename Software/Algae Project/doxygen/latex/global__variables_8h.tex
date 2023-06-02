@@ -1,6 +1,12 @@
 \hypertarget{global__variables_8h}{}\doxysection{src/global\+\_\+variables.h File Reference}
 \label{global__variables_8h}\index{src/global\_variables.h@{src/global\_variables.h}}
-{\ttfamily \#include $<$Liquid\+Crystal.\+h$>$}\newline
+
+
+Declares global variables to be used throughout the code.  
+
+
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include $<$Liquid\+Crystal\+\_\+\+I2\+C.\+h$>$}\newline
 {\ttfamily \#include $<$Arduino\+STL.\+h$>$}\newline
 {\ttfamily \#include $<$EEPROM\+\_\+\+Manager.\+h$>$}\newline
 {\ttfamily \#include $<$menu.\+h$>$}\newline
@@ -10,6 +16,15 @@
 {\ttfamily \#include $<$DS18\+B20.\+h$>$}\newline
 {\ttfamily \#include $<$pin\+\_\+definitions.\+hpp$>$}\newline
 {\ttfamily \#include $<$Algae\+Panel\+Remote.\+hpp$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{global__variables_8h_a51cb8b878986ce3ff33493d99d02d7fc}{STATE\+\_\+\+RATE}}~2000
+\item 
+\#define \mbox{\hyperlink{global__variables_8h_a8c2953801f2011dc5901884b0e53ddd5}{SENSOR\+\_\+\+RATE}}~500
+\item 
+\#define \mbox{\hyperlink{global__variables_8h_a669d5bc07ca8e20ac1699a0b54db4817}{LCD\+\_\+\+RATE}}~500
+\end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -21,13 +36,25 @@ enum \mbox{\hyperlink{global__variables_8h_a7131f3b3e5d9a4980752d9ac3edaeea0}{Co
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{global__variables_8h_ab627b25fe931b42061d8f6a3a6febbe2}{Temp1}}
+const int \mbox{\hyperlink{global__variables_8h_ae0d7b8a179a4e00492f385d3e4c28875}{Cyclic\+\_\+\+Array\+\_\+\+Size}} = 10
+\begin{DoxyCompactList}\small\item\em Cyclic\+\_\+\+Array Size;. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{global__variables_8h_a903dc10003a218620ea6bd4b59aca90f}{Cyclic\+\_\+\+Array\+\_\+\+Index}}
+\begin{DoxyCompactList}\small\item\em Current Index of Arrays. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{global__variables_8h_a4aa978fdd8b2af0060581b4cf057aa15}{Temp1}} \mbox{[}\mbox{\hyperlink{global__variables_8h_ae0d7b8a179a4e00492f385d3e4c28875}{Cyclic\+\_\+\+Array\+\_\+\+Size}}\mbox{]}
 \item 
-int \mbox{\hyperlink{global__variables_8h_a06d01255d6054de9b58a273d6cce6cc7}{Temp2}}
+int \mbox{\hyperlink{global__variables_8h_a349ef976a3c80acee90c13d5274c1012}{Temp2}} \mbox{[}\mbox{\hyperlink{global__variables_8h_ae0d7b8a179a4e00492f385d3e4c28875}{Cyclic\+\_\+\+Array\+\_\+\+Size}}\mbox{]}
 \item 
-int \mbox{\hyperlink{global__variables_8h_a026dac3ac8ce79dd32e750d83f417cc7}{Sonar\+Dist1}}
+int \mbox{\hyperlink{global__variables_8h_a7a4f9da5a5b03e3b620a52b326c99171}{Sonar\+Dist1}} \mbox{[}\mbox{\hyperlink{global__variables_8h_ae0d7b8a179a4e00492f385d3e4c28875}{Cyclic\+\_\+\+Array\+\_\+\+Size}}\mbox{]}
 \item 
-int \mbox{\hyperlink{global__variables_8h_ab0b58094c0206004e941f653f2b143d5}{Sonar\+Dist2}}
+int \mbox{\hyperlink{global__variables_8h_aa7423da4abe01b3d4e3ca46efe227ecc}{IRDist2}} \mbox{[}\mbox{\hyperlink{global__variables_8h_ae0d7b8a179a4e00492f385d3e4c28875}{Cyclic\+\_\+\+Array\+\_\+\+Size}}\mbox{]}
+\item 
+int \mbox{\hyperlink{global__variables_8h_ad2cddfbedfaa3c72c5ca3458123de2e6}{Temp1\+Average}}
+\begin{DoxyCompactList}\small\item\em Current Rolling Average of value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{global__variables_8h_a98a9f68d7aba6c3f37ea78974a6cc324}{Temp2\+Average}}
+\item 
+int \mbox{\hyperlink{global__variables_8h_af8fa803a5d79a542c42ff09091f99f4c}{Sonar\+Average}}
+\item 
+int \mbox{\hyperlink{global__variables_8h_ac2983004a8cc1f5eade6ee043f323f2f}{IRAverage}}
 \item 
 \mbox{\hyperlink{global__variables_8h_a7131f3b3e5d9a4980752d9ac3edaeea0}{Control\+\_\+\+State}} \mbox{\hyperlink{global__variables_8h_a2192d4871d46cdc3fba65146088bdcb9}{Pump\+State}}
 \item 
@@ -37,7 +64,13 @@ int \mbox{\hyperlink{global__variables_8h_ab0b58094c0206004e941f653f2b143d5}{Son
 \item 
 \mbox{\hyperlink{global__variables_8h_a7131f3b3e5d9a4980752d9ac3edaeea0}{Control\+\_\+\+State}} \mbox{\hyperlink{global__variables_8h_a48b73615b2cf62582fb4c47f95971475}{prev\+Solanoid\+State}}
 \item 
-Liquid\+Crystal \mbox{\hyperlink{global__variables_8h_a9721c703fd950b5e771809e8c15329c6}{lcd}}
+uint32\+\_\+t \mbox{\hyperlink{global__variables_8h_a17ca7918be207c977093defdb63d0867}{last\+State\+Update}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{global__variables_8h_a549b506ca4e238d975211948ab268d2f}{last\+LCDUpdate}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{global__variables_8h_ae7075b28a1b0396f31bba96665f4e903}{last\+Sensor\+Update}}
+\item 
+Liquid\+Crystal\+\_\+\+I2C \mbox{\hyperlink{global__variables_8h_a0b3886fc5d22cd9c3db5f0da7b01a2ce}{lcd}}
 \item 
 \mbox{\hyperlink{class_e_e_p_r_o_m___manager}{EEPROM\+\_\+\+Manager}} \mbox{\hyperlink{global__variables_8h_ab06c714ee161cf34440fdb53fb5a6d24}{rom\+\_\+manager}}
 \item 
@@ -45,6 +78,44 @@ Liquid\+Crystal \mbox{\hyperlink{global__variables_8h_a9721c703fd950b5e771809e8c
 \item 
 \mbox{\hyperlink{class_e_e_p_r_o_m___variable}{EEPROM\+\_\+\+Variable}} \mbox{\hyperlink{global__variables_8h_a4402b0cf0598116bc1d727b00c74bf51}{autosave}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declares global variables to be used throughout the code. 
+
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/06-\/02
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{global__variables_8h_a669d5bc07ca8e20ac1699a0b54db4817}\label{global__variables_8h_a669d5bc07ca8e20ac1699a0b54db4817}} 
+\index{global\_variables.h@{global\_variables.h}!LCD\_RATE@{LCD\_RATE}}
+\index{LCD\_RATE@{LCD\_RATE}!global\_variables.h@{global\_variables.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_RATE}{LCD\_RATE}}
+{\footnotesize\ttfamily \#define LCD\+\_\+\+RATE~500}
+
+\mbox{\Hypertarget{global__variables_8h_a8c2953801f2011dc5901884b0e53ddd5}\label{global__variables_8h_a8c2953801f2011dc5901884b0e53ddd5}} 
+\index{global\_variables.h@{global\_variables.h}!SENSOR\_RATE@{SENSOR\_RATE}}
+\index{SENSOR\_RATE@{SENSOR\_RATE}!global\_variables.h@{global\_variables.h}}
+\doxysubsubsection{\texorpdfstring{SENSOR\_RATE}{SENSOR\_RATE}}
+{\footnotesize\ttfamily \#define SENSOR\+\_\+\+RATE~500}
+
+\mbox{\Hypertarget{global__variables_8h_a51cb8b878986ce3ff33493d99d02d7fc}\label{global__variables_8h_a51cb8b878986ce3ff33493d99d02d7fc}} 
+\index{global\_variables.h@{global\_variables.h}!STATE\_RATE@{STATE\_RATE}}
+\index{STATE\_RATE@{STATE\_RATE}!global\_variables.h@{global\_variables.h}}
+\doxysubsubsection{\texorpdfstring{STATE\_RATE}{STATE\_RATE}}
+{\footnotesize\ttfamily \#define STATE\+\_\+\+RATE~2000}
+
 
 
 \doxysubsection{Enumeration Type Documentation}
@@ -81,11 +152,61 @@ Automatic&\\
 \doxysubsubsection{\texorpdfstring{autosave}{autosave}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_e_e_p_r_o_m___variable}{EEPROM\+\_\+\+Variable}} autosave\hspace{0.3cm}{\ttfamily [extern]}}
 
-\mbox{\Hypertarget{global__variables_8h_a9721c703fd950b5e771809e8c15329c6}\label{global__variables_8h_a9721c703fd950b5e771809e8c15329c6}} 
+\mbox{\Hypertarget{global__variables_8h_a903dc10003a218620ea6bd4b59aca90f}\label{global__variables_8h_a903dc10003a218620ea6bd4b59aca90f}} 
+\index{global\_variables.h@{global\_variables.h}!Cyclic\_Array\_Index@{Cyclic\_Array\_Index}}
+\index{Cyclic\_Array\_Index@{Cyclic\_Array\_Index}!global\_variables.h@{global\_variables.h}}
+\doxysubsubsection{\texorpdfstring{Cyclic\_Array\_Index}{Cyclic\_Array\_Index}}
+{\footnotesize\ttfamily uint8\+\_\+t Cyclic\+\_\+\+Array\+\_\+\+Index\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Current Index of Arrays. 
+
+\mbox{\Hypertarget{global__variables_8h_ae0d7b8a179a4e00492f385d3e4c28875}\label{global__variables_8h_ae0d7b8a179a4e00492f385d3e4c28875}} 
+\index{global\_variables.h@{global\_variables.h}!Cyclic\_Array\_Size@{Cyclic\_Array\_Size}}
+\index{Cyclic\_Array\_Size@{Cyclic\_Array\_Size}!global\_variables.h@{global\_variables.h}}
+\doxysubsubsection{\texorpdfstring{Cyclic\_Array\_Size}{Cyclic\_Array\_Size}}
+{\footnotesize\ttfamily const int Cyclic\+\_\+\+Array\+\_\+\+Size = 10}
+
+
+
+Cyclic\+\_\+\+Array Size;. 
+
+\mbox{\Hypertarget{global__variables_8h_ac2983004a8cc1f5eade6ee043f323f2f}\label{global__variables_8h_ac2983004a8cc1f5eade6ee043f323f2f}} 
+\index{global\_variables.h@{global\_variables.h}!IRAverage@{IRAverage}}
+\index{IRAverage@{IRAverage}!global\_variables.h@{global\_variables.h}}
+\doxysubsubsection{\texorpdfstring{IRAverage}{IRAverage}}
+{\footnotesize\ttfamily int IRAverage}
+
+\mbox{\Hypertarget{global__variables_8h_aa7423da4abe01b3d4e3ca46efe227ecc}\label{global__variables_8h_aa7423da4abe01b3d4e3ca46efe227ecc}} 
+\index{global\_variables.h@{global\_variables.h}!IRDist2@{IRDist2}}
+\index{IRDist2@{IRDist2}!global\_variables.h@{global\_variables.h}}
+\doxysubsubsection{\texorpdfstring{IRDist2}{IRDist2}}
+{\footnotesize\ttfamily int IRDist2\mbox{[}\mbox{\hyperlink{global__variables_8h_ae0d7b8a179a4e00492f385d3e4c28875}{Cyclic\+\_\+\+Array\+\_\+\+Size}}\mbox{]}}
+
+\mbox{\Hypertarget{global__variables_8h_a549b506ca4e238d975211948ab268d2f}\label{global__variables_8h_a549b506ca4e238d975211948ab268d2f}} 
+\index{global\_variables.h@{global\_variables.h}!lastLCDUpdate@{lastLCDUpdate}}
+\index{lastLCDUpdate@{lastLCDUpdate}!global\_variables.h@{global\_variables.h}}
+\doxysubsubsection{\texorpdfstring{lastLCDUpdate}{lastLCDUpdate}}
+{\footnotesize\ttfamily uint32\+\_\+t last\+LCDUpdate}
+
+\mbox{\Hypertarget{global__variables_8h_ae7075b28a1b0396f31bba96665f4e903}\label{global__variables_8h_ae7075b28a1b0396f31bba96665f4e903}} 
+\index{global\_variables.h@{global\_variables.h}!lastSensorUpdate@{lastSensorUpdate}}
+\index{lastSensorUpdate@{lastSensorUpdate}!global\_variables.h@{global\_variables.h}}
+\doxysubsubsection{\texorpdfstring{lastSensorUpdate}{lastSensorUpdate}}
+{\footnotesize\ttfamily uint32\+\_\+t last\+Sensor\+Update}
+
+\mbox{\Hypertarget{global__variables_8h_a17ca7918be207c977093defdb63d0867}\label{global__variables_8h_a17ca7918be207c977093defdb63d0867}} 
+\index{global\_variables.h@{global\_variables.h}!lastStateUpdate@{lastStateUpdate}}
+\index{lastStateUpdate@{lastStateUpdate}!global\_variables.h@{global\_variables.h}}
+\doxysubsubsection{\texorpdfstring{lastStateUpdate}{lastStateUpdate}}
+{\footnotesize\ttfamily uint32\+\_\+t last\+State\+Update\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{global__variables_8h_a0b3886fc5d22cd9c3db5f0da7b01a2ce}\label{global__variables_8h_a0b3886fc5d22cd9c3db5f0da7b01a2ce}} 
 \index{global\_variables.h@{global\_variables.h}!lcd@{lcd}}
 \index{lcd@{lcd}!global\_variables.h@{global\_variables.h}}
 \doxysubsubsection{\texorpdfstring{lcd}{lcd}}
-{\footnotesize\ttfamily Liquid\+Crystal lcd\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily Liquid\+Crystal\+\_\+\+I2C lcd\hspace{0.3cm}{\ttfamily [extern]}}
 
 \mbox{\Hypertarget{global__variables_8h_a306cb999495057968c9ebdaca2d99c44}\label{global__variables_8h_a306cb999495057968c9ebdaca2d99c44}} 
 \index{global\_variables.h@{global\_variables.h}!manual\_dutycycle@{manual\_dutycycle}}
@@ -123,27 +244,43 @@ Automatic&\\
 \doxysubsubsection{\texorpdfstring{SolanoidState}{SolanoidState}}
 {\footnotesize\ttfamily \mbox{\hyperlink{global__variables_8h_a7131f3b3e5d9a4980752d9ac3edaeea0}{Control\+\_\+\+State}} Solanoid\+State}
 
-\mbox{\Hypertarget{global__variables_8h_a026dac3ac8ce79dd32e750d83f417cc7}\label{global__variables_8h_a026dac3ac8ce79dd32e750d83f417cc7}} 
+\mbox{\Hypertarget{global__variables_8h_af8fa803a5d79a542c42ff09091f99f4c}\label{global__variables_8h_af8fa803a5d79a542c42ff09091f99f4c}} 
+\index{global\_variables.h@{global\_variables.h}!SonarAverage@{SonarAverage}}
+\index{SonarAverage@{SonarAverage}!global\_variables.h@{global\_variables.h}}
+\doxysubsubsection{\texorpdfstring{SonarAverage}{SonarAverage}}
+{\footnotesize\ttfamily int Sonar\+Average}
+
+\mbox{\Hypertarget{global__variables_8h_a7a4f9da5a5b03e3b620a52b326c99171}\label{global__variables_8h_a7a4f9da5a5b03e3b620a52b326c99171}} 
 \index{global\_variables.h@{global\_variables.h}!SonarDist1@{SonarDist1}}
 \index{SonarDist1@{SonarDist1}!global\_variables.h@{global\_variables.h}}
 \doxysubsubsection{\texorpdfstring{SonarDist1}{SonarDist1}}
-{\footnotesize\ttfamily int Sonar\+Dist1\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily int Sonar\+Dist1\mbox{[}\mbox{\hyperlink{global__variables_8h_ae0d7b8a179a4e00492f385d3e4c28875}{Cyclic\+\_\+\+Array\+\_\+\+Size}}\mbox{]}}
 
-\mbox{\Hypertarget{global__variables_8h_ab0b58094c0206004e941f653f2b143d5}\label{global__variables_8h_ab0b58094c0206004e941f653f2b143d5}} 
-\index{global\_variables.h@{global\_variables.h}!SonarDist2@{SonarDist2}}
-\index{SonarDist2@{SonarDist2}!global\_variables.h@{global\_variables.h}}
-\doxysubsubsection{\texorpdfstring{SonarDist2}{SonarDist2}}
-{\footnotesize\ttfamily int Sonar\+Dist2}
-
-\mbox{\Hypertarget{global__variables_8h_ab627b25fe931b42061d8f6a3a6febbe2}\label{global__variables_8h_ab627b25fe931b42061d8f6a3a6febbe2}} 
+\mbox{\Hypertarget{global__variables_8h_a4aa978fdd8b2af0060581b4cf057aa15}\label{global__variables_8h_a4aa978fdd8b2af0060581b4cf057aa15}} 
 \index{global\_variables.h@{global\_variables.h}!Temp1@{Temp1}}
 \index{Temp1@{Temp1}!global\_variables.h@{global\_variables.h}}
 \doxysubsubsection{\texorpdfstring{Temp1}{Temp1}}
-{\footnotesize\ttfamily int Temp1\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily int Temp1\mbox{[}\mbox{\hyperlink{global__variables_8h_ae0d7b8a179a4e00492f385d3e4c28875}{Cyclic\+\_\+\+Array\+\_\+\+Size}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
 
-\mbox{\Hypertarget{global__variables_8h_a06d01255d6054de9b58a273d6cce6cc7}\label{global__variables_8h_a06d01255d6054de9b58a273d6cce6cc7}} 
+\mbox{\Hypertarget{global__variables_8h_ad2cddfbedfaa3c72c5ca3458123de2e6}\label{global__variables_8h_ad2cddfbedfaa3c72c5ca3458123de2e6}} 
+\index{global\_variables.h@{global\_variables.h}!Temp1Average@{Temp1Average}}
+\index{Temp1Average@{Temp1Average}!global\_variables.h@{global\_variables.h}}
+\doxysubsubsection{\texorpdfstring{Temp1Average}{Temp1Average}}
+{\footnotesize\ttfamily int Temp1\+Average\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Current Rolling Average of value. 
+
+\mbox{\Hypertarget{global__variables_8h_a349ef976a3c80acee90c13d5274c1012}\label{global__variables_8h_a349ef976a3c80acee90c13d5274c1012}} 
 \index{global\_variables.h@{global\_variables.h}!Temp2@{Temp2}}
 \index{Temp2@{Temp2}!global\_variables.h@{global\_variables.h}}
 \doxysubsubsection{\texorpdfstring{Temp2}{Temp2}}
-{\footnotesize\ttfamily int Temp2}
+{\footnotesize\ttfamily int Temp2\mbox{[}\mbox{\hyperlink{global__variables_8h_ae0d7b8a179a4e00492f385d3e4c28875}{Cyclic\+\_\+\+Array\+\_\+\+Size}}\mbox{]}}
+
+\mbox{\Hypertarget{global__variables_8h_a98a9f68d7aba6c3f37ea78974a6cc324}\label{global__variables_8h_a98a9f68d7aba6c3f37ea78974a6cc324}} 
+\index{global\_variables.h@{global\_variables.h}!Temp2Average@{Temp2Average}}
+\index{Temp2Average@{Temp2Average}!global\_variables.h@{global\_variables.h}}
+\doxysubsubsection{\texorpdfstring{Temp2Average}{Temp2Average}}
+{\footnotesize\ttfamily int Temp2\+Average}
 

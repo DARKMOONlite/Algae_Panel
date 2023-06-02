@@ -11,47 +11,34 @@
 \DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_e_e_p_r_o_m___manager}{EEPROM\_Manager}};}
 \DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_e_e_p_r_o_m___variable}{EEPROM\_Variable}} \{}
 \DoxyCodeLine{13     \textcolor{keyword}{public}:}
-\DoxyCodeLine{19         \mbox{\hyperlink{class_e_e_p_r_o_m___variable_a57cb7170ef1d9e9eb11aa522951919b5}{EEPROM\_Variable}}(\textcolor{keywordtype}{int} \_Variable)}
-\DoxyCodeLine{20         :default\_var(\_Variable)}
-\DoxyCodeLine{21         \{}
-\DoxyCodeLine{22             \mbox{\hyperlink{class_e_e_p_r_o_m___variable_aef9b508ea8a71974877c9863d6b7a8cb}{var}} = \_Variable;}
-\DoxyCodeLine{23         \}}
-\DoxyCodeLine{31         \mbox{\hyperlink{class_e_e_p_r_o_m___variable_a57cb7170ef1d9e9eb11aa522951919b5}{EEPROM\_Variable}}(\textcolor{keywordtype}{int} \_Variable,uint8\_t \_EE\_Loc,\mbox{\hyperlink{class_e_e_p_r_o_m___manager}{EEPROM\_Manager}}* \_Manager);}
-\DoxyCodeLine{36         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_e_e_p_r_o_m___variable_afa286c605bfe0063635bc543f591dd09}{Store}}();}
-\DoxyCodeLine{37 }
-\DoxyCodeLine{42         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_e_e_p_r_o_m___variable_a0381e7239d894c1087df5e39e0319808}{Retrieve}}();}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{48         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_e_e_p_r_o_m___variable_a39e241d2ee3b49061f66b3f9e1cfa967}{Reset}}();}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_e_e_p_r_o_m___variable_a57cb7170ef1d9e9eb11aa522951919b5}{EEPROM\_Variable}}(\textcolor{keywordtype}{int} \_Variable):default\_var(\_Variable)}
+\DoxyCodeLine{20         \{var = \_Variable;\}}
+\DoxyCodeLine{28         \mbox{\hyperlink{class_e_e_p_r_o_m___variable_a57cb7170ef1d9e9eb11aa522951919b5}{EEPROM\_Variable}}(\textcolor{keywordtype}{int} \_Variable,uint8\_t \_EE\_Loc,\mbox{\hyperlink{class_e_e_p_r_o_m___manager}{EEPROM\_Manager}}* \_Manager);}
+\DoxyCodeLine{33         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_e_e_p_r_o_m___variable_afa286c605bfe0063635bc543f591dd09}{Store}}();}
+\DoxyCodeLine{39         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_e_e_p_r_o_m___variable_a0381e7239d894c1087df5e39e0319808}{Retrieve}}();}
+\DoxyCodeLine{44         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_e_e_p_r_o_m___variable_a39e241d2ee3b49061f66b3f9e1cfa967}{Reset}}();}
+\DoxyCodeLine{45     \textcolor{keyword}{private}:}
+\DoxyCodeLine{46         uint16\_t EEPROM\_LOC=-\/1;}
+\DoxyCodeLine{47         \textcolor{keyword}{const} \textcolor{keywordtype}{int} default\_var;}
+\DoxyCodeLine{48 \};}
 \DoxyCodeLine{49 }
-\DoxyCodeLine{54         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_e_e_p_r_o_m___variable_aef9b508ea8a71974877c9863d6b7a8cb}{var}};}
-\DoxyCodeLine{55         }
-\DoxyCodeLine{56     \textcolor{keyword}{private}:}
-\DoxyCodeLine{61         uint16\_t EEPROM\_LOC=-\/1;}
-\DoxyCodeLine{66         \textcolor{keyword}{const} \textcolor{keywordtype}{int} default\_var;}
-\DoxyCodeLine{67 \};}
-\DoxyCodeLine{68 }
-\DoxyCodeLine{73 \textcolor{keyword}{class }\mbox{\hyperlink{class_e_e_p_r_o_m___manager}{EEPROM\_Manager}}\{}
-\DoxyCodeLine{74 }
-\DoxyCodeLine{75     \textcolor{keyword}{public}:}
-\DoxyCodeLine{80         \mbox{\hyperlink{class_e_e_p_r_o_m___manager_abdf85dbd2a4ae73d27ec0fa6903e86dc}{EEPROM\_Manager}}();}
-\DoxyCodeLine{85         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a3f06460dcaf379593a0b235c24bf8582}{Store}}();}
-\DoxyCodeLine{90         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a05f8d0296bab8657d22c900a2e0a5970}{Retrieve}}();}
-\DoxyCodeLine{95         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a078eeb631effb3c535a287015373a9d8}{Reset}}();}
-\DoxyCodeLine{104         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a4d810ea53386ad9d6609d3f6deb0bf56}{Add}}(\mbox{\hyperlink{class_e_e_p_r_o_m___variable}{EEPROM\_Variable}}* variable,uint8\_t EEPROM\_LOC);}
+\DoxyCodeLine{54 \textcolor{keyword}{class }\mbox{\hyperlink{class_e_e_p_r_o_m___manager}{EEPROM\_Manager}}\{}
+\DoxyCodeLine{55     \textcolor{keyword}{public}:}
+\DoxyCodeLine{56         \mbox{\hyperlink{class_e_e_p_r_o_m___manager_abdf85dbd2a4ae73d27ec0fa6903e86dc}{EEPROM\_Manager}}();}
+\DoxyCodeLine{61         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a3f06460dcaf379593a0b235c24bf8582}{Store}}();}
+\DoxyCodeLine{66         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a05f8d0296bab8657d22c900a2e0a5970}{Retrieve}}();}
+\DoxyCodeLine{71         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a078eeb631effb3c535a287015373a9d8}{Reset}}();}
+\DoxyCodeLine{80         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a4d810ea53386ad9d6609d3f6deb0bf56}{Add}}(\mbox{\hyperlink{class_e_e_p_r_o_m___variable}{EEPROM\_Variable}}* variable,uint8\_t EEPROM\_LOC);}
+\DoxyCodeLine{85         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a5f546db7495c918ce450044833e30f2b}{print\_errors}}();}
+\DoxyCodeLine{86     \textcolor{keyword}{private}:}
+\DoxyCodeLine{91         uint8\_t EEPROM\_MAP;}
+\DoxyCodeLine{96         std::vector<uint8\_t> double\_error;}
+\DoxyCodeLine{97         std::vector<uint8\_t> overflow\_error;}
+\DoxyCodeLine{102         std::vector<EEPROM\_Variable*> EEPROM\_Vector;}
+\DoxyCodeLine{103 \};}
+\DoxyCodeLine{104 }
 \DoxyCodeLine{105 }
-\DoxyCodeLine{110         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_e_e_p_r_o_m___manager_a5f546db7495c918ce450044833e30f2b}{print\_errors}}();}
-\DoxyCodeLine{111 }
-\DoxyCodeLine{112         \textcolor{keyword}{private}:}
-\DoxyCodeLine{117         uint8\_t EEPROM\_MAP;}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{119         std::vector<uint8\_t> double\_error;}
-\DoxyCodeLine{120         std::vector<uint8\_t> overflow\_error;}
-\DoxyCodeLine{121 }
-\DoxyCodeLine{126         std::vector<EEPROM\_Variable*> EEPROM\_Vector;}
-\DoxyCodeLine{127 \};}
-\DoxyCodeLine{128 }
-\DoxyCodeLine{129 }
-\DoxyCodeLine{130 }
-\DoxyCodeLine{131 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

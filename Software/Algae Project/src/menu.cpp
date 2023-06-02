@@ -1,4 +1,13 @@
-
+/**
+ * @file menu.cpp
+ * @author Sebastian Schroder
+ * @brief Defines the menu system, can be easily edited to add new functions and variables
+ * @version 0.1
+ * @date 2023-06-02
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <menu.h>
 
 

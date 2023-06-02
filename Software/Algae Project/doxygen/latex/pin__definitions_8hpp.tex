@@ -1,5 +1,10 @@
 \hypertarget{pin__definitions_8hpp}{}\doxysection{include/pin\+\_\+definitions.hpp File Reference}
 \label{pin__definitions_8hpp}\index{include/pin\_definitions.hpp@{include/pin\_definitions.hpp}}
+
+
+Use this document to define all Pins used in the main code in the \mbox{\hyperlink{menu_8cpp}{menu.\+cpp}} file inside the Menu\+\_\+\+IR\+\_\+\+Input function.  
+
+
 {\ttfamily \#include $<$Arduino.\+h$>$}\newline
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
@@ -18,24 +23,29 @@
 \item 
 \#define \mbox{\hyperlink{pin__definitions_8hpp_a98300bbbce3a65d992bbf4be3a84600b}{Pump\+Rx\+Pin}}~10
 \item 
-\#define \mbox{\hyperlink{pin__definitions_8hpp_a716c109071dabc5172b8b12c5795a1ae}{Solanoid\+Pin1}}~50
+\#define \mbox{\hyperlink{pin__definitions_8hpp_a716c109071dabc5172b8b12c5795a1ae}{Solanoid\+Pin1}}~22
 \item 
-\#define \mbox{\hyperlink{pin__definitions_8hpp_a0e34ce111e1eeb07757bd097cc23b761}{Solanoid\+Pin2}}~51
+\#define \mbox{\hyperlink{pin__definitions_8hpp_a0e34ce111e1eeb07757bd097cc23b761}{Solanoid\+Pin2}}~24
 \item 
 \#define \mbox{\hyperlink{pin__definitions_8hpp_aca6f3616097e746f44b630d09fa99c98}{IRRXPin}}~11
-\item 
-\#define \mbox{\hyperlink{pin__definitions_8hpp_ae063a69aedb9a11c5dcce286aca69e8a}{LCDRSPin}}~2
-\item 
-\#define \mbox{\hyperlink{pin__definitions_8hpp_a36d84e5ec247a812bbaeef451a4474df}{LCDEPin}}~3
-\item 
-\#define \mbox{\hyperlink{pin__definitions_8hpp_a54e732fe991cc64455956b7bf6bd3318}{LCDD4\+Pin}}~4
-\item 
-\#define \mbox{\hyperlink{pin__definitions_8hpp_a3e2a4376ee03d35d98bcadb44c52d116}{LCDD5\+Pin}}~5
-\item 
-\#define \mbox{\hyperlink{pin__definitions_8hpp_a4af10b4351848a8c42d5ac661d93b454}{LCDD6\+Pin}}~6
-\item 
-\#define \mbox{\hyperlink{pin__definitions_8hpp_ab0a96059061f979f64336f007ff98dc3}{LCDD7\+Pin}}~7
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Use this document to define all Pins used in the main code in the \mbox{\hyperlink{menu_8cpp}{menu.\+cpp}} file inside the Menu\+\_\+\+IR\+\_\+\+Input function. 
+
+\begin{DoxyAuthor}{Author}
+Sebastian Schroder 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/06-\/02
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -44,42 +54,6 @@
 \index{IRRXPin@{IRRXPin}!pin\_definitions.hpp@{pin\_definitions.hpp}}
 \doxysubsubsection{\texorpdfstring{IRRXPin}{IRRXPin}}
 {\footnotesize\ttfamily \#define IRRXPin~11}
-
-\mbox{\Hypertarget{pin__definitions_8hpp_a54e732fe991cc64455956b7bf6bd3318}\label{pin__definitions_8hpp_a54e732fe991cc64455956b7bf6bd3318}} 
-\index{pin\_definitions.hpp@{pin\_definitions.hpp}!LCDD4Pin@{LCDD4Pin}}
-\index{LCDD4Pin@{LCDD4Pin}!pin\_definitions.hpp@{pin\_definitions.hpp}}
-\doxysubsubsection{\texorpdfstring{LCDD4Pin}{LCDD4Pin}}
-{\footnotesize\ttfamily \#define LCDD4\+Pin~4}
-
-\mbox{\Hypertarget{pin__definitions_8hpp_a3e2a4376ee03d35d98bcadb44c52d116}\label{pin__definitions_8hpp_a3e2a4376ee03d35d98bcadb44c52d116}} 
-\index{pin\_definitions.hpp@{pin\_definitions.hpp}!LCDD5Pin@{LCDD5Pin}}
-\index{LCDD5Pin@{LCDD5Pin}!pin\_definitions.hpp@{pin\_definitions.hpp}}
-\doxysubsubsection{\texorpdfstring{LCDD5Pin}{LCDD5Pin}}
-{\footnotesize\ttfamily \#define LCDD5\+Pin~5}
-
-\mbox{\Hypertarget{pin__definitions_8hpp_a4af10b4351848a8c42d5ac661d93b454}\label{pin__definitions_8hpp_a4af10b4351848a8c42d5ac661d93b454}} 
-\index{pin\_definitions.hpp@{pin\_definitions.hpp}!LCDD6Pin@{LCDD6Pin}}
-\index{LCDD6Pin@{LCDD6Pin}!pin\_definitions.hpp@{pin\_definitions.hpp}}
-\doxysubsubsection{\texorpdfstring{LCDD6Pin}{LCDD6Pin}}
-{\footnotesize\ttfamily \#define LCDD6\+Pin~6}
-
-\mbox{\Hypertarget{pin__definitions_8hpp_ab0a96059061f979f64336f007ff98dc3}\label{pin__definitions_8hpp_ab0a96059061f979f64336f007ff98dc3}} 
-\index{pin\_definitions.hpp@{pin\_definitions.hpp}!LCDD7Pin@{LCDD7Pin}}
-\index{LCDD7Pin@{LCDD7Pin}!pin\_definitions.hpp@{pin\_definitions.hpp}}
-\doxysubsubsection{\texorpdfstring{LCDD7Pin}{LCDD7Pin}}
-{\footnotesize\ttfamily \#define LCDD7\+Pin~7}
-
-\mbox{\Hypertarget{pin__definitions_8hpp_a36d84e5ec247a812bbaeef451a4474df}\label{pin__definitions_8hpp_a36d84e5ec247a812bbaeef451a4474df}} 
-\index{pin\_definitions.hpp@{pin\_definitions.hpp}!LCDEPin@{LCDEPin}}
-\index{LCDEPin@{LCDEPin}!pin\_definitions.hpp@{pin\_definitions.hpp}}
-\doxysubsubsection{\texorpdfstring{LCDEPin}{LCDEPin}}
-{\footnotesize\ttfamily \#define LCDEPin~3}
-
-\mbox{\Hypertarget{pin__definitions_8hpp_ae063a69aedb9a11c5dcce286aca69e8a}\label{pin__definitions_8hpp_ae063a69aedb9a11c5dcce286aca69e8a}} 
-\index{pin\_definitions.hpp@{pin\_definitions.hpp}!LCDRSPin@{LCDRSPin}}
-\index{LCDRSPin@{LCDRSPin}!pin\_definitions.hpp@{pin\_definitions.hpp}}
-\doxysubsubsection{\texorpdfstring{LCDRSPin}{LCDRSPin}}
-{\footnotesize\ttfamily \#define LCDRSPin~2}
 
 \mbox{\Hypertarget{pin__definitions_8hpp_a98300bbbce3a65d992bbf4be3a84600b}\label{pin__definitions_8hpp_a98300bbbce3a65d992bbf4be3a84600b}} 
 \index{pin\_definitions.hpp@{pin\_definitions.hpp}!PumpRxPin@{PumpRxPin}}
@@ -97,13 +71,13 @@
 \index{pin\_definitions.hpp@{pin\_definitions.hpp}!SolanoidPin1@{SolanoidPin1}}
 \index{SolanoidPin1@{SolanoidPin1}!pin\_definitions.hpp@{pin\_definitions.hpp}}
 \doxysubsubsection{\texorpdfstring{SolanoidPin1}{SolanoidPin1}}
-{\footnotesize\ttfamily \#define Solanoid\+Pin1~50}
+{\footnotesize\ttfamily \#define Solanoid\+Pin1~22}
 
 \mbox{\Hypertarget{pin__definitions_8hpp_a0e34ce111e1eeb07757bd097cc23b761}\label{pin__definitions_8hpp_a0e34ce111e1eeb07757bd097cc23b761}} 
 \index{pin\_definitions.hpp@{pin\_definitions.hpp}!SolanoidPin2@{SolanoidPin2}}
 \index{SolanoidPin2@{SolanoidPin2}!pin\_definitions.hpp@{pin\_definitions.hpp}}
 \doxysubsubsection{\texorpdfstring{SolanoidPin2}{SolanoidPin2}}
-{\footnotesize\ttfamily \#define Solanoid\+Pin2~51}
+{\footnotesize\ttfamily \#define Solanoid\+Pin2~24}
 
 \mbox{\Hypertarget{pin__definitions_8hpp_aea99235fa3eef529e3ca42c55036d49a}\label{pin__definitions_8hpp_aea99235fa3eef529e3ca42c55036d49a}} 
 \index{pin\_definitions.hpp@{pin\_definitions.hpp}!SonarEchoPin@{SonarEchoPin}}

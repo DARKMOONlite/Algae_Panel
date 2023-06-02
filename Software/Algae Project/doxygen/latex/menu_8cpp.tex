@@ -1,5 +1,10 @@
 \hypertarget{menu_8cpp}{}\doxysection{src/menu.cpp File Reference}
 \label{menu_8cpp}\index{src/menu.cpp@{src/menu.cpp}}
+
+
+Defines the menu system, can be easily edited to add new functions and variables.  
+
+
 {\ttfamily \#include $<$menu.\+h$>$}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -15,7 +20,9 @@ void \mbox{\hyperlink{menu_8cpp_a13507063323ae611f3d47b515d02ae20}{Solanoid\+\_\
 uint16\+\_\+t \mbox{\hyperlink{menu_8cpp_a5e22482079cf2d4a65867971a1a670b9}{Menu\+\_\+\+IR\+\_\+\+Input}} (uint16\+\_\+t \+\_\+input)
 \begin{DoxyCompactList}\small\item\em Allows for the menu to accept IR input. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{menu_8cpp_a0c6717e502f384991e45600e263a630e}{Menu\+\_\+\+Serial\+\_\+\+Input}} (int \+\_\+input)
-\begin{DoxyCompactList}\small\item\em Allows for the menu to take serial input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Allows for the menu to take serial input. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{menu_8cpp_a713c6975f139b699328fbb48e4ad3854}{Average\+\_\+\+Array}} (int $\ast$Array, int Size)
+\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,15 +40,45 @@ int \mbox{\hyperlink{menu_8cpp_a0c6717e502f384991e45600e263a630e}{Menu\+\_\+\+Se
 \item 
 \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} \mbox{\hyperlink{menu_8cpp_a8e64000c95fb278eeea7b1c91831e09b}{Save\+\_\+\+Menu}} \mbox{[}3\mbox{]}
 \item 
-\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} \mbox{\hyperlink{menu_8cpp_a5521310a2ae10f21306aaa7e03f474bc}{SD\+\_\+\+Menu}} \mbox{[}2\mbox{]}
+\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} \mbox{\hyperlink{menu_8cpp_af7013aec88603afcbe6d830ea9c75481}{Menu}} \mbox{[}4\mbox{]}
 \item 
-\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} \mbox{\hyperlink{menu_8cpp_adf9e37a03564972b583bc9e17e30a93d}{Menu}} \mbox{[}5\mbox{]}
-\item 
-\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} \mbox{\hyperlink{menu_8cpp_aac12b325f03593cd32016b244db49b7a}{Top\+Menu}} (5, \mbox{\hyperlink{menu_8cpp_adf9e37a03564972b583bc9e17e30a93d}{Menu}})
+\mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} \mbox{\hyperlink{menu_8cpp_a82febe351e307c6d407cbe5bfa9436e9}{Top\+Menu}} (4, \mbox{\hyperlink{menu_8cpp_af7013aec88603afcbe6d830ea9c75481}{Menu}})
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Defines the menu system, can be easily edited to add new functions and variables. 
+
+\begin{DoxyAuthor}{Author}
+Sebastian Schroder 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/06-\/02
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023
+\end{DoxyCopyright}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/06-\/02
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{menu_8cpp_a713c6975f139b699328fbb48e4ad3854}\label{menu_8cpp_a713c6975f139b699328fbb48e4ad3854}} 
+\index{menu.cpp@{menu.cpp}!Average\_Array@{Average\_Array}}
+\index{Average\_Array@{Average\_Array}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{Average\_Array()}{Average\_Array()}}
+{\footnotesize\ttfamily float Average\+\_\+\+Array (\begin{DoxyParamCaption}\item[{int $\ast$}]{Array,  }\item[{int}]{Size }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{menu_8cpp_a7e7bd34f7f80ad8b5e5950e026446989}\label{menu_8cpp_a7e7bd34f7f80ad8b5e5950e026446989}} 
 \index{menu.cpp@{menu.cpp}!display@{display}}
 \index{display@{display}!menu.cpp@{menu.cpp}}
@@ -150,8 +187,8 @@ Set the control state of the solanoid.
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{= \{}
-\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Panel Depth"{}},\&\mbox{\hyperlink{global__variables_8cpp_a026dac3ac8ce79dd32e750d83f417cc7}{SonarDist1}}), }
-\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Resevoir Depth"{}},\&\mbox{\hyperlink{global__variables_8cpp_ab0b58094c0206004e941f653f2b143d5}{SonarDist2}})}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Panel Depth"{}},\&\mbox{\hyperlink{global__variables_8cpp_ac2983004a8cc1f5eade6ee043f323f2f}{IRAverage}}), }
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Resevoir Depth"{}},\&\mbox{\hyperlink{global__variables_8cpp_af8fa803a5d79a542c42ff09091f99f4c}{SonarAverage}})}
 \DoxyCodeLine{  \}}
 
 \end{DoxyCode}
@@ -164,28 +201,25 @@ Set the control state of the solanoid.
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{=\{}
-\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Duty Cycle"{}},\&\mbox{\hyperlink{global__variables_8cpp_a90ab7f98979031ec04fb9d755240df1e}{manual\_dutycycle}}.\mbox{\hyperlink{class_e_e_p_r_o_m___variable_aef9b508ea8a71974877c9863d6b7a8cb}{var}},0,25),}
-\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Manual On"{}},[]()\{\textcolor{keywordflow}{return}(\mbox{\hyperlink{menu_8cpp_a518dcef4869031bbcc886e41a054fae3}{Pump\_Ctrl}}(1));\})}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}On!"{}},[]()\{\textcolor{keywordflow}{return}(\mbox{\hyperlink{menu_8cpp_a518dcef4869031bbcc886e41a054fae3}{Pump\_Ctrl}}(1));\}),}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Duty Cycle"{}},\&\mbox{\hyperlink{global__variables_8cpp_a333380188387e2d1f21f5298beb7b706}{manual\_dutycycle}}.var,0,100)}
+\DoxyCodeLine{    }
 \DoxyCodeLine{  \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{menu_8cpp_adf9e37a03564972b583bc9e17e30a93d}\label{menu_8cpp_adf9e37a03564972b583bc9e17e30a93d}} 
+\mbox{\Hypertarget{menu_8cpp_af7013aec88603afcbe6d830ea9c75481}\label{menu_8cpp_af7013aec88603afcbe6d830ea9c75481}} 
 \index{menu.cpp@{menu.cpp}!Menu@{Menu}}
 \index{Menu@{Menu}!menu.cpp@{menu.cpp}}
 \doxysubsubsection{\texorpdfstring{Menu}{Menu}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} Menu\mbox{[}5\mbox{]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} Menu\mbox{[}4\mbox{]}}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{= \{}
-\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Save Settings:"{}},3,\mbox{\hyperlink{menu_8cpp_a8e64000c95fb278eeea7b1c91831e09b}{Save\_Menu}}),}
-\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Solanoid:"{}},2,\mbox{\hyperlink{menu_8cpp_a0bb9e1c25c5c79adfd50e3ccfbb4ec01}{Solanoid\_Menu}}),}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Solenoid:"{}},2,\mbox{\hyperlink{menu_8cpp_a0bb9e1c25c5c79adfd50e3ccfbb4ec01}{Solanoid\_Menu}}),}
 \DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Pump Controls:"{}},3,\mbox{\hyperlink{menu_8cpp_ac6cf2cdc34dc515b7057c4319e8f7e88}{Pump\_Menu}}),}
 \DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Sensors:"{}},2,\mbox{\hyperlink{menu_8cpp_a8d8404dc8adbbcce6f0aaab3ffe37f3c}{Sensor\_Menu}}),}
-\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}SD Menu"{}},2,\mbox{\hyperlink{menu_8cpp_a5521310a2ae10f21306aaa7e03f474bc}{SD\_Menu}})}
-\DoxyCodeLine{    }
-\DoxyCodeLine{    }
-\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Save Settings:"{}},3,\mbox{\hyperlink{menu_8cpp_a8e64000c95fb278eeea7b1c91831e09b}{Save\_Menu}})}
 \DoxyCodeLine{  \}}
 
 \end{DoxyCode}
@@ -216,20 +250,6 @@ Set the control state of the solanoid.
 \DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Save!"{}},[]()\{\textcolor{keywordflow}{return}(\mbox{\hyperlink{global__variables_8cpp_ab06c714ee161cf34440fdb53fb5a6d24}{rom\_manager}}.\mbox{\hyperlink{class_e_e_p_r_o_m___manager_a3f06460dcaf379593a0b235c24bf8582}{Store}}());\}),}
 \DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Soft Reset!"{}},[]()\{\textcolor{keywordflow}{return}(\mbox{\hyperlink{global__variables_8cpp_ab06c714ee161cf34440fdb53fb5a6d24}{rom\_manager}}.\mbox{\hyperlink{class_e_e_p_r_o_m___manager_a05f8d0296bab8657d22c900a2e0a5970}{Retrieve}}());\}),}
 \DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Hard Reset!"{}},[]()\{\textcolor{keywordflow}{return}(\mbox{\hyperlink{global__variables_8cpp_ab06c714ee161cf34440fdb53fb5a6d24}{rom\_manager}}.\mbox{\hyperlink{class_e_e_p_r_o_m___manager_a078eeb631effb3c535a287015373a9d8}{Reset}}());\})}
-\DoxyCodeLine{  \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{menu_8cpp_a5521310a2ae10f21306aaa7e03f474bc}\label{menu_8cpp_a5521310a2ae10f21306aaa7e03f474bc}} 
-\index{menu.cpp@{menu.cpp}!SD\_Menu@{SD\_Menu}}
-\index{SD\_Menu@{SD\_Menu}!menu.cpp@{menu.cpp}}
-\doxysubsubsection{\texorpdfstring{SD\_Menu}{SD\_Menu}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} SD\+\_\+\+Menu\mbox{[}2\mbox{]}}
-
-{\bfseries Initial value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{=\{}
-\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}autosave period"{}},\&\mbox{\hyperlink{global__variables_8cpp_a3be615e2bc312f27ae417081e70dd276}{autosave}}.\mbox{\hyperlink{class_e_e_p_r_o_m___variable_aef9b508ea8a71974877c9863d6b7a8cb}{var}},0,60),}
-\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}manual save!"{}},[]()\{\})}
 \DoxyCodeLine{  \}}
 
 \end{DoxyCode}
@@ -270,14 +290,14 @@ Set the control state of the solanoid.
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{=\{}
-\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Panel Temp"{}},\&\mbox{\hyperlink{global__variables_8cpp_ab627b25fe931b42061d8f6a3a6febbe2}{Temp1}}),}
-\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Resevoir Temp"{}},\&\mbox{\hyperlink{global__variables_8cpp_a06d01255d6054de9b58a273d6cce6cc7}{Temp2}})}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Panel Temp"{}},\&\mbox{\hyperlink{global__variables_8cpp_ad2cddfbedfaa3c72c5ca3458123de2e6}{Temp1Average}}),}
+\DoxyCodeLine{    \mbox{\hyperlink{class_simple_menu}{SimpleMenu}}(\textcolor{stringliteral}{"{}Resevoir Temp"{}},\&\mbox{\hyperlink{global__variables_8cpp_a98a9f68d7aba6c3f37ea78974a6cc324}{Temp2Average}})}
 \DoxyCodeLine{  \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{menu_8cpp_aac12b325f03593cd32016b244db49b7a}\label{menu_8cpp_aac12b325f03593cd32016b244db49b7a}} 
+\mbox{\Hypertarget{menu_8cpp_a82febe351e307c6d407cbe5bfa9436e9}\label{menu_8cpp_a82febe351e307c6d407cbe5bfa9436e9}} 
 \index{menu.cpp@{menu.cpp}!TopMenu@{TopMenu}}
 \index{TopMenu@{TopMenu}!menu.cpp@{menu.cpp}}
 \doxysubsubsection{\texorpdfstring{TopMenu}{TopMenu}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} Top\+Menu(5, \mbox{\hyperlink{menu_8cpp_adf9e37a03564972b583bc9e17e30a93d}{Menu}}) (\begin{DoxyParamCaption}\item[{5}]{,  }\item[{\mbox{\hyperlink{menu_8cpp_adf9e37a03564972b583bc9e17e30a93d}{Menu}}}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_simple_menu}{Simple\+Menu}} Top\+Menu(4, \mbox{\hyperlink{menu_8cpp_af7013aec88603afcbe6d830ea9c75481}{Menu}}) (\begin{DoxyParamCaption}\item[{4}]{,  }\item[{\mbox{\hyperlink{menu_8cpp_af7013aec88603afcbe6d830ea9c75481}{Menu}}}]{ }\end{DoxyParamCaption})}
 

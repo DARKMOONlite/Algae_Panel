@@ -8,5 +8,7 @@ var searchData=
   ['count_5fper_5fc_5',['COUNT_PER_C',['../_dallas_temperature_8h.html#a32ec8a9a258e8a70c4125d14b71ca7b2',1,'DallasTemperature.h']]],
   ['count_5fremain_6',['COUNT_REMAIN',['../_dallas_temperature_8h.html#ad4f3030cdf560af74faf18a34c155f27',1,'DallasTemperature.h']]],
   ['crc16_7',['crc16',['../class_one_wire.html#a685131803ff9bd250926de68fb477998',1,'OneWire']]],
-  ['crc8_8',['crc8',['../class_one_wire.html#ae3486a669581b750e4fdf3f3a12b05f1',1,'OneWire']]]
+  ['crc8_8',['crc8',['../class_one_wire.html#ae3486a669581b750e4fdf3f3a12b05f1',1,'OneWire']]],
+  ['cyclic_5farray_5findex_9',['Cyclic_Array_Index',['../global__variables_8cpp.html#a903dc10003a218620ea6bd4b59aca90f',1,'Cyclic_Array_Index():&#160;global_variables.cpp'],['../global__variables_8h.html#a903dc10003a218620ea6bd4b59aca90f',1,'Cyclic_Array_Index():&#160;global_variables.cpp']]],
+  ['cyclic_5farray_5fsize_10',['Cyclic_Array_Size',['../global__variables_8h.html#ae0d7b8a179a4e00492f385d3e4c28875',1,'global_variables.h']]]
 ];

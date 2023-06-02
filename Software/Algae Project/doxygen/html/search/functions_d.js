@@ -12,8 +12,8 @@ var searchData=
   ['requesttemperatures_9',['requestTemperatures',['../class_dallas_temperature.html#a5d28cff0d7e317c28e28c0f1a62fbe6d',1,'DallasTemperature']]],
   ['requesttemperaturesbyaddress_10',['requestTemperaturesByAddress',['../class_dallas_temperature.html#aee2a2abd5f8293df9a0a030b3e982c90',1,'DallasTemperature']]],
   ['requesttemperaturesbyindex_11',['requestTemperaturesByIndex',['../class_dallas_temperature.html#ae9a7bf62321615519242d2421c8b349a',1,'DallasTemperature']]],
-  ['reset_12',['Reset',['../class_e_e_p_r_o_m___variable.html#a39e241d2ee3b49061f66b3f9e1cfa967',1,'EEPROM_Variable::Reset()'],['../class_e_e_p_r_o_m___manager.html#a078eeb631effb3c535a287015373a9d8',1,'EEPROM_Manager::Reset()']]],
-  ['reset_13',['reset',['../class_one_wire.html#a6a742a9112392567eae3d06dde067c07',1,'OneWire']]],
+  ['reset_12',['reset',['../class_one_wire.html#a6a742a9112392567eae3d06dde067c07',1,'OneWire']]],
+  ['reset_13',['Reset',['../class_e_e_p_r_o_m___variable.html#a39e241d2ee3b49061f66b3f9e1cfa967',1,'EEPROM_Variable::Reset()'],['../class_e_e_p_r_o_m___manager.html#a078eeb631effb3c535a287015373a9d8',1,'EEPROM_Manager::Reset()']]],
   ['reset_5fsearch_14',['reset_search',['../class_one_wire.html#aae5efdf67928b5ee312ab7d7906416fa',1,'OneWire']]],
   ['retrieve_15',['Retrieve',['../class_e_e_p_r_o_m___variable.html#a0381e7239d894c1087df5e39e0319808',1,'EEPROM_Variable::Retrieve()'],['../class_e_e_p_r_o_m___manager.html#a05f8d0296bab8657d22c900a2e0a5970',1,'EEPROM_Manager::Retrieve()']]],
   ['returned_16',['returned',['../class_simple_menu.html#a155cc048639907bfa66c656949cb7e25',1,'SimpleMenu']]]

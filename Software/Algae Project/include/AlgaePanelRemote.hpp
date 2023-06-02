@@ -1,3 +1,14 @@
+/**
+ * @file AlgaePanelRemote.hpp
+ * @author Sebastian Schroder
+ * @brief Defines all IR codes produced by the relacent IR remote
+ * new buttons can be added by adding them to this list and adding a relavent function in the 
+ * @version 0.1
+ * @date 2023-06-02
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #ifndef ALGAE_PANEL_REMOTE_CODES_H
 #define ALGAE_PANEL_REMOTE_CODES_H
 
