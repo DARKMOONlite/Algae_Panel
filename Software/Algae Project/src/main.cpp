@@ -34,6 +34,7 @@ void setup() {
   irrecv.enableIRIn(); // starts interrupt for IR receiver
   // if you want to change values here in code, then comment out the retrieve call and save the changes to the arduino
   // rom_manager.Retrieve();
+  pinMode(SolanoidPin1,OUTPUT);
 
 }
 
@@ -66,6 +67,7 @@ void loop() {
 
 void Update_Sensor_State(){
   lastSensorUpdate = millis();
+  Serial.println("Reading Sensors");
   
 
   Temp1[Cyclic_Array_Index] = (int)TempSensor1.readTempC();
@@ -81,19 +83,24 @@ void Update_Sensor_State(){
 
 void Update_Control_State(){
   lastStateUpdate=millis();
- Serial.print("Current PunpState: ");
-    Serial.println(PumpState);
+ Serial.print("Pumpstate: ");
+    Serial.print(PumpState);
+    Serial.print(" , SolanoidState: ");
+    Serial.println(SolanoidState);
       lastStateUpdate=millis();
       if(PumpState != prevPumpState){
         prevPumpState=PumpState;
             if(PumpState==Control_State::Off){  // if the pumpstate is off then turn off the pump pwm controller
               PumpController.setPwmEnable(PWM_DISENABLE);
               //digitalWrite(SolanoidPin2,LOW); //this is
+              Serial.println("Pump Off");
               
             }
             if(PumpState==Control_State::Manual){ // if the state is set to manual, 
               PumpController.setPwmDuty(manual_dutycycle.var);
               PumpController.setPwmEnable(PWM_ENABLE);
+              Serial.print("Pump On, duty Cycle: ");
+              Serial.println(manual_dutycycle.var);
               //digitalWrite(SolanoidPin2,HIGH);
             }
             
@@ -102,9 +109,13 @@ void Update_Control_State(){
         prevSolanoidState=SolanoidState;
         if(SolanoidState==Control_State::Off){
           digitalWrite(SolanoidPin1,LOW);
+          digitalWrite(SolanoidPin2,LOW);
+          Serial.println("Solenoid Closed");
         }
         if(SolanoidState==Control_State::Manual){
           digitalWrite(SolanoidPin1,HIGH);
+          digitalWrite(SolanoidPin2,HIGH);
+          Serial.println("Solenoid Open");
         }
         
       }

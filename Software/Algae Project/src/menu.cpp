@@ -5,8 +5,9 @@
     //-----------------------------     Menu Structure ----------------------------------
 
   SimpleMenu ManualPumpSettings[2]={
-    SimpleMenu("Duty Cycle",&manual_dutycycle.var,0,25),
-    SimpleMenu("Manual On",[](){return(Pump_Ctrl(1));})
+    SimpleMenu("On!",[](){return(Pump_Ctrl(1));}),
+    SimpleMenu("Duty Cycle",&manual_dutycycle.var,0,100)
+    
   };
 
     SimpleMenu Pump_Menu[3] = {
