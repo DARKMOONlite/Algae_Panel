@@ -1,0 +1,3 @@
+- This model is a simple design to affix the electrical box and the pump to the algae panel via hose clamps. 
+- [This hose clamp](https://www.bunnings.com.au/kinetic-105-127mm-304-stainless-steel-hose-clamp_p0110744) was used, however it slightly too big, so a smaller one could be used instead.
+- This model is effective however repeated installation and removal found that the design is quite weak, it could be redesigned an/or printed with a stronger material to make up for these discovered inefficiencies. 

@@ -1,4 +1,0 @@
-READ ME
-
-- files added here are seperated into each folder based on the component
-- furthermore there is a drawing provided for each one
