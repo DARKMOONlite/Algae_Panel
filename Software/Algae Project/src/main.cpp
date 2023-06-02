@@ -38,7 +38,7 @@ void setup() {
 
 }
 
-void loop() {//! do not put anything here, task scheduler will take over
+void loop() {
 
 
 // ----------------------------------------     UI      ---------------------------------------------------------
@@ -46,10 +46,9 @@ void loop() {//! do not put anything here, task scheduler will take over
   if(irrecv.decode()){ //if IR receiver is picking up something
       if(Menu_IR_Input(irrecv.decodedIRData.command)){// if the response is a recognised command delay to prevent multiple commands read
         delay(20);
-      }
-      
       irrecv.resume();
     }
+  }
   if(Serial.available()){
     Menu_Serial_Input(Serial.read());
   }
