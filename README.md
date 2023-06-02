@@ -25,14 +25,14 @@ repo for the storage of files related to the control and operation of an Algae B
 graph LR;
     Repo-->CAD;
     Repo-->Software;
-    CAD-->Parts_List;
-    CAD-->Parts&Assemblies;
-    CAD-->Drawings;
+    CAD-->1[ElectrialModels];
+    CAD-->2[Plumbing];
+    CAD-->3[Previous DMMS Group];
+    CAD-->4[Pump & Elec Mount];
+    CAD-->5[Interior Mounts];
     Software-->Deprecated;
     Software-->AlgaeProject;
     AlgaeProject-->src;
     AlgaeProject-->lib;
     AlgaeProject-->include;
-
-
 ```
