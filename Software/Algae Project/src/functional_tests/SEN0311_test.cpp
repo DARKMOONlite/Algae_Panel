@@ -1,27 +1,25 @@
-
 #include <Arduino.h>
 #include <SoftwareSerial.h>
 
+// Define connections to sensor
+int pinRX = 7; // WHITE CABLE - 4TH CABLE (Vcc, GND, TX (YELLOW), RX (WHITE))
+int pinTX = 6; // YELLOW CABLE - 3RD CABLE (Vcc, GND, TX (YELLOW), RX (WHITE))
 
 
-SoftwareSerial USSerial(A2,A3);
+SoftwareSerial USSerial(pinRX, pinTX);
 unsigned char data[4]={};
-float distance;
+float distance = 0.0;
 
 void setup(){
     Serial.begin(9600);
     USSerial.begin(9600);
-
-
-
-    
-
-
 }
 
 
 void loop(){
     do{
+     delay(4);
+
      for(int i=0;i<4;i++)
      {
        data[i]=USSerial.read();
