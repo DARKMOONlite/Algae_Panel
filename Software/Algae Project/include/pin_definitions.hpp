@@ -21,9 +21,8 @@
 // --------------------------       SENSORS     ------------------------------
 # define TSensorPin1 12
 #define TSensorPin2 13
-#define SSensorPin1 A3
-#define SSensorPin2 A4
-#define SonarEchoPin A2
+#define SonarTXPin 6    // Prev A3
+#define SonarRXPin 7    // Prev A2
 
 
 

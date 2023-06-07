@@ -20,7 +20,7 @@ void Update_Control_State();
 
   DS18B20 TempSensor1(TSensorPin1);
   DS18B20 TempSensor2(TSensorPin2);
-  SEN0311 Sonar1(SSensorPin1,SonarEchoPin);
+  SEN0311 Sonar1(SonarTXPin,SonarRXPin);
   // NewPing Sonar1(SSensorPin1,SonarEchoPin,400);
   // NewPing Sonar2(SSensorPin2,SonarEchoPin,400);
   IRrecv irrecv(IRRXPin);
@@ -46,9 +46,9 @@ void setup() {
   irrecv.enableIRIn(); // starts interrupt for IR receiver
   // if you want to change values here in code, then comment out the retrieve call and save the changes to the arduino
   // rom_manager.Retrieve();
-  pinMode(SolanoidPin1,OUTPUT);
-  pinMode(SolanoidPin2,OUTPUT);
-  pinMode(26,OUTPUT);
+  //pinMode(SolanoidPin1,OUTPUT);
+  //pinMode(SolanoidPin2,OUTPUT);
+  //pinMode(26,OUTPUT);
   pinMode(28,OUTPUT);
 
 }
@@ -98,61 +98,67 @@ void Update_Sensor_State(){
 }
 
 
-void Update_Control_State(){
+void Update_Control_State()
+{
   lastStateUpdate=millis();
- Serial.print("Pumpstate: ");
-    Serial.print(PumpState);
-    Serial.print(" , SolanoidState: ");
-    Serial.println(SolanoidState);
-      lastStateUpdate=millis();
-      if(PumpState != prevPumpState){
-        prevPumpState=PumpState;
-            if(PumpState==Control_State::Off){  // if the pumpstate is off then turn off the pump pwm controller
-              PumpController.setPwmEnable(PWM_DISENABLE);
-              //digitalWrite(SolanoidPin2,LOW); //this is
-              Serial.println("Pump Off");
-              
-            }
-            if(PumpState==Control_State::Manual){ // if the state is set to manual, 
-              PumpController.setPwmDuty(manual_dutycycle.var);
-              PumpController.setPwmEnable(PWM_ENABLE);
-              Serial.print("Pump On, duty Cycle: ");
-              Serial.println(manual_dutycycle.var);
-              //digitalWrite(SolanoidPin2,HIGH);
-            }
-            
-        }
-      if(SolanoidState!=prevSolanoidState){
-        prevSolanoidState=SolanoidState;
-        if(SolanoidState==Control_State::Off){
-          digitalWrite(SolanoidPin1,LOW);
-          digitalWrite(SolanoidPin2,LOW);
-          digitalWrite(26,LOW);
-          digitalWrite(28,LOW);
-          Serial.println("Solenoid Closed");
-        }
-        if(SolanoidState==Control_State::Manual){
-          digitalWrite(SolanoidPin1,HIGH);
-          digitalWrite(SolanoidPin2,HIGH);
-          digitalWrite(26,HIGH);
-          digitalWrite(28,HIGH);
-          Serial.println("Solenoid Open");
-        }
-        
-      }
+  Serial.print("Pumpstate: ");
+  Serial.print(PumpState);
+  Serial.print(" , SolanoidState: ");
+  Serial.println(SolanoidState);
+  if(PumpState != prevPumpState)
+  {
+    prevPumpState=PumpState;
+    if(PumpState==Control_State::Off)
+    {  
+      // if the pumpstate is off then turn off the pump pwm controller
+      PumpController.setPwmEnable(PWM_DISENABLE);
+      //digitalWrite(SolanoidPin2,LOW); //this is
+      Serial.println("Pump Off");           
+    }
+
+    if(PumpState==Control_State::Manual)
+    { 
+      // if the state is set to manual, 
+      PumpController.setPwmDuty(manual_dutycycle.var);
+      PumpController.setPwmEnable(PWM_ENABLE);
+      Serial.print("Pump On, duty Cycle: ");
+      Serial.println(manual_dutycycle.var);
+      //digitalWrite(SolanoidPin2,HIGH);
+    }           
+  }
+
+  if(SolanoidState!=prevSolanoidState)
+  {
+    prevSolanoidState=SolanoidState;
+    if(SolanoidState==Control_State::Off)
+    {
+      //digitalWrite(SolanoidPin1,LOW);
+      //digitalWrite(SolanoidPin2,LOW);
+      //digitalWrite(26,LOW);
+      digitalWrite(28,LOW);
+      Serial.println("Solenoid Closed");
+    }
+    else if(SolanoidState==Control_State::Manual)
+    {
+      //digitalWrite(SolanoidPin1,HIGH);
+      //digitalWrite(SolanoidPin2,HIGH);
+      //digitalWrite(26,HIGH);
+      digitalWrite(28,HIGH);
+      Serial.println("Solenoid Open");
+    }       
+  }
 
 
-      if(SolanoidState==Control_State::Automatic){
+  if(SolanoidState==Control_State::Automatic)
+  {
           
-        }
+  }
 
 
-        if(PumpState==Control_State::Automatic){
+  if(PumpState==Control_State::Automatic)
+  {
 
-      }
-
-
-
+  }
 }
 
 
