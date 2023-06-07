@@ -11,5 +11,5 @@ Serial.begin(9600);
 
 void loop(){
 Serial.print("Temp: ");
-Serial.Println(TempSensor.readTempC());
+Serial.println(TempSensor.readTempC());
 }
