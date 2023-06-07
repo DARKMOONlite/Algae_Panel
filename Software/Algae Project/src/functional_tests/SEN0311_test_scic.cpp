@@ -5,8 +5,8 @@
 #include <stdlib.h>
 
 // Define connections to sensor
-int pinRX = 11;
-int pinTX = 10;
+int pinRX = 11; // WHITE CABLE - 4TH CABLE (Vcc, GND, TX (YELLOW), RX (WHITE))
+int pinTX = 10; // YELLOW CABLE - 3RD CABLE (Vcc, GND, TX (YELLOW), RX (WHITE))
 
 // Array to store incoming serial data
 unsigned char data_buffer[4] = {0};
