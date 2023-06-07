@@ -20,8 +20,9 @@ void Update_Control_State();
 
   DS18B20 TempSensor1(TSensorPin1);
   DS18B20 TempSensor2(TSensorPin2);
-  NewPing Sonar1(SSensorPin1,SonarEchoPin,400);
-  NewPing Sonar2(SSensorPin2,SonarEchoPin,400);
+  SEN0311 Sonar1(SSensorPin1,SonarEchoPin);
+  // NewPing Sonar1(SSensorPin1,SonarEchoPin,400);
+  // NewPing Sonar2(SSensorPin2,SonarEchoPin,400);
   IRrecv irrecv(IRRXPin);
   DRI0050 PumpController(PumpTxPin,PumpRxPin);
 
@@ -33,8 +34,9 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
 
-  while(!Serial){;}
+  // while(!Serial){;}
   Serial.println("Starting Up");
+  delay(100);
   lcd.init();
   lcd.backlight();
   // lcd.begin(16,2);
@@ -45,6 +47,9 @@ void setup() {
   // if you want to change values here in code, then comment out the retrieve call and save the changes to the arduino
   // rom_manager.Retrieve();
   pinMode(SolanoidPin1,OUTPUT);
+  pinMode(SolanoidPin2,OUTPUT);
+  pinMode(26,OUTPUT);
+  pinMode(28,OUTPUT);
 
 }
 
@@ -56,6 +61,7 @@ void loop() {
   if(irrecv.decode()){ //if IR receiver is picking up something
       if(Menu_IR_Input(irrecv.decodedIRData.command)){// if the response is a recognised command delay to prevent multiple commands read
         delay(20);
+        irrecv.printIRResultMinimal(&Serial);
       irrecv.resume();
     }
   }
@@ -78,12 +84,13 @@ void loop() {
 void Update_Sensor_State(){
   lastSensorUpdate = millis();
   Serial.println("Reading Sensors");
-  
+  Serial.print("sonar: ");
+  Serial.println(Sonar1.get_dist());
 
   Temp1[Cyclic_Array_Index] = (int)TempSensor1.readTempC();
   Temp2[Cyclic_Array_Index] = (int)TempSensor2.readTempC();
-  SonarDist1[Cyclic_Array_Index] = Sonar1.ping_cm();
-  IRDist2[Cyclic_Array_Index] = Sonar2.ping_cm();
+  SonarDist1[Cyclic_Array_Index] = Sonar1.get_dist();
+  // IRDist2[Cyclic_Array_Index] = Sonar2.get_dist(); //! need to swap to using the IR object
   Cyclic_Array_Index++;
   Temp1Average = Average_Array(Temp1,Cyclic_Array_Size);
   Temp2Average = Average_Array(Temp2,Cyclic_Array_Size);
@@ -120,11 +127,15 @@ void Update_Control_State(){
         if(SolanoidState==Control_State::Off){
           digitalWrite(SolanoidPin1,LOW);
           digitalWrite(SolanoidPin2,LOW);
+          digitalWrite(26,LOW);
+          digitalWrite(28,LOW);
           Serial.println("Solenoid Closed");
         }
         if(SolanoidState==Control_State::Manual){
           digitalWrite(SolanoidPin1,HIGH);
           digitalWrite(SolanoidPin2,HIGH);
+          digitalWrite(26,HIGH);
+          digitalWrite(28,HIGH);
           Serial.println("Solenoid Open");
         }
         

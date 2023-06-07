@@ -42,9 +42,12 @@ class EEPROM_Variable {
          * 
          */
         void Reset();
+
+        int var=0;
     private:
         uint16_t EEPROM_LOC=-1;
         const int default_var;
+        
 };
 
 /**

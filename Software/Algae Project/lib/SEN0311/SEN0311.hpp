@@ -1,26 +1,18 @@
-
+#ifndef SEN0311_H
+#define SEN0311_H
 #include <Arduino.h>
 #include <SoftwareSerial.h>
 
 
-
-SoftwareSerial USSerial(A2,A3);
-unsigned char data[4]={};
-float distance;
-
-void setup(){
-    Serial.begin(9600);
-    USSerial.begin(9600);
-
-
-
-    
-
-
+class SEN0311{
+public:
+SEN0311(int tx, int rx):
+USSerial(tx,rx){
+USSerial.begin(9600);
 }
 
 
-void loop(){
+float get_dist(){
     do{
      for(int i=0;i<4;i++)
      {
@@ -36,20 +28,29 @@ void loop(){
       sum=(data[0]+data[1]+data[2])&0x00FF;
       if(sum==data[3])
       {
+
+
+
         distance=(data[1]<<8)+data[2];
         if(distance>30)
           {
-           Serial.print("distance=");
-           Serial.print(distance/10);
-           Serial.println("cm");
+           return(distance);
           }else 
              {
                Serial.println("Below the lower limit");
+               return(0);
              }
-      }else Serial.println("ERROR");
+      }else {Serial.println("ERROR"); return(-1);}
      }
-     delay(100);
+    
 }
 
+private:
+
+SoftwareSerial USSerial;
+unsigned char data[4]={};
+double distance;
+};
 
 
+#endif

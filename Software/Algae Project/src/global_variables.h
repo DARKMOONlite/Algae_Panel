@@ -21,6 +21,7 @@
 #include <DS18B20.h>
 #include <pin_definitions.hpp>
 #include <AlgaePanelRemote.hpp>
+#include <SEN0311.hpp>
 
 // -------------------------------      ENUM    --------------------------------------
 // enum Joystick_State{
