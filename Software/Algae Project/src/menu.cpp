@@ -19,7 +19,7 @@
     
   };
 
-    SimpleMenu Pump_Menu[3] = {
+  SimpleMenu Pump_Menu[3] = {
     SimpleMenu("Off",[](){return(Pump_Ctrl(0));}),
     SimpleMenu("Manual:",2,ManualPumpSettings),
     SimpleMenu("Automatic On",[](){return(Pump_Ctrl(2));}),
@@ -39,7 +39,7 @@
     SimpleMenu("Temperature:",2,TempMenu),
     SimpleMenu("Depth:",2,DepthMenu)
   };
-    SimpleMenu Solanoid_Menu[2]={
+  SimpleMenu Solanoid_Menu[2]={
     SimpleMenu("Open",[](){return(Solanoid_Ctrl(1));}),
     SimpleMenu("Close",[](){return(Solanoid_Ctrl(0));})
   };

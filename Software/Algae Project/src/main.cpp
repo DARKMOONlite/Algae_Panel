@@ -1,6 +1,6 @@
 /**
  * @file main.cpp
- * @author Sebastian Schroder
+ * @author Sebastian Schroder, Adam Scicluna
  * @brief Main file, to run either select the main or mainmega environments inside platformio
  * main may not run due to the large size of the menu inside @file menu.h
  * @version 0.1
@@ -9,35 +9,37 @@
  * @copyright Copyright (c) 2023
  * 
  */
+
+// Including necessary libraries, including self-created consisting other information
 #include <Wire.h>
 #include <global_variables.h>
 #include <Arduino.h>
 #include <IRremote.h> //this needs to be included in a .cpp file, IDK why it doesn't work in a header file
 
+// Function Declarations
 void Update_Sensor_State();
 void Update_Control_State();
 
+// Sensor variable intialisations
+DS18B20 TempSensor1(TSensorPin1);
+DS18B20 TempSensor2(TSensorPin2);
+SEN0311 Sonar1(SonarRXPin,SonarTXPin);
+// NewPing Sonar1(SSensorPin1,SonarEchoPin,400);
+// NewPing Sonar2(SSensorPin2,SonarEchoPin,400);
+IRrecv irrecv(IRRXPin);
+DRI0050 PumpController(PumpTxPin,PumpRxPin);
 
-  DS18B20 TempSensor1(TSensorPin1);
-  DS18B20 TempSensor2(TSensorPin2);
-  SEN0311 Sonar1(SonarTXPin,SonarRXPin);
-  // NewPing Sonar1(SSensorPin1,SonarEchoPin,400);
-  // NewPing Sonar2(SSensorPin2,SonarEchoPin,400);
-  IRrecv irrecv(IRRXPin);
-  DRI0050 PumpController(PumpTxPin,PumpRxPin);
-
-
-
-
+// Setup loop runs once - for intialisation of Serial, LCD, and I/O Pins
 void setup() {
   
-  // put your setup code here, to run once:
+  // Initialise Serial at 9600 BAUD Rate
   Serial.begin(9600);
 
-  // while(!Serial){;}
+  // Start LCD and IR Receiver
   Serial.println("Starting Up");
   delay(100);
   lcd.init();
+  lcd.clear();
   lcd.backlight();
   // lcd.begin(16,2);
   TopMenu.begin(display,displayValue);
@@ -46,6 +48,9 @@ void setup() {
   irrecv.enableIRIn(); // starts interrupt for IR receiver
   // if you want to change values here in code, then comment out the retrieve call and save the changes to the arduino
   // rom_manager.Retrieve();
+
+  // Initialise PinMode for the Solenoid Valve Relay COM Port
+
   //pinMode(SolanoidPin1,OUTPUT);
   //pinMode(SolanoidPin2,OUTPUT);
   //pinMode(26,OUTPUT);
@@ -53,9 +58,8 @@ void setup() {
 
 }
 
+// Loop function - runs continously unless interrupted
 void loop() {
-
-
 // ----------------------------------------     UI      ---------------------------------------------------------
 
   if(irrecv.decode()){ //if IR receiver is picking up something
@@ -76,11 +80,12 @@ void loop() {
 }
 
 
-
-
-
-
-
+/*
+  Function Defintion: Sensor Updates
+  Purpose: Takes Sensor readings, adds them to a cyclic array, and averages
+           the array (currently set to store the last 10 readings) to print
+           to LCD screen.
+*/
 void Update_Sensor_State(){
   lastSensorUpdate = millis();
   Serial.println("Reading Sensors");
@@ -89,15 +94,21 @@ void Update_Sensor_State(){
 
   Temp1[Cyclic_Array_Index] = (int)TempSensor1.readTempC();
   Temp2[Cyclic_Array_Index] = (int)TempSensor2.readTempC();
-  SonarDist1[Cyclic_Array_Index] = Sonar1.get_dist();
+  SonarDist1[Cyclic_Array_Index] = (int)Sonar1.get_dist();
   // IRDist2[Cyclic_Array_Index] = Sonar2.get_dist(); //! need to swap to using the IR object
   Cyclic_Array_Index++;
   Temp1Average = Average_Array(Temp1,Cyclic_Array_Size);
   Temp2Average = Average_Array(Temp2,Cyclic_Array_Size);
+  SonarAverage = Average_Array(SonarDist1,Cyclic_Array_Size);
   if(Cyclic_Array_Index>=Cyclic_Array_Size){Cyclic_Array_Index=0;}
 }
 
-
+/*
+  Function Definition: Update state of controls (pump + solenoid valve)
+  Purpose: Based on the sensor readings, and the set pump flow-rate, this function
+           assigns a number, also known as a 'state' to each of the pump and
+           solenoid valve to determine its current operation (e.g. on or off).
+*/
 void Update_Control_State()
 {
   lastStateUpdate=millis();

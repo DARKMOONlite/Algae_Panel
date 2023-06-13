@@ -21,8 +21,8 @@
 // --------------------------       SENSORS     ------------------------------
 # define TSensorPin1 12
 #define TSensorPin2 13
-#define SonarTXPin 6    // Prev A3
-#define SonarRXPin 7    // Prev A2
+#define SonarTXPin 6    // Prev A3 : YELLOW CABLE - 3RD CABLE
+#define SonarRXPin 7    // Prev A2 : WHITE CABLE - 4TH CABLE
 
 
 

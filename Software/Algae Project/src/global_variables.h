@@ -75,7 +75,9 @@ extern uint32_t lastStateUpdate, lastLCDUpdate, lastSensorUpdate;
 
 
     //-----------------------------     Global Objects Declarations  ----------------------------------
-extern LiquidCrystal_I2C lcd;
+
+// Declare LCD Object: Arguments: I2C Address, LCD Rows, LCD Columns
+extern LiquidCrystal_I2C lcd(0x27, 16, 2);
 
     //-----------------------------     EEPROM Variable Declarations  ----------------------------------
 
