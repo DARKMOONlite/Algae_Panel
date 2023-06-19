@@ -24,6 +24,9 @@ void setup() {
   while (!Serial); // Leonardo: wait for Serial Monitor
   Serial.println("\nI2C Scanner");
 
+}
+
+void loop() {
   address = get_i2c_address();
 
   LiquidCrystal_I2C lcd(address,16,2);  // set the LCD address for a 16 chars and 2 line display
@@ -38,10 +41,8 @@ void setup() {
   
   lcd.setCursor(1,1);   //Move cursor to character 1 on line 1
   lcd.print("LCD I2C Test");
-}
 
-void loop() {
-  
+  delay(1000);
 }
 
 uint8_t get_i2c_address(void)

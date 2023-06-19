@@ -50,11 +50,7 @@ void setup() {
   // rom_manager.Retrieve();
 
   // Initialise PinMode for the Solenoid Valve Relay COM Port
-
-  //pinMode(SolanoidPin1,OUTPUT);
-  //pinMode(SolanoidPin2,OUTPUT);
-  //pinMode(26,OUTPUT);
-  pinMode(28,OUTPUT);
+  pinMode(SolanoidPin1,OUTPUT);
 
 }
 

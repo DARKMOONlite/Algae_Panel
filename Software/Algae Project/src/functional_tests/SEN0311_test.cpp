@@ -2,8 +2,8 @@
 #include <SoftwareSerial.h>
 
 // Define connections to sensor
-int pinRX = 7; // WHITE CABLE - 4TH CABLE (Vcc, GND, TX (YELLOW), RX (WHITE))
-int pinTX = 6; // YELLOW CABLE - 3RD CABLE (Vcc, GND, TX (YELLOW), RX (WHITE))
+int pinRX = 15; // WHITE/GREEN CABLE - 4TH CABLE (Vcc, GND, TX (YELLOW), RX (WHITE))
+int pinTX = 14; // YELLOW/BLUE CABLE - 3RD CABLE (Vcc, GND, TX (YELLOW), RX (WHITE))
 
 
 SoftwareSerial USSerial(pinRX, pinTX);
@@ -44,10 +44,16 @@ void loop(){
              {
                Serial.println("Below the lower limit");
              }
-      }else Serial.println("ERROR");
+      }
+      else
+      {
+        Serial.println(data[3]);
+        Serial.println(sum);
+      }
+     }
+     else
+     {
+      Serial.println(data[0]);
      }
      delay(100);
 }
-
-
-

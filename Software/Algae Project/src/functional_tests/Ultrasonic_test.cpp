@@ -12,14 +12,16 @@
 #include <NewPing.h>
 #include <Arduino.h>
 
-#define TRIGGER_PIN   12 // Arduino pin tied to trigger pin on ping sensor.
-#define ECHO_PIN      11 // Arduino pin tied to echo pin on ping sensor.
+#define TRIGGER_PIN   7 // Arduino pin tied to trigger pin on ping sensor.
+#define ECHO_PIN      6 // Arduino pin tied to echo pin on ping sensor.
 #define MAX_DISTANCE 500 // Maximum distance we want to ping for (in centimeters). Maximum sensor distance is rated at 400-500cm.
 
 NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and maximum distance.
 
 unsigned int pingSpeed = 50; // How frequently are we going to send out a ping (in milliseconds). 50ms would be 20 times a second.
 unsigned long pingTimer;     // Holds the next ping time.
+
+void echoCheck();
 
 void setup() {
   Serial.begin(9600); // Open serial monitor at 115200 baud to see ping results.
@@ -30,7 +32,19 @@ void loop() {
   // Notice how there's no delays in this sketch to allow you to do other processing in-line while doing distance pings.
   if (millis() >= pingTimer) {   // pingSpeed milliseconds since last ping, do another ping.
     pingTimer += pingSpeed;      // Set the next ping time.
-    sonar.ping_timer(echoCheck); // Send out the ping, calls "echoCheck" function every 24uS where you can check the ping status.
+
+    //sonar.ping_timer(echoCheck); // Send out the ping, calls "echoCheck" function every 24uS where you can check the ping status.
+  
+    unsigned int distance = sonar.ping_cm(); // Measure distance in centimeters
+
+    if (distance == 0) {
+      Serial.println("Out of range");
+    } else {
+      Serial.print("Distance: ");
+      Serial.print(distance);
+      Serial.println(" cm");
+    }
+  
   }
   // Do other stuff here, really. Think of it as multi-tasking.
 }
